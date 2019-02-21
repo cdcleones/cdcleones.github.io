@@ -1,0 +1,13 @@
+[{"anio":2018,"socio":"ASADMAR  LAHCEN","nombre":"LAHCEN ASADMAR","activo":true},
+{"anio":2018,"socio":"GONZALEZ LLORENTE GENARO","nombre":"GENARO GONZALEZ LLORENTE","activo":true},
+{"anio":2018,"socio":"REGLERO CASTRO CIPRIANO","nombre":"CIPRIANO REGLERO CASTRO","activo":true},
+{"anio":2018,"socio":"VERMEJO BUJ SALVADOR","nombre":"SALVADOR VERMEJO BUJ","activo":false},
+{"anio":2018,"socio":"RODRIGUEZ GONZALEZ ANTONIO","nombre":"ANTONIO RODRIGUEZ GONZALEZ","activo":true},
+{"anio":2018,"socio":"FERNANDO Y  DAVID","nombre":"FERNANDO Y  DAVID","activo":true},
+{"anio":2018,"socio":"GARCÍA GARCIA JESÚS","nombre":"JESUS ROBERTO GARCIA GARCIA","activo":true},
+{"anio":2018,"socio":"GUTIERREZ  JUAN CARLO","nombre":"JUAN CARLOS GUTIERREZ","activo":true},
+{"anio":2018,"socio":"COSTA SILVA JOSE FDO.","nombre":"JOSE FERNANDO COSTA SILVA","activo":true},
+{"anio":2018,"socio":"RAMOS FRADE  FERNANDO","nombre":"FERNANDO RAMOS FRADE","activo":true},
+{"anio":2018,"socio":"CASADO ALONSO  MIGUEL A.","nombre":"MIGUEL A. CASADO ALONSO","activo":true},
+{"anio":2018,"socio":"SIMON ABAJO  ALBERTO","nombre":"ALBERTO SIMON ABAJO","activo":true},
+{"anio":2018,"socio":"LUENGO FERNANDEZ IGNACIO","nombre":"IGNACIO LUENGO FERNANDEZ","activo":true}]

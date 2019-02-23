@@ -28,6 +28,76 @@
 <script src="contact/contact_me.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 
+<style type="text/css">
+div.carreras{
+  background: #fff;
+  border: 1px solid #E1E1E8;
+  margin: 10px 0;
+  padding: 8px;
+  color: #000;
+}
+
+.btn-red { 
+  color: #ffffff; 
+  background-color: #DF0031; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-red:focus, .btn-red.active, .open .dropdown-toggle.btn-red { 
+  color: #ffffff; 
+  background-color: #1e721e; 
+  border-color: #FFFFFF; 
+} 
+
+.btn-red:hover { 
+  color: #ffffff; 
+  background-color: #449D44; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-red:active, .btn-red.active, .open .dropdown-toggle.btn-red { 
+  background-image: none; 
+} 
+ 
+.btn-red.disabled, .btn-red[disabled], fieldset[disabled] .btn-red, 
+.btn-red.disabled:hover, .btn-red[disabled]:hover, fieldset[disabled] .btn-red:hover, 
+.btn-red.disabled:focus, .btn-red[disabled]:focus, fieldset[disabled] .btn-red:focus, 
+.btn-red.disabled:active, .btn-red[disabled]:active, fieldset[disabled] .btn-red:active, 
+.btn-red.disabled.active, .btn-red[disabled].active, fieldset[disabled] .btn-red.active { 
+  background-color: #DF0031; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-red .badge { 
+  color: #DF0031; 
+  background-color: #ffffff; 
+}
+
+div.infocarrera{
+  background: #E7E7E7;
+  border: 1px solid #26C300;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000000;
+  border-radius: 10px;
+}
+.dcha{
+  text-align: right;
+}
+.izda{
+  text-align: left;
+}
+
+div.podium{
+  background: #fff;
+  border: 1px solid #DF0031;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000;
+  border-radius: 10px
+}
+</style>
+
 <script>
 
 var arrSocios;
@@ -79,58 +149,7 @@ $(document).ready(function(){
   arrSocios = leeSocios(2018);
   arrConcursos = leeConcursos(2018);
   
-  $("#get_btn").click(function(){
-	$.getJSON('carreras.txt', function(datos){
-	  /*console.log(datos);
-	  var ssocios='<ul>';
-	  for (var i=0;i<datos.length;i++){
-		ssocios+="<li>"+datos[i].concurso+" - "+datos[i].anilla+"</li>";
-	  }
-	  ssocios+="</ul>";
-	  $("#salida").html(ssocios);
-	  */
-/*	  
-	  var arrCarreras = [];
-	  for (var i=0; i<datos.length; i++){
-		var nuevo = {posicion:datos[i].pos,anilla:datos[i].anilla,pais:datos[i].pais,concurso:datos[i].concurso,socio:datos[i].socio,puntos:datos[i].puntos};
-		arrCarreras.push(nuevo);
-	  }
-*/
-	  var arrPalomas = [];
-	  var encontrada;
-	  for (var i=0; i<datos.length; i++){
-		encontrada=false;
-		for (var j=0; j<arrPalomas.length; j++){
-		  if (datos[i].anilla==arrPalomas[j].anilla){
-			encontrada=true;
-			break;
-		  }
-		}
-		if (!encontrada){
-		  var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:datos[i].concurso+" ("+datos[i].pos+/*", "+datos[i].puntos+*/")",clasificada:1};
-		  arrPalomas.push(nueva);
-		}
-		else{
-		  arrPalomas[j].misdatos+=", "+datos[i].concurso+" ("+datos[i].pos+/*", "+datos[i].puntos+*/")"
-		  arrPalomas[j].clasificada+=1;
-		}
-	  }
-	  
-	  arrPalomas.sort(function (a, b) {
-		return b.clasificada - a.clasificada;
-	  });
-	  
-	  
-	  var sSalida='<ul>';
-	  for (var i=0; i<arrPalomas.length; i++){
-		sSalida+="<li>"+(i+1)+" - "+arrPalomas[i].clasificada+" - "+arrPalomas[i].anilla+" - "+arrPalomas[i].pais+" - "+dimeNombreSocio(arrPalomas[i].socio)+" - "+arrPalomas[i].misdatos+"</li>";
-	  }
-	  sSalida+="</ul>";
-	  $("#salida").html(sSalida);
-	});
-  });
-  
-  $("#get_btn1").click(function(){
+  $("#btnbestnac2018").click(function(){
 	$.getJSON('carreras.txt', function(datos){
 	  var arrPalomas = [];
 	  var encontrada;
@@ -144,46 +163,89 @@ $(document).ready(function(){
 		}
 		if (!encontrada){
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)=='N'){
-			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
+			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
+			//var enlace = "<a href='#' data-toggle='tooltip' title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</a>";
+			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:enlace+": "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
+			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:datos[i].concurso+": "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
 			arrPalomas.push(nueva);
 		  }
 		}
 		else{
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)=='N'){
-			arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";
+			//arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";
+			//var enlace = "<a href='#' data-toggle='tooltip' title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</a>";
+			//arrPalomas[j].misdatos+=", "+enlace+": "+datos[i].pos+"ª";
+			arrPalomas[j].misdatos+=", "+datos[i].concurso+": "+datos[i].pos+"ª";
 			arrPalomas[j].puntos_nac+=datos[i].puntos;
 		  }
 		}
 	  }
+	  //$('[data-toggle="tooltip"]').tooltip();
+	  
 	  arrPalomas.sort(function (a, b) {
 		return b.puntos_nac - a.puntos_nac;
 	  });
 	  
-
-	  //var sSalida="<table id='tablepodium1' class='display'>";
-	  var sSalida="<table id='mejorespalomas' class='display' style='width:100%'>";
-	  sSalida+="<thead><tr><th>#</th><th>País</th><th>Anilla</th><th>Nombre</th><th>Posiciones</th><th>Puntos</th></tr></thead>";
-	  sSalida+="<tbody>";
+	  var myTableDiv = document.getElementById("salida");
+	  
+	  var table = document.createElement('TABLE');
+	  table.id='mejorespalomas';
+	  table.setAttribute("class", "display");
+	  table.style='width:100%';
+	  var header = table.createTHead();
+	  var row = header.insertRow(0);
+	  var cell1 = row.insertCell(0);
+	  var cell2 = row.insertCell(1);
+	  var cell3 = row.insertCell(1);
+	  var cell4 = row.insertCell(1);
+	  var cell5 = row.insertCell(1);
+	  var cell6 = row.insertCell(1);
+	  cell1.innerHTML = "#";
+	  cell6.innerHTML = "País";
+	  cell5.innerHTML = "Anilla";
+	  cell4.innerHTML = "Nombre";
+	  cell3.innerHTML = "Posiciones";
+	  cell2.innerHTML = "Puntos";
+	  var tableBody = document.createElement('TBODY');
+	  table.appendChild(tableBody);
 	  
 	  for (var i=0; i<arrPalomas.length; i++){
-		sSalida+="<tr>";
-		sSalida+="<th>" + (i+1) +"</th>";
-		sSalida+="<td>"+arrPalomas[i].pais+"</td><td>"+arrPalomas[i].anilla+"</td><td>"+dimeNombreSocio(arrPalomas[i].socio)+"</td><td>"+arrPalomas[i].misdatos +"</td><td>"+Number(arrPalomas[i].puntos_nac).toFixed(2)+"</td>";
-		sSalida+="</tr>";
+		var tr = document.createElement('TR');
+		tableBody.appendChild(tr);
+		for (var j=0; j<6; j++){
+		  var td = document.createElement('TD');
+		  switch(j) {
+			case 0:
+			  td.appendChild(document.createTextNode(i+1));
+			  break;
+			case 1:
+			  td.appendChild(document.createTextNode(arrPalomas[i].pais));
+			  break;
+			case 2:
+			  td.appendChild(document.createTextNode(arrPalomas[i].anilla));
+			  break;
+			case 3:
+			  td.appendChild(document.createTextNode(dimeNombreSocio(arrPalomas[i].socio)));
+			  break;
+			case 4:
+			  td.appendChild(document.createTextNode(arrPalomas[i].misdatos));
+			  break;
+			case 5:
+			  td.appendChild(document.createTextNode(Number(arrPalomas[i].puntos_nac).toFixed(2)));
+			  break;
+		  } 
+		  tr.appendChild(td);
+		}
 	  }
 	  
-	  sSalida+="</tbody>";
-	  sSalida+="</table>";
-	  $("#salida").html(sSalida);
-
-	});
-
-
-	
-	$('#mejorespalomas').DataTable( {
-		//retrieve: true,
+	  $('#salida').empty();
+	  myTableDiv.appendChild(table);
+	  
+	  $('#mejorespalomas').DataTable( {
+		retrieve: true,
 		responsive: true,
 		paging: true,
+		
 		"language": {
 			"emptyTable": "No hay datos disponibles en la tabla",
 			"infoEmpty": "Mostrando 0 a 0 de 0 registros",
@@ -203,11 +265,13 @@ $(document).ready(function(){
 		columnDefs: [
 			{ targets: [0,5], className: 'dt-body-right' }
 		]
-	} );
+	  } );
+	
+	});
 	
   });
-
-  $("#get_btn2").click(function(){
+  
+  $("#btnbestreg2018").click(function(){
 	$.getJSON('carreras.txt', function(datos){
 	  var arrPalomas = [];
 	  var encontrada;
@@ -221,13 +285,15 @@ $(document).ready(function(){
 		}
 		if (!encontrada){
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)!='N'){
-			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
+			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
+			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:datos[i].concurso+": "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
 			arrPalomas.push(nueva);
 		  }
 		}
 		else{
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)!='N'){
-			arrPalomas[j].misdatos+=", <abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";
+			//arrPalomas[j].misdatos+=", <abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";
+			arrPalomas[j].misdatos+=", "+datos[i].concurso+": "+datos[i].pos+"ª";
 			arrPalomas[j].puntos_reg+=datos[i].puntos;
 		  }
 		}
@@ -236,28 +302,63 @@ $(document).ready(function(){
 		return b.puntos_reg - a.puntos_reg;
 	  });
 	  
-
-	  //var sSalida="<table id='tablepodium2'>";
-	  var sSalida="<table id='mejorespalomas' class='display' style='width:100%'>";
-	  sSalida+="<thead><tr><th>#</th><th>Pais</th><th>Anilla</th><th>Nombre</th><th>Posiciones</th><th>Puntos</th></tr></thead>";
-	  sSalida+="<tbody>";
+	  var myTableDiv = document.getElementById("salida");
+	  
+	  var table = document.createElement('TABLE');
+	  table.id='mejorespalomas';
+	  table.setAttribute("class", "display");
+	  table.style='width:100%';
+	  var header = table.createTHead();
+	  var row = header.insertRow(0);
+	  var cell1 = row.insertCell(0);
+	  var cell2 = row.insertCell(1);
+	  var cell3 = row.insertCell(1);
+	  var cell4 = row.insertCell(1);
+	  var cell5 = row.insertCell(1);
+	  var cell6 = row.insertCell(1);
+	  cell1.innerHTML = "#";
+	  cell6.innerHTML = "País";
+	  cell5.innerHTML = "Anilla";
+	  cell4.innerHTML = "Nombre";
+	  cell3.innerHTML = "Posiciones";
+	  cell2.innerHTML = "Puntos";
+	  var tableBody = document.createElement('TBODY');
+	  table.appendChild(tableBody);
 	  
 	  for (var i=0; i<arrPalomas.length; i++){
-		sSalida+="<tr>";
-		sSalida+="<th>" + (i+1) +"</th>";
-		sSalida+="<td>"+arrPalomas[i].pais+"</td><td>"+arrPalomas[i].anilla+"</td><td>"+dimeNombreSocio(arrPalomas[i].socio)+"</td><td>"+arrPalomas[i].misdatos +"</td><td>"+Number(arrPalomas[i].puntos_reg).toFixed(2)+"</td>";
-		sSalida+="</tr>";
+		var tr = document.createElement('TR');
+		tableBody.appendChild(tr);
+		for (var j=0; j<6; j++){
+		  var td = document.createElement('TD');
+		  switch(j) {
+			case 0:
+			  td.appendChild(document.createTextNode(i+1));
+			  break;
+			case 1:
+			  td.appendChild(document.createTextNode(arrPalomas[i].pais));
+			  break;
+			case 2:
+			  td.appendChild(document.createTextNode(arrPalomas[i].anilla));
+			  break;
+			case 3:
+			  td.appendChild(document.createTextNode(dimeNombreSocio(arrPalomas[i].socio)));
+			  break;
+			case 4:
+			  td.appendChild(document.createTextNode(arrPalomas[i].misdatos));
+			  break;
+			case 5:
+			  td.appendChild(document.createTextNode(Number(arrPalomas[i].puntos_reg).toFixed(2)));
+			  break;
+		  } 
+		  tr.appendChild(td);
+		}
 	  }
 	  
-	  sSalida+="</tbody>";
-	  sSalida+="</table>";
-	  $("#salida").html(sSalida);
+	  $('#salida').empty();
+	  myTableDiv.appendChild(table);
 
-	});
-	
-	
-	$('#mejorespalomas').DataTable( {
-		//retrieve: true,
+	  $('#mejorespalomas').DataTable( {
+		retrieve: true,
 		responsive: true,
 		paging: true,
 		"language": {
@@ -279,14 +380,11 @@ $(document).ready(function(){
 		columnDefs: [
 			{ targets: [0,5], className: 'dt-body-right' }
 		]
-	} );
+	  } );
 	
-	
+	});
   });
-  
 
-
-  
 });
 
 
@@ -304,13 +402,10 @@ $(document).ready(function(){
 <body>
 <br /><br />
 <div class="container">
-<!--  <button id="get_btn">Cargar datos</button>-->
-  <button id="get_btn1">Mejor paloma nacional</button>
-  <button id="get_btn2">Mejor paloma regional</button>
+  <button type='button' class='btn btn-lg btn-red enabled' id='btnbestnac2018'>Mejor paloma nacional</button>
+  <button type='button' class='btn btn-lg btn-red enabled' id='btnbestreg2018'>Mejor paloma regional</button>
   <br /><br />
   <div id="salida"></div>
-	<table id="mejorespalomas" class="display" style="width:100%">
-  </div>
 </div>
 
 <br /><br /><br />

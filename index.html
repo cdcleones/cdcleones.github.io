@@ -163,7 +163,7 @@ $(document).ready(function(){
 		}
 		if (!encontrada){
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)=='N'){
-			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
+			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};  
 			//var enlace = "<a href='#' data-toggle='tooltip' title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</a>";
 			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:enlace+": "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
 			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:datos[i].concurso+": "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
@@ -172,7 +172,7 @@ $(document).ready(function(){
 		}
 		else{
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)=='N'){
-			arrPalomas[j].misdatos+=", <abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";  
+			arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";
 			//var enlace = "<a href='#' data-toggle='tooltip' title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</a>";
 			//arrPalomas[j].misdatos+=", "+enlace+": "+datos[i].pos+"ª";
 			//arrPalomas[j].misdatos+=", "+datos[i].concurso+": "+datos[i].pos+"ª";

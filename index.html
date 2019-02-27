@@ -150,7 +150,7 @@ $(document).ready(function(){
   arrConcursos = leeConcursos(2018);
   
   $("#btnbestnac2018").click(function(){
-	$.getJSON('carreras.txt', function(datos){
+	$.getJSON('carreras2018.txt', function(datos){
 	  var arrPalomas = [];
 	  var encontrada;
 	  for (var i=0; i<datos.length; i++){
@@ -163,7 +163,7 @@ $(document).ready(function(){
 		}
 		if (!encontrada){
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)=='N'){
-			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};  
+			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
 			//var enlace = "<a href='#' data-toggle='tooltip' title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</a>";
 			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:enlace+": "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
 			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:datos[i].concurso+": "+datos[i].pos+"ª",puntos_nac:datos[i].puntos};
@@ -228,7 +228,8 @@ $(document).ready(function(){
 			  td.appendChild(document.createTextNode(dimeNombreSocio(arrPalomas[i].socio)));
 			  break;
 			case 4:
-			  td.appendChild(document.createTextNode(arrPalomas[i].misdatos));
+			  //td.appendChild(document.createTextNode(arrPalomas[i].misdatos));
+			  td.id='pos'+i;
 			  break;
 			case 5:
 			  td.appendChild(document.createTextNode(Number(arrPalomas[i].puntos_nac).toFixed(2)));
@@ -240,6 +241,12 @@ $(document).ready(function(){
 	  
 	  $('#salida').empty();
 	  myTableDiv.appendChild(table);
+
+	  for (var i=0; i<arrPalomas.length; i++){
+		var $mipos = $("#pos"+i);
+		var html = $.parseHTML(arrPalomas[i].misdatos,true);
+		$mipos.append(html);
+	  }
 	  
 	  $('#mejorespalomas').DataTable( {
 		retrieve: true,
@@ -272,7 +279,7 @@ $(document).ready(function(){
   });
   
   $("#btnbestreg2018").click(function(){
-	$.getJSON('carreras.txt', function(datos){
+	$.getJSON('carreras2018.txt', function(datos){
 	  var arrPalomas = [];
 	  var encontrada;
 	  for (var i=0; i<datos.length; i++){
@@ -285,15 +292,15 @@ $(document).ready(function(){
 		}
 		if (!encontrada){
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)!='N'){
-			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
-			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:datos[i].concurso+": "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
+			var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
+			//var nueva = {anilla:datos[i].anilla,pais:datos[i].pais,socio:datos[i].socio,misdatos:datos[i].concurso+": "+datos[i].pos+"ª",puntos_reg:datos[i].puntos};
 			arrPalomas.push(nueva);
 		  }
 		}
 		else{
 		  if (datos[i].concurso.charAt(datos[i].concurso.length-2)!='N'){
-			//arrPalomas[j].misdatos+=", <abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";
-			arrPalomas[j].misdatos+=", "+datos[i].concurso+": "+datos[i].pos+"ª";
+			arrPalomas[j].misdatos+=", <abbr title='"+dimeNombreConcurso(datos[i].concurso)+"'>"+datos[i].concurso+"</abbr>: "+datos[i].pos+"ª";
+			//arrPalomas[j].misdatos+=", "+datos[i].concurso+": "+datos[i].pos+"ª";
 			arrPalomas[j].puntos_reg+=datos[i].puntos;
 		  }
 		}
@@ -344,7 +351,8 @@ $(document).ready(function(){
 			  td.appendChild(document.createTextNode(dimeNombreSocio(arrPalomas[i].socio)));
 			  break;
 			case 4:
-			  td.appendChild(document.createTextNode(arrPalomas[i].misdatos));
+			  //td.appendChild(document.createTextNode(arrPalomas[i].misdatos));
+			  td.id='pos'+i;
 			  break;
 			case 5:
 			  td.appendChild(document.createTextNode(Number(arrPalomas[i].puntos_reg).toFixed(2)));
@@ -357,6 +365,15 @@ $(document).ready(function(){
 	  $('#salida').empty();
 	  myTableDiv.appendChild(table);
 
+	  $('#salida').empty();
+	  myTableDiv.appendChild(table);
+
+	  for (var i=0; i<arrPalomas.length; i++){
+		var $mipos = $("#pos"+i);
+		var html = $.parseHTML(arrPalomas[i].misdatos,true);
+		$mipos.append(html);
+	  }
+	  
 	  $('#mejorespalomas').DataTable( {
 		retrieve: true,
 		responsive: true,

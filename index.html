@@ -124,6 +124,11 @@ div.anillainfo {
 $(document).ready(function(){
 	$('#infoanio').hide();
 
+	$('#btn2017').click(function(){ 
+	  anioSelected=2017;
+	  Procesar(anioSelected);
+	});
+
 	$('#btn2018').click(function(){ 
 	  anioSelected=2018;
 	  Procesar(anioSelected);

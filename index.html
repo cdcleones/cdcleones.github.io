@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>Club Deportivo Colomb&oacute;filo Leon&eacute;s</title>
+<link rel="icon" href="favicon.png" type="image/png">
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script> 
+
+<script type="text/javascript" src="js/races.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+<script type="text/javascript" src="js/jquery.nav.js"></script> 
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/wow.js"></script> 
+
+<script type="text/javascript" src="js/custom.js"></script>
+
+
+<!--[if lt IE 9]>
+	<script src="js/respond-1.1.0.min.js"></script>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/html5element.js"></script>
+<![endif]-->
+ 
+<style type="text/css">
+div.carreras {
+  background: #ffffff;
+  margin: 10px 0;
+  padding: 8px;
+  color: #000;
+}
+
+.btn-red { 
+  color: #ffffff;
+  background-color: #df0031;
+  border-color: #ffffff;
+}
+
+.btn-red:focus, .btn-red.active, .open .dropdown-toggle.btn-red {
+  color: #ffffff;
+  background-color: #1e721e;
+  border-color: #ffffff;
+}
+
+.btn-red:hover {
+  color: #ffffff;
+  background-color: #449d44;
+  border-color: #ffffff;
+}
+
+.btn-red:active, .btn-red.active, .open .dropdown-toggle.btn-red {
+  background-image: none;
+}
+
+.btn-red.disabled, .btn-red[disabled], fieldset[disabled] .btn-red, 
+.btn-red.disabled:hover, .btn-red[disabled]:hover, fieldset[disabled] .btn-red:hover, 
+.btn-red.disabled:focus, .btn-red[disabled]:focus, fieldset[disabled] .btn-red:focus, 
+.btn-red.disabled:active, .btn-red[disabled]:active, fieldset[disabled] .btn-red:active, 
+.btn-red.disabled.active, .btn-red[disabled].active, fieldset[disabled] .btn-red.active {
+  background-color: #df0031;
+  border-color: #ffffff;
+}
+
+.btn-red .badge {
+  color: #df0031;
+  background-color: #ffffff;
+}
+
+div.infocarrera {
+  background: #e7e7e7;
+  border: 1px solid #26c300;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.dcha {
+  text-align: right;
+}
+
+.izda {
+  text-align: left;
+}
+
+div.podium {
+  background: #ffffff;
+  border: 1px solid #df0031;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000000;
+  border-radius: 10px
+}
+
+div.anillainfo {
+  background: #ffffff;
+  border: 1px solid #26c300;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.active-pink-4 input[type=text]:focus:not([readonly]) {
+  border: 1px solid #f48fb1;
+  box-shadow: 0 0 0 1px #f48fb1;
+  padding: 20px;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+	$('#infoanio').hide();
+
+	$('#btn2018').click(function(){ 
+	  anioSelected=2018;
+	  Procesar(anioSelected);
+	});
+
+	$('#btn2019').click(function(){ 
+	  anioSelected=2019;
+	  Procesar(anioSelected);
+	});
+
+	$('#btn2020').click(function(){ 
+	  anioSelected=2020;
+	  Procesar(anioSelected);
+	});
+	
+	$('#btnnacional').click(function(){ 
+	  var html=$.parseHTML('<h3>Nacional '+anioSelected+'</h3>',true);
+	  var $clave=$("#infodate");
+	  $clave.empty();
+	  $clave.append(html);
+	  $('#regional').hide(); 
+	  $('#nacional').show(); 
+	});
+
+	$('#btnregional').click(function(){ 
+	  var html=$.parseHTML('<h3>Regional '+anioSelected+'</h3>',true);
+	  var $clave= $("#infodate");
+	  $clave.empty();
+	  $clave.append(html);
+	  $('#nacional').hide(); 
+	  $('#regional').show(); 
+	});
+
+	$('#btnbestnac').click(function(){ 
+	  $('#divmejorpalomaregional').hide(); 
+	  $('#divmejorpalomanacional').show();
+	});
+
+	$('#btnbestreg').click(function(){ 
+	  $('#divmejorpalomanacional').hide(); 
+	  $('#divmejorpalomaregional').show();
+	});
+});
+
+</script>
+
+</head>
+<body>
+
+<!--Cabecera-->
+<header id="header_wrapper">
+  <div class="container">
+	<div class="header_box">
+	  <div class="logo"><a href="#"><img src="img/cdcl.png" alt="logo" height="48"></a></div>
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="navbar-header">
+			<button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+		  </div>
+		  <div id="main-nav" class="collapse navbar-collapse navStyle">
+			<ul class="nav navbar-nav" id="mainNav">
+			  <li class="active"><a href="#principal" class="scroll-link">Principal</a></li>
+			  <li><a href="#nosotros" class="scroll-link">Nosotros</a></li>
+			  <li><a href="#clasificaciones" class="scroll-link">Clasificaciones</a></li>
+			  <li><a href="#contacto" class="scroll-link">Contacto</a></li>
+			</ul>
+		  </div>
+		</nav>
+	  </div>
+  </div>
+</header>
+<!--Cabecera--> 
+
+<!--Principal-->
+<section id="principal" class="top_cont_outer">
+  <div class="hero_wrapper">
+	<div class="container">
+	  <div class="hero_section">
+		<div class="row">
+		  <div class="col-lg-5 col-sm-7">
+			<div class="top_left_cont zoomIn wow animated"> 
+			  <h2><strong>Club Deportivo Colomb&oacute;filo Leon&eacute;s</strong></h2>
+			</div>
+		  </div>
+		  <div class="col-lg-7 col-sm-5">
+			<img src="img/pigeon.png" class="zoomInUp wow animated" alt="" />
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>
+<!--Principal--> 
+
+<section id="nada">
+  <div class="inner_wrapper">
+	<div class="container">
+	  <div class="inner_section">
+		<div class="row">
+		  <div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
+			<div class=" delay-01s animated fadeInDown wow animated">
+			  <p>&nbsp;</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div> 
+  </div>
+</section>
+
+<!--Nosotros-->
+<section id="nosotros">
+  <div class="inner_wrapper">
+	<div class="container">
+	  <h2>Qui&eacute;nes somos...</h2>
+	  <div class="inner_section">
+		<div class="row">
+		  <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="img/suelta.jpg" class="img-circle delay-03s animated wow zoomIn" alt=""></div>
+			<div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
+			  <div class=" delay-01s animated fadeInDown wow animated">
+				<h3>Historia del Club</h3><br/> 
+				<p>El Club Deportivo Colomb&oacute;filo Leon&eacute;s fue; fundado el 17 de septiembre de 1996.</p> <br/>
+				<p>Su primer presidente fue D. Miguel Robles Rodr&iacute;guez.</p>
+				<p>Su actual presidente es D. Miguel &Aacute;ngel Casado Alonso que adem&aacute;s es el Presidente de la Federaci&oacute;n de Colombofilia de Castilla y Le&oacute;n.</p>
+			  </div>
+			<div class="work_bottom"> <span>Saber m&aacute;s...</span> <a href="#contacto" class="contact_btn">Contacto</a> </div>
+		  </div>
+		</div>
+	  </div>
+	</div> 
+  </div>
+</section>
+<!--Nosotros--> 
+
+<br><br>
+<!--Clasificaciones-->
+<section class="content" id="clasificaciones">
+  <div class="inner_wrapper">
+	<div class="container">
+	  <h2>Clasificaciones</h2>
+	</div> 
+	<div class="container">
+	  <div class="row">
+		<div class="col-xs-12 text-center">
+		  <script>
+			escribeAnios();
+		  </script>
+		  <div id="infoanio">
+			<div class="carreras">
+			  <div id="podium" class="podium">
+				<button type="button" class="btn btn-lg btn-red enabled" id="btnnacional">Nacional</button>
+				<button type="button" class="btn btn-lg btn-red enabled" id="btnregional">Regional</button>
+				<br /><br />
+				<div id="infodate"></div>
+				<div id="nacional"></div>
+				<div id="regional"></div>
+				<div id="concursos"></div>
+				<br /><br />
+				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestnac">Mejor paloma nacional</button>
+				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestreg">Mejor paloma regional</button>
+				<br /><br />
+				<div id="divmejorpalomanacional"></div>
+				<div id="divmejorpalomaregional"></div>
+				
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+</section>
+<!--/Clasificaciones -->
+
+<section id="nada1">
+  <div class="inner_wrapper">
+	<div class="container">
+	  <div class="inner_section">
+		<div class="row">
+		  <div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
+			<div class=" delay-01s animated fadeInDown wow animated">
+			  <p>&nbsp;</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>
+
+<!--Footer-->
+<footer class="footer_wrapper" id="contacto">
+  <div class="container">
+	<section class="page_section contact" id="contacto">
+	  <div class="contact_section">
+		<h2>Contacto</h2>
+	  </div>
+	  <div class="row">
+		<div class="col-lg-4 wow fadeInLeft">
+		  <div class="contact_info">
+			<div class="detail">
+			  <h4>Email</h4>
+			  <p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#117;&#98;&#100;&#101;&#112;&#111;&#114;&#116;&#105;&#118;&#111;&#99;&#111;&#108;&#111;&#109;&#98;&#111;&#102;&#105;&#108;&#111;&#108;&#101;&#111;&#110;&#101;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#99;&#108;&#117;&#98;&#100;&#101;&#112;&#111;&#114;&#116;&#105;&#118;&#111;&#99;&#111;&#108;&#111;&#109;&#98;&#111;&#102;&#105;&#108;&#111;&#108;&#101;&#111;&#110;&#101;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+			</div> 
+		  </div>
+		</div>
+	  </div>
+	</section>
+  </div>
+  <div class="container">
+	<div class="footer_bottom"><span>Copyright &copy; 2019 Club Deportivo Colomb&oacute;filo Leon&eacute;s</span> </div>
+  </div>
+</footer>
+<!--Footer-->
+
+</body>
+</html>

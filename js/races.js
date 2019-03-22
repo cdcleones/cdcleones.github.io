@@ -1,8 +1,7 @@
 const MAXROWS = 10;
 
 var arrAnios = [{"anio":2018,"activo":true},
-				{"anio":2019,"activo":true},
-				{"anio":2020,"activo":false}
+				{"anio":2019,"activo":true}
 			   ];
 
 var anioSelected;
@@ -64,7 +63,6 @@ function Procesar(anio){
   $('#nacional').show(); 
   $('#divmejorpalomanacional').hide();
   $('#divmejorpalomaregional').hide();
-  //$('#anillainfo').hide();
 }
 
 function ProcesaAnio(anio){
@@ -83,7 +81,7 @@ function ProcesaAnio(anio){
 		req1.done(function(response){
 		  for (var i=0; i<datosConcursos.length; i++){
 			if (datosConcursos[i].anio==anio){
-			  var nuevo = {anio:datosConcursos[i].anio,codigo:datosConcursos[i].codigo,nombre:datosConcursos[i].nombre,fenceste:datosConcursos[i].fenceste,fsuelta:datosConcursos[i].fsuelta,categoria:datosConcursos[i].categoria,fichero:'data/'+anio+'/'+datosConcursos[i].fichero,provincia:datosConcursos[i].provincia,hsuelta:datosConcursos[i].hsuelta,campeonato:datosConcursos[i].campeonato,colectivo:datosConcursos[i].colectivo,socios:datosConcursos[i].socios,encestadas:datosConcursos[i].encestadas,clasif:datosConcursos[i].clasif,noclasif:datosConcursos[i].noclasif,activo:datosConcursos[i].activo,km:datosConcursos[i].km};
+			  var nuevo = {anio:datosConcursos[i].anio,codigo:datosConcursos[i].codigo,nombre:datosConcursos[i].nombre,fenceste:datosConcursos[i].fenceste,fsuelta:datosConcursos[i].fsuelta,categoria:datosConcursos[i].categoria,fichero:'data/'+anio+'/'+datosConcursos[i].fichero,provincia:datosConcursos[i].provincia,hsuelta:datosConcursos[i].hsuelta,campeonato:datosConcursos[i].campeonato,colectivo:datosConcursos[i].colectivo,socios:datosConcursos[i].socios,encestadas:datosConcursos[i].encestadas,clasif:datosConcursos[i].clasif,noclasif:datosConcursos[i].noclasif,activo:datosConcursos[i].activo,km0:datosConcursos[i].km0,km1:datosConcursos[i].km1};
 			  arrConcursos.push(nuevo);
 			}
 		  }
@@ -111,6 +109,8 @@ function ProcesaAnio(anio){
 				$('#' + arrConcursos[i].codigo).hide();
 			  }
 			  /* Insertar de EXCEL los concursos */
+			  /* 2017 */
+			  
 			  /* 2018 */
 			  $('#btnLV1R8').click(function(){ if ($('#LV1R8').is (':hidden')){ $('#LV1N8').hide(); $('#LV2R8').hide(); $('#LV3R8').hide(); $('#LJ1N8').hide(); $('#LMFN8').hide(); $('#LJ2N8').hide(); $('#LV5R8').hide(); $('#LF1N8').hide(); $('#LF1R8').hide(); $('#LF2R8').hide(); $('#LF2N8').hide(); $('#LG1R8').hide(); $('#LG1N8').hide(); $('#LG2N8').hide(); $('#LG2R8').hide(); $('#LV1R8').show(); } else $('#LV1R8').hide(); });
 			  $('#btnLV1N8').click(function(){ if ($('#LV1N8').is (':hidden')){ $('#LV1R8').hide(); $('#LV2R8').hide(); $('#LV3R8').hide(); $('#LJ1N8').hide(); $('#LMFN8').hide(); $('#LJ2N8').hide(); $('#LV5R8').hide(); $('#LF1N8').hide(); $('#LF1R8').hide(); $('#LF2R8').hide(); $('#LF2N8').hide(); $('#LG1R8').hide(); $('#LG1N8').hide(); $('#LG2N8').hide(); $('#LG2R8').hide(); $('#LV1N8').show(); } else $('#LV1N8').hide(); });
@@ -137,7 +137,8 @@ function ProcesaAnio(anio){
 			  $('#btnLJ1N9').click(function(){ if ($('#LJ1N9').is (':hidden')){ $('#LV1R9').hide(); $('#LV2R9').hide(); $('#LV1N9').hide(); $('#LV3R9').hide(); $('#LV4R9').hide(); $('#LV2N9').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LJ1N9').show(); } else $('#LJ1N9').hide(); });
 			  $('#btnLV4R9').click(function(){ if ($('#LV4R9').is (':hidden')){ $('#LV1R9').hide(); $('#LV2R9').hide(); $('#LV1N9').hide(); $('#LV3R9').hide(); $('#LJ1N9').hide(); $('#LV2N9').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LV4R9').show(); } else $('#LV4R9').hide(); });
 			  $('#btnLV2N9').click(function(){ if ($('#LV2N9').is (':hidden')){ $('#LV1R9').hide(); $('#LV2R9').hide(); $('#LV1N9').hide(); $('#LV3R9').hide(); $('#LJ1N9').hide(); $('#LV4R9').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LV2N9').show(); } else $('#LV2N9').hide(); });
-
+			  
+			  /* 2020 */
 			  
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
@@ -183,7 +184,7 @@ function crearPodium(anio,clave){
 		return b.puntosnacional - a.puntosnacional;
 	  });
 	  
-	  htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
+	  htmlPuntos+="<table id='tablepodium" + anio +"' class='table table-striped'>";
 	  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
 	  htmlPuntos+="<tbody>";
 	  for (var i=0; i<arrPuntos.length; i++){
@@ -239,15 +240,15 @@ function crearConcursos(anio){
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>No clasificadas: " + arrConcursos[j].noclasif + "</div>";
 		htmlConcursos+="</div >";
 		htmlConcursos+="<div class='row'>";
-		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><abbr title='Distancia al palomar m&aacute;s cercano'>Km:</abbr> " + arrConcursos[j].km + "</div>";
+		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><abbr title='Distancia al palomar m&aacute;s cercano'>Km cerca:</abbr> " + arrConcursos[j].km0 + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Fecha suelta: " + arrConcursos[j].fsuelta +"</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Colectivo: " + arrConcursos[j].colectivo + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><a target='_blank' href='" + arrConcursos[j].fichero + "'>Listado clasificadas</a></div>";
 		htmlConcursos+="</div >";
 		htmlConcursos+="<div class='row'>";
-		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Socios: " + arrConcursos[j].socios + "</div>";
+		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><abbr title='Distancia al palomar m&aacute;s lejano'>Km lejos:</abbr> " + arrConcursos[j].km1 + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Hora suelta: " + arrConcursos[j].hsuelta + "</div>";
-		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>&nbsp;</div>";
+		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Socios: " + arrConcursos[j].socios + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>&nbsp;</div>";
 		htmlConcursos+="</div >";
 		

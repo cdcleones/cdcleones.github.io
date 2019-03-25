@@ -8,6 +8,7 @@ var anioSelected;
 var arrSocios=[];
 var arrConcursos=[];
 var arrCarreras=[];
+var arrAnillas=[];
 
 function dimeNombreSocio(sSocio){
   for (var i=0; i<arrSocios.length; i++){
@@ -37,7 +38,7 @@ function escribeAnios() {
 }
 
 function Procesar(anio){
-  var html=$.parseHTML('<h3>Nacional '+anioSelected+'</h3>',true);
+  var html=$.parseHTML('<h3>Nacional '+anio+'</h3>',true);
   var $clave = $("#infodate");
   $clave.empty();
   $clave.append(html);
@@ -47,16 +48,16 @@ function Procesar(anio){
   $clave.empty();
   $clave=$('#concursos');
   $clave.empty();
-  html=$.parseHTML('<h3>Mejor paloma nacional '+anioSelected+'</h3><br>Sin datos',true);
+  html=$.parseHTML('<h3>Mejor paloma nacional '+anio+'</h3><br>Sin datos',true);
   $clave=$('#divmejorpalomanacional');
   $clave.empty();
   $clave.append(html);
-  html=$.parseHTML('<h3>Mejor paloma regional '+anioSelected+'</h3><br>Sin datos',true);
+  html=$.parseHTML('<h3>Mejor paloma regional '+anio+'</h3><br>Sin datos',true);
   $clave=$('#divmejorpalomaregional');
   $clave.empty();
   $clave.append(html);
 
-  ProcesaAnio(anioSelected);
+  ProcesaAnio(anio);
 
   $('#infoanio').show(); 
   $('#regional').hide(); 
@@ -73,7 +74,7 @@ function ProcesaAnio(anio){
 	req.done(function(response){
 	  for (var i=0; i<datosSocios.length; i++){
 		if (datosSocios[i].anio==anio){
-		  var nuevo = {anio:datosSocios[i].anio,socio:datosSocios[i].socio,nombre:datosSocios[i].nombre,activo:datosSocios[i].activo};
+		  var nuevo = {anio:datosSocios[i].anio,club:datosSocios[i].club,socio:datosSocios[i].socio,nombre:datosSocios[i].nombre,activo:datosSocios[i].activo};
 		  arrSocios.push(nuevo);
 		}
 	  }
@@ -81,16 +82,16 @@ function ProcesaAnio(anio){
 		req1.done(function(response){
 		  for (var i=0; i<datosConcursos.length; i++){
 			if (datosConcursos[i].anio==anio){
-			  var nuevo = {anio:datosConcursos[i].anio,codigo:datosConcursos[i].codigo,nombre:datosConcursos[i].nombre,fenceste:datosConcursos[i].fenceste,fsuelta:datosConcursos[i].fsuelta,categoria:datosConcursos[i].categoria,fichero:'data/'+anio+'/'+datosConcursos[i].fichero,provincia:datosConcursos[i].provincia,hsuelta:datosConcursos[i].hsuelta,campeonato:datosConcursos[i].campeonato,colectivo:datosConcursos[i].colectivo,socios:datosConcursos[i].socios,encestadas:datosConcursos[i].encestadas,clasif:datosConcursos[i].clasif,noclasif:datosConcursos[i].noclasif,activo:datosConcursos[i].activo,km0:datosConcursos[i].km0,km1:datosConcursos[i].km1};
-			  arrConcursos.push(nuevo);
+			  var nuevo1 = {anio:datosConcursos[i].anio,club:datosConcursos[i].club,codigo:datosConcursos[i].codigo,nombre:datosConcursos[i].nombre,fenceste:datosConcursos[i].fenceste,fsuelta:datosConcursos[i].fsuelta,categoria:datosConcursos[i].categoria,fichero:'data/'+anio+'/'+datosConcursos[i].fichero,provincia:datosConcursos[i].provincia,hsuelta:datosConcursos[i].hsuelta,campeonato:datosConcursos[i].campeonato,colectivo:datosConcursos[i].colectivo,socios:datosConcursos[i].socios,encestadas:datosConcursos[i].encestadas,clasif:datosConcursos[i].clasif,noclasif:datosConcursos[i].noclasif,km0:datosConcursos[i].km0,km1:datosConcursos[i].km1,activo:datosConcursos[i].activo};
+			  arrConcursos.push(nuevo1);
 			}
 		  }
 		  var req2 = $.getJSON('data/'+anio+'/carreras.txt', function(datosCarreras){
 			req2.done(function(response){
 			  for (var i=0; i<datosCarreras.length; i++){
 				if (datosCarreras[i].anio==anio){
-				  var nuevo = {anio:datosCarreras[i].anio,concurso:datosCarreras[i].concurso,pos:datosCarreras[i].pos,pais:datosCarreras[i].pais,anilla:datosCarreras[i].anilla,a1:datosCarreras[i].a1,a2:datosCarreras[i].a2,a3:datosCarreras[i].a3,socio:datosCarreras[i].socio,a4:datosCarreras[i].a4,a5:datosCarreras[i].a5,a6:datosCarreras[i].a6,a7:datosCarreras[i].a7,puntos:datosCarreras[i].puntos,a8:datosCarreras[i].a8};
-				  arrCarreras.push(nuevo);
+				  var nuevo2 = {anio:datosCarreras[i].anio,club:datosCarreras[i].club,concurso:datosCarreras[i].concurso,pos:datosCarreras[i].pos,pais:datosCarreras[i].pais,anilla:datosCarreras[i].anilla,a1:datosCarreras[i].a1,a2:datosCarreras[i].a2,a3:datosCarreras[i].a3,socio:datosCarreras[i].socio,a4:datosCarreras[i].a4,a5:datosCarreras[i].a5,a6:datosCarreras[i].a6,a7:datosCarreras[i].a7,puntos:datosCarreras[i].puntos,a8:datosCarreras[i].a8};
+				  arrCarreras.push(nuevo2);
 				}
 			  }
 			  var html=crearPodium(anio,true);
@@ -529,4 +530,209 @@ function crearMejoresPalomasRegional(){
 
 }
 
+function ProcesarAnilla(anilla,anio) {
+  var html="";
+  if (anilla==''){
+	html=$.parseHTML('Sin datos',true);
+	$clave=$('#infoanilla');
+	$clave.empty();
+	$clave.append(html);
+	return;
+  }
+  if (isNaN(anio)){
+	anio=new Date().getFullYear();
+  }
+  if (anio==anioSelected){
+	//Hay que cargar las anillas de dicho año
+	arrAnillas.length = 0;
+	var req3 = $.getJSON('data/'+anio+'/anillas.txt', function(datosAnillas){
+	  req3.done(function(response){
+		for (var i=0; i<datosAnillas.length; i++){
+		  if (datosAnillas[i].anio==anio){
+			var nuevo = {anio:datosAnillas[i].anio,club:datosAnillas[i].club,concurso:datosAnillas[i].concurso,anilla:datosAnillas[i].anilla,pais:datosAnillas[i].pais,sexo:datosAnillas[i].sexo,color:datosAnillas[i].color,socio:datosAnillas[i].socio};
+			arrAnillas.push(nuevo);
+		  }
+		}
+		var htmlAnillas="";
+		htmlAnillas="<div class='infocarrera'>";
+		htmlAnillas+="<div class='row'>";
+		htmlAnillas+="<h3>Anilla 16-123456</h3>";
+		htmlAnillas+="</div>";
+		htmlAnillas+="<div class='row'>";
+		htmlAnillas+="<div class='col-md-4'>Propietario: JESÚS ROBERTO GARCÍA GARCIA</div>";
+		htmlAnillas+="<div class='col-md-4'>Color: Rodao ali</div>";
+		htmlAnillas+="<div class='col-md-4'>Sexo: Hembra</div>";
+		htmlAnillas+="</div>";
+		htmlAnillas+="</div>";
+		htmlAnillas+="<div><canvas id='myChart'></canvas></div>";
+		
+		html=$.parseHTML(htmlAnillas,true);
+		$clave=$('#infoanilla');
+		$clave.empty();
+		$clave.append(html);
+		//escribeChart();
+	  });
+	}); //anillas
+  } else {
+	//Hay que cargar todos los datos de dicho año
+	arrSocios.length = 0;
+	arrConcursos.length = 0;
+	arrCarreras.length = 0;
+	arrAnillas.length = 0;
+	var req = $.getJSON('data/'+anio+'/socios.txt', function(datosSocios){
+	  req.done(function(response){
+		for (var i=0; i<datosSocios.length; i++){
+		  if (datosSocios[i].anio==anio){
+			var nuevo = {anio:datosSocios[i].anio,club:datosSocios[i].club,socio:datosSocios[i].socio,nombre:datosSocios[i].nombre,activo:datosSocios[i].activo};
+			arrSocios.push(nuevo);
+		  }
+		}
+		var req1 = $.getJSON('data/'+anio+'/concursos.txt', function(datosConcursos){
+		  req1.done(function(response){
+			for (var i=0; i<datosConcursos.length; i++){
+			  if (datosConcursos[i].anio==anio){
+				var nuevo1 = {anio:datosConcursos[i].anio,club:datosConcursos[i].club,codigo:datosConcursos[i].codigo,nombre:datosConcursos[i].nombre,fenceste:datosConcursos[i].fenceste,fsuelta:datosConcursos[i].fsuelta,categoria:datosConcursos[i].categoria,fichero:'data/'+anio+'/'+datosConcursos[i].fichero,provincia:datosConcursos[i].provincia,hsuelta:datosConcursos[i].hsuelta,campeonato:datosConcursos[i].campeonato,colectivo:datosConcursos[i].colectivo,socios:datosConcursos[i].socios,encestadas:datosConcursos[i].encestadas,clasif:datosConcursos[i].clasif,noclasif:datosConcursos[i].noclasif,km0:datosConcursos[i].km0,km1:datosConcursos[i].km1,activo:datosConcursos[i].activo};
+				arrConcursos.push(nuevo1);
+			  }
+			}
+			var req2 = $.getJSON('data/'+anio+'/carreras.txt', function(datosCarreras){
+			  req2.done(function(response){
+				for (var i=0; i<datosCarreras.length; i++){
+				  if (datosCarreras[i].anio==anio){
+					var nuevo2 = {anio:datosCarreras[i].anio,club:datosCarreras[i].club,concurso:datosCarreras[i].concurso,pos:datosCarreras[i].pos,pais:datosCarreras[i].pais,anilla:datosCarreras[i].anilla,a1:datosCarreras[i].a1,a2:datosCarreras[i].a2,a3:datosCarreras[i].a3,socio:datosCarreras[i].socio,a4:datosCarreras[i].a4,a5:datosCarreras[i].a5,a6:datosCarreras[i].a6,a7:datosCarreras[i].a7,puntos:datosCarreras[i].puntos,a8:datosCarreras[i].a8};
+					arrCarreras.push(nuevo2);
+				  }
+				}
+				var req3 = $.getJSON('data/'+anio+'/anillas.txt', function(datosAnillas){
+				  req3.done(function(response){
+					for (var i=0; i<datosAnillas.length; i++){
+					  if (datosAnillas[i].anio==anio){
+						var nuevo3 = {anio:datosAnillas[i].anio,club:datosAnillas[i].club,concurso:datosAnillas[i].concurso,anilla:datosAnillas[i].anilla,pais:datosAnillas[i].pais,sexo:datosAnillas[i].sexo,color:datosAnillas[i].color,socio:datosAnillas[i].socio};
+						arrAnillas.push(nuevo3);
+					  }
+					}
+					var htmlAnillas="";
+					htmlAnillas="<div class='infocarrera'>";
+					htmlAnillas+="<div class='row'>";
+					htmlAnillas+="<h3>Anilla 16-123456</h3>";
+					htmlAnillas+="</div>";
+					htmlAnillas+="<div class='row'>";
+					htmlAnillas+="<div class='col-md-4'>Propietario: JESÚS ROBERTO GARCÍA GARCIA</div>";
+					htmlAnillas+="<div class='col-md-4'>Color: Rodao ali</div>";
+					htmlAnillas+="<div class='col-md-4'>Sexo: Hembra</div>";
+					htmlAnillas+="</div>";
+					htmlAnillas+="</div>";
+					htmlAnillas+="<div><canvas id='myChart'></canvas></div>";
+					html=$.parseHTML(htmlAnillas,true);
+					$clave=$('#infoanilla');
+					$clave.empty();
+					$clave.append(html);
+					//escribeChart();
+				  });
+				}); //anillas
 
+			});
+		  }); //carreras
+
+		});
+	  }); //concursos
+  
+	});
+  }); //socios
+	
+  }
+  
+}
+
+function escribeChart(){
+  Chart.defaults.global.elements.line.fill = false;
+
+  var barChartData = {
+	labels: ["LV1R8","LV2R8","LV3R8","LV4R8","LV5R8","LF1R8","LF2R8","LG1R8","LG2R8"],
+	datasets: [{
+	  type: 'line',
+	  label: 'Posición',
+	  id: "y-axis-1",
+	  lineTension: 0,
+	  borderWidth: 5,
+	  backgroundColor: "rgba(0,0,255,0.5)",
+	  borderColor: "rgba(0,0,255,0.5)",
+	  data: [43,15,123,,,7,6,6,1]
+	}, {
+	  type: 'bubble',
+	  label: 'Encestada',
+	  id: "y-axis-1",
+	  borderWidth: 4,
+	  backgroundColor: "rgba(255,0,0,0.7)",
+	  borderColor: "rgba(255,0,0,0.7)",
+	  data: [0,0,0,,0,0,0,0,0]
+	}, {
+	  type: 'bar',
+	  label: 'Clasificadas',
+	  id: "y-axis-0",
+	  backgroundColor: "rgba(0,198,79,0.75)",
+	  data: [143,115,223,100,197,67,76,66,51]
+	}, {
+	  type: 'bar',
+	  label: 'No clasificadas',
+	  id: "y-axis-0",
+	  backgroundColor: "rgba(187,187,187,0.75)",
+	  data: [7,5,25,2,3,0,4,1,8]
+	}]
+  };
+
+  var ctx = document.getElementById("myChart").getContext("2d");
+  var ch = new Chart(ctx, {
+	type: 'bar',
+	data: barChartData,
+	options: {
+	  animation: true,
+	  //responsive: true,
+	  title: {
+		display: true,
+		padding: 10,
+		text: ['Anilla 16-124613','Año 2018'],
+		position: 'top'
+	  },
+	  tooltips: {
+		mode: 'index'
+	  },
+	  legend: {
+		//position: 'right'
+	  },
+	  showTooltips: true,
+	  scales: {
+		xAxes: [{
+		  stacked: true
+		}],
+		yAxes: [{
+		  stacked: true,
+		  position: "left",
+		  id: "y-axis-0",
+		}]
+	  },
+	  animation: {
+		//duration: 0,
+		onComplete: function () {
+		  
+		  var ctx = this.chart.ctx;
+		  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+		  ctx.textAlign = 'center';
+		  ctx.textBaseline = 'bottom';
+		  ctx.fillStyle = "#000";
+		  this.data.datasets.forEach(function (dataset) {
+			if (dataset.label == 'Posición'){
+			  for (var i = 0; i < dataset.data.length; i++) {
+				for (var key in dataset._meta) {
+				  var model = dataset._meta[key].data[i]._model;
+				  ctx.fillText(dataset.data[i] + 'ª', model.x, model.y - 10);
+				}
+			  }
+			}
+		  });
+		}
+	  }
+	  
+	}
+  });
+}

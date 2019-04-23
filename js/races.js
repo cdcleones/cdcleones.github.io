@@ -1,6 +1,7 @@
 const MAXROWS = 10;
 
-var arrAnios = [{"anio":2018,"activo":true},
+var arrAnios = [{"anio":2017,"activo":true},
+				{"anio":2018,"activo":true},
 				{"anio":2019,"activo":true}
 			   ];
 
@@ -111,7 +112,25 @@ function ProcesaAnio(anio){
 			  }
 			  /* Insertar de EXCEL los concursos */
 			  /* 2017 */
-			  
+			  $('#btnLV1R7').click(function(){ if ($('#LV1R7').is (':hidden')){ $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LV1R7').show(); } else $('#LV1R7').hide(); });
+			  $('#btnLJ1N7').click(function(){ if ($('#LJ1N7').is (':hidden')){ $('#LV1R7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LJ1N7').show(); } else $('#LJ1N7').hide(); });
+			  $('#btnLVN7').click(function(){ if ($('#LVN7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LVN7').show(); } else $('#LVN7').hide(); });
+			  $('#btnLJR17').click(function(){ if ($('#LJR17').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LJR17').show(); } else $('#LJR17').hide(); });
+			  $('#btnLJ1R7').click(function(){ if ($('#LJ1R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LJ1R7').show(); } else $('#LJ1R7').hide(); });
+			  $('#btnLV3R7').click(function(){ if ($('#LV3R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LV3R7').show(); } else $('#LV3R7').hide(); });
+			  $('#btnLMFN7').click(function(){ if ($('#LMFN7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LMFN7').show(); } else $('#LMFN7').hide(); });
+			  $('#btnLJ2N7').click(function(){ if ($('#LJ2N7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LJ2N7').show(); } else $('#LJ2N7').hide(); });
+			  $('#btnLJ2R7').click(function(){ if ($('#LJ2R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LJ2R7').show(); } else $('#LJ2R7').hide(); });
+			  $('#btnLV4R7').click(function(){ if ($('#LV4R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LV4R7').show(); } else $('#LV4R7').hide(); });
+			  $('#btnLF1R7').click(function(){ if ($('#LF1R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LF1R7').show(); } else $('#LF1R7').hide(); });
+			  $('#btnLF1N7').click(function(){ if ($('#LF1N7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LF1N7').show(); } else $('#LF1N7').hide(); });
+			  $('#btnLF2R7').click(function(){ if ($('#LF2R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LF2R7').show(); } else $('#LF2R7').hide(); });
+			  $('#btnLF2N7').click(function(){ if ($('#LF2N7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LF2N7').show(); } else $('#LF2N7').hide(); });
+			  $('#btnLGF1R7').click(function(){ if ($('#LGF1R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LGF1R7').show(); } else $('#LGF1R7').hide(); });
+			  $('#btnLGF1N7').click(function(){ if ($('#LGF1N7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF2R7').hide(); $('#LGF1N7').show(); } else $('#LGF1N7').hide(); });
+			  $('#btnLGF2R7').click(function(){ if ($('#LGF2R7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').show(); } else $('#LGF2R7').hide(); });
+			  $('#btnLGF2N7').click(function(){ if ($('#LGF2N7').is (':hidden')){ $('#LV1R7').hide(); $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LGF2N7').show(); } else $('#LGF2N7').hide(); });
+
 			  /* 2018 */
 			  $('#btnLV1R8').click(function(){ if ($('#LV1R8').is (':hidden')){ $('#LV1N8').hide(); $('#LV2R8').hide(); $('#LV3R8').hide(); $('#LJ1N8').hide(); $('#LMFN8').hide(); $('#LJ2N8').hide(); $('#LV5R8').hide(); $('#LF1N8').hide(); $('#LF1R8').hide(); $('#LF2R8').hide(); $('#LF2N8').hide(); $('#LG1R8').hide(); $('#LG1N8').hide(); $('#LG2N8').hide(); $('#LG2R8').hide(); $('#LV1R8').show(); } else $('#LV1R8').hide(); });
 			  $('#btnLV1N8').click(function(){ if ($('#LV1N8').is (':hidden')){ $('#LV1R8').hide(); $('#LV2R8').hide(); $('#LV3R8').hide(); $('#LJ1N8').hide(); $('#LMFN8').hide(); $('#LJ2N8').hide(); $('#LV5R8').hide(); $('#LF1N8').hide(); $('#LF1R8').hide(); $('#LF2R8').hide(); $('#LF2N8').hide(); $('#LG1R8').hide(); $('#LG1N8').hide(); $('#LG2N8').hide(); $('#LG2R8').hide(); $('#LV1N8').show(); } else $('#LV1N8').hide(); });
@@ -553,7 +572,7 @@ function ProcesarAnilla(anilla,anio) {
 	  req3.done(function(response){
 		for (var i=0; i<datosAnillas.length; i++){
 		  if (datosAnillas[i].anio==anio){
-			var nuevo = {anio:datosAnillas[i].anio,club:datosAnillas[i].club,concurso:datosAnillas[i].concurso,anilla:datosAnillas[i].anilla,pais:datosAnillas[i].pais,sexo:datosAnillas[i].sexo,color:datosAnillas[i].color,socio:datosAnillas[i].socio};
+			var nuevo = {anio:datosAnillas[i].anio,club:datosAnillas[i].club,concurso:datosAnillas[i].concurso,anilla:datosAnillas[i].anilla,pais:datosAnillas[i].pais,sexo:datosAnillas[i].sexo,color:datosAnillas[i].color,nombre:datosAnillas[i].nombre};
 			arrAnillas.push(nuevo);
 		  }
 		}
@@ -582,6 +601,7 @@ function ProcesarAnilla(anilla,anio) {
 	arrConcursos.length = 0;
 	arrCarreras.length = 0;
 	arrAnillas.length = 0;
+	anioSelected = anio;
 	var req = $.getJSON('data/'+anio+'/socios.txt', function(datosSocios){
 	  req.done(function(response){
 		for (var i=0; i<datosSocios.length; i++){

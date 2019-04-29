@@ -106,7 +106,7 @@ div.podium {
 
 div.anillainfo {
   background: #ffffff;
-  border: 1px solid #df0031;//#26c300;
+  border: 1px solid #26c300;
   margin: 20px 0;
   padding: 40px;
   color: #000000;
@@ -118,59 +118,12 @@ div.anillainfo {
   box-shadow: 0 0 0 1px #f48fb1;
   padding: 20px;
 }
-
-
-#return-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.7);
-    width: 50px;
-    height: 50px;
-    display: block;
-    text-decoration: none;
-    -webkit-border-radius: 35px;
-    -moz-border-radius: 35px;
-    border-radius: 35px;
-    display: none;
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-#return-to-top i {
-    color: #fff;
-    margin: 0;
-    position: relative;
-    left: 16px;
-    top: 13px;
-    font-size: 19px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-#return-to-top:hover {
-    background: rgba(255, 0, 0, 0.9);
-}
-#return-to-top:hover i {
-    color: #fff;
-    top: 5px;
-}
 </style>
 
 <script>
 $(document).ready(function(){
 	$('#infoanio').hide();
 
-	$('#btn2016').click(function(){ 
-	  anioSelected=2016;
-	  Procesar(anioSelected);
-	});
-	
 	$('#btn2017').click(function(){ 
 	  anioSelected=2017;
 	  Procesar(anioSelected);
@@ -218,32 +171,13 @@ $(document).ready(function(){
 	  $('#divmejorpalomanacional').hide(); 
 	  $('#divmejorpalomaregional').show();
 	});
-	$('#btnBuscarAnilla').click(function(){ 
-	  ProcesarAnilla($('[name=ring]').val(),parseInt($('#anioconcurso').val()));
-	  $('#infoanilla').show();
-	});
-	$('#infoanilla').hide();
-	RellenaAnios();
-	
-	$('#return-to-top').click(function(){
-	  $('body,html').animate({
-		scrollTop : 0
-	  }, 500);
-	});
 });
 
-$(window).scroll(function(){
-  if ($(this).scrollTop() >= 50){
-	$('#return-to-top').fadeIn(200);
-  }else{
-	$('#return-to-top').fadeOut(200);
-  }
-});
 </script>
 
 </head>
 <body>
-<a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+
 <!--Cabecera-->
 <header id="header_wrapper">
   <div class="container">
@@ -263,7 +197,6 @@ $(window).scroll(function(){
 			  <li class="active"><a href="#principal" class="scroll-link">Principal</a></li>
 			  <li><a href="#nosotros" class="scroll-link">Nosotros</a></li>
 			  <li><a href="#clasificaciones" class="scroll-link">Clasificaciones</a></li>
-			  <li><a href="#anillas" class="scroll-link">Anillas</a></li>
 			  <li><a href="#contacto" class="scroll-link">Contacto</a></li>
 			</ul>
 		  </div>
@@ -387,65 +320,6 @@ $(window).scroll(function(){
 	</div>
 </section>
 <!--/Clasificaciones -->
-
-<br /><br />
-<!--Anillas-->
-<section class="content" id="anillas">
-  <div class="inner_wrapper">
-	<div class="container">
-	  <h2>Anillas</h2>
-	</div> 
-	<div class="client_logos"><!--client_logos-->
-	  <div class="container">
-		<ul class="fadeInRight animated wow">
-		  <li><img src="img/ring.png" alt=""></li>
-		</ul>
-	  </div>
-	</div>
-	<br />
-	<div class="container">
-	  <div class="row">
-		<div class="col-xs-12 text-center">
-		  <div id="anillainfo" class="anillainfo">
-			<div class="row">
-			  <div class="col-md-12 col-sm-6 col-xs-12">
-				<div class="panel panel-default">
-				  <div class="panel-heading clearfix">
-					<h3 class="panel-title">Buscar anilla</h3>
-				  </div>
-				  
-				  <div class="panel-body">
-					<div class="form-horizontal row-border">
-					  <div class="form-group">
-						<label class="col-md-2 control-label">Anilla</label>
-						<div class="col-md-10">
-						  <input type="text" name="ring" class="form-control" placeholder="YY-XXXXXX">
-						</div>
-					  </div>
-					  
-					  <div class="form-group" id="anio_concurso">
-						<label class="col-md-2 control-label">A&ntilde;o concurso</label>
-						  <div class="col-md-10">
-							<select class="form-control" id="anioconcurso"></select>
-						  </div>
-					  </div>
-					  
-					  <div class="col-md-12">
-						<button type="button" class="btn btn-lg btn-red" id="btnBuscarAnilla">Buscar</button>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div> <!-- row -->
-			<div id="infoanilla"></div>
-		</div> <!-- anillainfo -->
-	  </div>
-	</div> <!-- row -->
-  </div>
-
-</section>
-<!--/Anillas -->
 
 <section id="nada1">
   <div class="inner_wrapper">

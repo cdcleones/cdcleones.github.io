@@ -1,6 +1,7 @@
 const MAXROWS = 10;
 
-var arrAnios = [{"anio":2017,"activo":true},
+var arrAnios = [{"anio":2016,"activo":true},
+				{"anio":2017,"activo":true},
 				{"anio":2018,"activo":true},
 				{"anio":2019,"activo":true}
 			   ];
@@ -111,6 +112,17 @@ function ProcesaAnio(anio){
 				$('#' + arrConcursos[i].codigo).hide();
 			  }
 			  /* Insertar de EXCEL los concursos */
+			  /* 2016 */
+			  $('#btnLV1R6').click(function(){ if ($('#LV1R6').is (':hidden')){ $('#LV2R6').hide(); $('#LVN6').hide(); $('#LMFN6').hide(); $('#LMFR6').hide(); $('#LF1N6').hide(); $('#LF1R6').hide(); $('#LJN6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LV1R6').show(); } else $('#LV1R6').hide(); });
+			  $('#btnLV2R6').click(function(){ if ($('#LV2R6').is (':hidden')){ $('#LV1R6').hide(); $('#LVN6').hide(); $('#LMFN6').hide(); $('#LMFR6').hide(); $('#LF1N6').hide(); $('#LF1R6').hide(); $('#LJN6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LV2R6').show(); } else $('#LV2R6').hide(); });
+			  $('#btnLVN6').click(function(){ if ($('#LVN6').is (':hidden')){ $('#LV1R6').hide(); $('#LV2R6').hide(); $('#LMFN6').hide(); $('#LMFR6').hide(); $('#LF1N6').hide(); $('#LF1R6').hide(); $('#LJN6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LVN6').show(); } else $('#LVN6').hide(); });
+			  $('#btnLMFN6').click(function(){ if ($('#LMFN6').is (':hidden')){ $('#LV1R6').hide(); $('#LV2R6').hide(); $('#LVN6').hide(); $('#LMFR6').hide(); $('#LF1N6').hide(); $('#LF1R6').hide(); $('#LJN6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LMFN6').show(); } else $('#LMFN6').hide(); });
+			  $('#btnLMFR6').click(function(){ if ($('#LMFR6').is (':hidden')){ $('#LV1R6').hide(); $('#LV2R6').hide(); $('#LVN6').hide(); $('#LMFN6').hide(); $('#LF1N6').hide(); $('#LF1R6').hide(); $('#LJN6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LMFR6').show(); } else $('#LMFR6').hide(); });
+			  $('#btnLF1N6').click(function(){ if ($('#LF1N6').is (':hidden')){ $('#LV1R6').hide(); $('#LV2R6').hide(); $('#LVN6').hide(); $('#LMFN6').hide(); $('#LMFR6').hide(); $('#LF1R6').hide(); $('#LJN6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LF1N6').show(); } else $('#LF1N6').hide(); });
+			  $('#btnLF1R6').click(function(){ if ($('#LF1R6').is (':hidden')){ $('#LV1R6').hide(); $('#LV2R6').hide(); $('#LVN6').hide(); $('#LMFN6').hide(); $('#LMFR6').hide(); $('#LF1N6').hide(); $('#LJN6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LF1R6').show(); } else $('#LF1R6').hide(); });
+			  $('#btnLJN6').click(function(){ if ($('#LJN6').is (':hidden')){ $('#LV1R6').hide(); $('#LV2R6').hide(); $('#LVN6').hide(); $('#LMFN6').hide(); $('#LMFR6').hide(); $('#LF1N6').hide(); $('#LF1R6').hide(); $('#LJR6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LJN6').show(); } else $('#LJN6').hide(); });
+			  $('#btnLJR6').click(function(){ if ($('#LJR6').is (':hidden')){ $('#LV1R6').hide(); $('#LV2R6').hide(); $('#LVN6').hide(); $('#LMFN6').hide(); $('#LMFR6').hide(); $('#LF1N6').hide(); $('#LF1R6').hide(); $('#LJN6').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#').hide(); $('#LJR6').show(); } else $('#LJR6').hide(); });
+
 			  /* 2017 */
 			  $('#btnLV1R7').click(function(){ if ($('#LV1R7').is (':hidden')){ $('#LJ1N7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LV1R7').show(); } else $('#LV1R7').hide(); });
 			  $('#btnLJ1N7').click(function(){ if ($('#LJ1N7').is (':hidden')){ $('#LV1R7').hide(); $('#LVN7').hide(); $('#LJR17').hide(); $('#LJ1R7').hide(); $('#LV3R7').hide(); $('#LMFN7').hide(); $('#LJ2N7').hide(); $('#LJ2R7').hide(); $('#LV4R7').hide(); $('#LF1R7').hide(); $('#LF1N7').hide(); $('#LF2R7').hide(); $('#LF2N7').hide(); $('#LGF1R7').hide(); $('#LGF1N7').hide(); $('#LGF2R7').hide(); $('#LJ1N7').show(); } else $('#LJ1N7').hide(); });
@@ -187,7 +199,8 @@ function crearPodium(anio,clave){
 		arrPuntos.push(nuevo);
 	  }
 	}
-	for (var i=0;i<arrPuntos.length;i++){
+	/* Calcula la suma de puntos de todas las palomas de cada socio */
+	/*for (var i=0;i<arrPuntos.length;i++){
 	  for (var j=0;j<arrCarreras.length;j++){
 		if ((arrPuntos[i].socio==arrCarreras[j].socio)&&(arrCarreras[j].anio == anio)){
 		  if (arrCarreras[j].concurso.charAt(arrCarreras[j].concurso.length-2)=='N'){
@@ -198,7 +211,46 @@ function crearPodium(anio,clave){
 		  }
 		}
 	  }
+	}*/
+	/* Calcula la suma de puntos de las 10 primeras palomas de cada socio por cada carrera */
+	var cuantosN;
+	var cuantosR;
+	var i=-1;
+	
+	for(i=0;i<arrPuntos.length;i++){
+	  for (var j=0;j<arrConcursos.length;j++){
+		exit_kn:{
+		  cuantosN=0;
+		  for (var k=0;k<arrCarreras.length;k++){
+			if ((arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)&&(arrCarreras[k].concurso.charAt(arrCarreras[k].concurso.length-2)=='N')){
+			  arrPuntos[i].puntosnacional += arrCarreras[k].puntos;
+			  cuantosN+=1;
+			  if (cuantosN==10){
+				break exit_kn;
+			  }
+			}
+		  }
+		}
+	  }
 	}
+	
+	for(i=0;i<arrPuntos.length;i++){
+	  for (var j=0;j<arrConcursos.length;j++){
+		exit_kr:{
+		  cuantosR=0;
+		  for (var k=0;k<arrCarreras.length;k++){
+			if ((arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)&&(arrCarreras[k].concurso.charAt(arrCarreras[k].concurso.length-2)=='R')){
+			  arrPuntos[i].puntosregional += arrCarreras[k].puntos;
+			  cuantosR+=1;
+			  if (cuantosR==10){
+				break exit_kr;
+			  }
+			}
+		  }
+		}
+	  }
+	}
+	
 	var htmlPuntos = "";
 	if (clave==true){ //Nacional
 	  arrPuntos.sort(function (a, b) {
@@ -218,6 +270,7 @@ function crearPodium(anio,clave){
 	  }
 	  htmlPuntos+="</tbody>";
 	  htmlPuntos+="</table>";
+	  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 10 primeras palomas clasificadas de cada concurso</p><br />";
 	}
 	else{ //regional
 	  arrPuntos.sort(function (a, b) {
@@ -236,6 +289,7 @@ function crearPodium(anio,clave){
 	  }
 	  htmlPuntos+="</tbody>";
 	  htmlPuntos+="</table>";
+	  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 10 primeras palomas clasificadas de cada concurso</p><br />";
 	}
   return htmlPuntos;
 }
@@ -262,13 +316,13 @@ function crearConcursos(anio){
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>No clasificadas: " + arrConcursos[j].noclasif + "</div>";
 		htmlConcursos+="</div >";
 		htmlConcursos+="<div class='row'>";
-		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><abbr title='Distancia al palomar m&aacute;s cercano'>Km cerca:</abbr> " + arrConcursos[j].km0 + "</div>";
+		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><abbr title='Distancia al palomar m&aacute;s cercano'>Km cerca:</abbr> " + Number(arrConcursos[j].km0).toFixed(2) + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Fecha suelta: " + arrConcursos[j].fsuelta +"</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Colectivo: " + arrConcursos[j].colectivo + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><a target='_blank' href='" + arrConcursos[j].fichero + "'>Listado clasificadas</a></div>";
 		htmlConcursos+="</div >";
 		htmlConcursos+="<div class='row'>";
-		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><abbr title='Distancia al palomar m&aacute;s lejano'>Km lejos:</abbr> " + arrConcursos[j].km1 + "</div>";
+		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'><abbr title='Distancia al palomar m&aacute;s lejano'>Km lejos:</abbr> " + Number(arrConcursos[j].km1).toFixed(2) + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Hora suelta: " + arrConcursos[j].hsuelta + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>Socios: " + arrConcursos[j].socios + "</div>";
 		htmlConcursos+="<div class='col-md-3 col-sm-6 col-xs-12 izda'>&nbsp;</div>";

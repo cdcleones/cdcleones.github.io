@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>Club Deportivo Colomb&oacute;filo Leon&eacute;s</title>
+<link rel="icon" href="favicon.png" type="image/png">
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script> 
+
+<script type="text/javascript" src="js/races.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+<script type="text/javascript" src="js/jquery.nav.js"></script> 
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/wow.js"></script> 
+
+<script type="text/javascript" src="js/custom.js"></script>
+
+
+<!--[if lt IE 9]>
+	<script src="js/respond-1.1.0.min.js"></script>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/html5element.js"></script>
+<![endif]-->
+<style type="text/css">
+div.carreras {
+  background: #ffffff;
+  margin: 10px 0;
+  padding: 8px;
+  color: #000;
+}
+
+.btn-red { 
+  color: #ffffff;
+  background-color: #df0031;
+  border-color: #ffffff;
+}
+
+.btn-red:focus, .btn-red.active, .open .dropdown-toggle.btn-red {
+  color: #ffffff;
+  background-color: #1e721e;
+  border-color: #ffffff;
+}
+
+.btn-red:hover {
+  color: #ffffff;
+  background-color: #449d44;
+  border-color: #ffffff;
+}
+
+.btn-red:active, .btn-red.active, .open .dropdown-toggle.btn-red {
+  background-image: none;
+}
+
+.btn-red.disabled, .btn-red[disabled], fieldset[disabled] .btn-red, 
+.btn-red.disabled:hover, .btn-red[disabled]:hover, fieldset[disabled] .btn-red:hover, 
+.btn-red.disabled:focus, .btn-red[disabled]:focus, fieldset[disabled] .btn-red:focus, 
+.btn-red.disabled:active, .btn-red[disabled]:active, fieldset[disabled] .btn-red:active, 
+.btn-red.disabled.active, .btn-red[disabled].active, fieldset[disabled] .btn-red.active {
+  background-color: #df0031;
+  border-color: #ffffff;
+}
+
+.btn-red .badge {
+  color: #df0031;
+  background-color: #ffffff;
+}
+
+div.infocarrera {
+  background: #e7e7e7;
+  border: 1px solid #26c300;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.dcha {
+  text-align: right;
+}
+
+.izda {
+  text-align: left;
+}
+
+div.podium {
+  background: #ffffff;
+  border: 1px solid #df0031;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000000;
+  border-radius: 10px
+}
+
+div.anillainfo {
+  background: #ffffff;
+  border: 1px solid #df0031;//#26c300;
+  margin: 20px 0;
+  padding: 40px;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.active-pink-4 input[type=text]:focus:not([readonly]) {
+  border: 1px solid #f48fb1;
+  box-shadow: 0 0 0 1px #f48fb1;
+  padding: 20px;
+}
+
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(255, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+	$('#return-to-top').click(function(){
+	  $('body,html').animate({
+		scrollTop : 0
+	  }, 500);
+	});
+});
+
+$(window).scroll(function(){
+  if ($(this).scrollTop() >= 50){
+	$('#return-to-top').fadeIn(200);
+  }else{
+	$('#return-to-top').fadeOut(200);
+  }
+});
+</script>
+</head>
+<body>
+<a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+<!--Cabecera-->
+<header id="header_wrapper">
+  <div class="container">
+	<div class="header_box">
+	  <div class="logo"><a href="#"><img src="img/cdcl.png" alt="logo" height="48"></a></div>
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="navbar-header">
+			<button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+		  </div>
+		  <div id="main-nav" class="collapse navbar-collapse navStyle">
+			<ul class="nav navbar-nav" id="mainNav">
+			  <li><a href="index.html#principal" class="scroll-link">Principal</a></li>
+			  <li><a href="index.html#nosotros" class="scroll-link">Nosotros</a></li>
+			  <li><a href="index.html#clasificaciones" class="scroll-link">Clasificaciones</a></li>
+			  <li><a href="index.html#anillas" class="scroll-link">Anillas</a></li>
+			  <li><a href="index.html#contacto" class="scroll-link">Contacto</a></li>
+			</ul>
+		  </div>
+		</nav>
+	  </div>
+  </div>
+</header>
+<!--Aviso legal-->
+<section id="legal">
+  <div class="inner_wrapper">
+	<div class="container">
+	  <h2>Aviso legal</h2>
+	  <div class="inner_section">
+		<div class="row">
+			<!--<div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">-->
+			  <div class=" delay-01s animated fadeInDown wow animated">
+				
+<p>LEY DE LOS SERVICIOS DE LA SOCIEDAD DE LA INFORMACIÓN (LSSI)</p>
+<p>El Club Deportivo Colombófilo Leonés, responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), BOE Nº 166, así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso.</p>
+<p>Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier otra disposición legal que fuera de aplicación.</p>
+El RESPONSABLE se reserva el derecho de modificar cualquier tipo de información que pudiera aparecer en el sitio web, sin que exista obligación de preavisar o poner en conocimiento de los usuarios dichas obligaciones, entendiéndose como suficiente con la publicación en el sitio web.</p>
+<p>1. DATOS IDENTIFICATIVOS</p>
+<li>Nombre de dominio: https://cdcleones.github.io/</li>
+<li>Denominación social: Club Deportivo Colombófilo Leonés</li>
+<li>NIF: G-24344632</li>
+<li>Domicilio social: C/ del Pozo 6, 24226, Puente Villarente, León</li>
+<li>Teléfono: 630 048 022</li>
+<li>e-mail: clubdeportivocolombofiloleones@gmail.com</li>
+<li>Inscrita en la Sección de Entidades, Subsección 1ª con fecha 01 de Octiubre de 1996 y número 04413</li>
+<p>2. DERECHOS DE PROPIEDAD INTELECTUAL E INDUSTRIAL</p>
+<p>El sitio web, incluyendo a título enunciativo pero no limitativo su programación, edición, compilación y demás elementos necesarios para su funcionamiento, los diseños, logotipos, texto y/o gráficos, son propiedad del RESPONSABLE o, si es el caso, dispone de licencia o autorización expresa por parte del autor. Todos los contenidos del sitio web se encuentran debidamente protegidos por la normativa de propiedad intelectual e industrial.</p>
+<p>Independientemente de la finalidad para la que fueran destinados, la reproducción total o parcial, uso, explotación, distribución y comercialización, requiere en todo caso de la autorización escrita previa por parte del RESPONSABLE. Cualquier uso no autorizado previamente se considera un incumplimiento grave de los derechos de propiedad intelectual o industrial del autor.</p>
+<p>Los diseños, logotipos, texto y/o gráficos ajenos al RESPONSABLE y que pudieran aparecer en el sitio web, pertenecen a sus respectivos propietarios, siendo ellos mismos responsables de cualquier posible controversia que pudiera suscitarse respecto a los mismos. El RESPONSABLE autoriza expresamente a que terceros puedan redirigir directamente a los contenidos concretos del sitio web, y en todo caso redirigir al sitio web principal de https://cdcleones.github.io</p>
+<p>El RESPONSABLE reconoce a favor de sus titulares los correspondientes derechos de propiedad intelectual e industrial, no implicando su sola mención o aparición en el sitio web la existencia de derechos o responsabilidad alguna sobre los mismos, como tampoco respaldo, patrocinio o recomendación por parte del mismo.</p>
+<p>Para realizar cualquier tipo de observación respecto a posibles incumplimientos de los derechos de propiedad intelectual o industrial, así como sobre cualquiera de los contenidos del sitio web, puede hacerlo a través del correo electrónico clubdeportivocolombofiloleones@gmail.com</p>
+<p>3. EXENCIÓN DE RESPONSABILIDADES</p>
+<p>El RESPONSABLE se exime de cualquier tipo de responsabilidad derivada de la información publicada en su sitio web siempre que esta información haya sido manipulada o introducida por un tercero ajeno al mismo.</p>
+<p>Uso de Cookies</p>
+<p>Este sitio web de puede utilizar cookies técnicas y analíticas (pequeños archivos de información que el servidor envía al ordenador de quien accede a la página) para llevar a cabo determinadas funciones que son consideradas imprescindibles para el correcto funcionamiento y visualización del sitio. Las cookies utilizadas tienen, en todo caso, carácter temporal, con la única finalidad de hacer más eficaz la navegación, y desaparecen al terminar la sesión del usuario. En ningún caso, estas cookies proporcionan por sí mismas datos de carácter personal y no se utilizarán para la recogida de los mismos.</p>
+<p>Mediante el uso de cookies también es posible que el servidor donde se encuentra la web reconozca el navegador utilizado por el usuario con la finalidad de que la navegación sea más sencilla, permitiendo, por ejemplo, el acceso de los usuarios que se hayan registrado previamente a las áreas, servicios, promociones o concursos reservados exclusivamente a ellos sin tener que registrarse en cada visita. También se pueden utilizar para medir la audiencia, parámetros de tráfico, controlar el progreso y número de entradas, etc, siendo en estos casos cookies prescindibles técnicamente pero beneficiosas para el usuario. Este sitio web no instalará cookies prescindibles sin el consentimiento previo del usuario.</p>
+<p>El usuario tiene la posibilidad de configurar su navegador para ser alertado de la recepción de cookies y para impedir su instalación en su equipo. Por favor, consulte las instrucciones de su navegador para ampliar esta información.</p>
+<p>Política de enlaces</p>
+<p>Desde el sitio web, es posible que se redirija a contenidos de terceros sitios web. Dado que el RESPONSABLE no puede controlar siempre los contenidos introducidos por los terceros en sus respectivos sitios web, no asume ningún tipo de responsabilidad respecto a dichos contenidos. En todo caso, procederá a la retirada inmediata de cualquier contenido que pudiera contravenir la legislación nacional o internacional, la moral o el orden público, procediendo a la retirada inmediata de la redirección a dicho sitio web, poniendo en conocimiento de las autoridades competentes el contenido en cuestión.</p>
+<p>El RESPONSABLE no se hace responsable de la información y contenidos almacenados, a título enunciativo pero no limitativo, en foros, chats, generadores de blogs, comentarios, redes sociales o cualquier otro medio que permita a terceros publicar contenidos de forma independiente en la página web del RESPONSABLE. Sin embargo, y en cumplimiento de lo dispuesto en los artículos 11 y 16 de la LSSICE, se pone a disposición de todos los usuarios, autoridades y fuerzas de seguridad, colaborando de forma activa en la retirada o, en su caso, bloqueo de todos aquellos contenidos que puedan afectar o contravenir la legislación nacional o internacional, los derechos de terceros o la moral y el orden público. En caso de que el usuario considere que existe en el sitio web algún contenido que pudiera ser susceptible de esta clasificación, se ruega lo notifique de forma inmediata al administrador del sitio web.</p>
+<p>Este sitio web ha sido revisado y probado para que funcione correctamente. En principio, puede garantizarse el correcto funcionamiento los 365 días del año, 24 horas al día. Sin embargo, el RESPONSABLE no descarta la posibilidad de que existan ciertos errores de programación, o que acontezcan causas de fuerza mayor, catástrofes naturales, huelgas o circunstancias semejantes que hagan imposible el acceso a la página web.</p>
+<p>Direcciones IP</p>
+<p>Los servidores del sitio web podrán detectar de manera automática la dirección IP y el nombre de dominio utilizados por el usuario. Una dirección IP es un número asignado automáticamente a un ordenador cuando éste se conecta a Internet. Toda esta información es registrada en un fichero de actividad del servidor debidamente inscrito que permite el posterior procesamiento de los datos con el fin de obtener mediciones únicamente estadísticas que permitan conocer el número de impresiones de páginas, el número de visitas realizadas a los servidores web, el orden de visitas, el punto de acceso, etc.</p>
+
+<p>4. LEY APLICABLE Y JURISDICCIÓN</p>
+<p>Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales más cercanos a LEÓN.</p>				
+				
+				
+			  </div>
+		  <!--</div>-->
+		</div>
+	  </div>
+	</div> 
+  </div>
+</section>
+
+<!--Footer-->
+<footer class="footer_wrapper" id="contacto">
+  <div class="container">
+	<section class="page_section contact" id="contacto">
+	  <div class="contact_section">
+		<h2>Contacto</h2>
+	  </div>
+	  <div class="row">
+		<div class="col-lg-4 wow fadeInLeft">
+		  <div class="contact_info">
+			<div class="detail">
+			  <h4>Email</h4>
+			  <p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#117;&#98;&#100;&#101;&#112;&#111;&#114;&#116;&#105;&#118;&#111;&#99;&#111;&#108;&#111;&#109;&#98;&#111;&#102;&#105;&#108;&#111;&#108;&#101;&#111;&#110;&#101;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#99;&#108;&#117;&#98;&#100;&#101;&#112;&#111;&#114;&#116;&#105;&#118;&#111;&#99;&#111;&#108;&#111;&#109;&#98;&#111;&#102;&#105;&#108;&#111;&#108;&#101;&#111;&#110;&#101;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+			</div> 
+		  </div>
+		</div>
+	  </div>
+	</section>
+  </div>
+  <div class="container">
+	<div class="footer_bottom"><span>Copyright &copy; 2021 Club Deportivo Colomb&oacute;filo Leon&eacute;s</span><a href="aviso-legal.html" title="Aviso legal"><span>Aviso legal<spam></a> </div>
+  </div>
+</footer>
+<!--Footer-->
+
+</body>
+</html>

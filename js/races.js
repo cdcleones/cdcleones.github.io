@@ -3,7 +3,8 @@ const MAXROWS = 10;
 var arrAnios = [{"anio":2016,"activo":true},
 				{"anio":2017,"activo":true},
 				{"anio":2018,"activo":true},
-				{"anio":2019,"activo":true}
+				{"anio":2019,"activo":true},
+				{"anio":2021,"activo":true}
 			   ];
 
 var anioSelected;
@@ -180,7 +181,8 @@ function ProcesaAnio(anio){
 			  $('#btnLGF2N9').click(function(){ if ($('#LGF2N9').is (':hidden')){ $('#LV1R9').hide(); $('#LV2R9').hide(); $('#LV1N9').hide(); $('#LJ1N9').hide(); $('#LV2N9').hide(); $('#LV3R9').hide(); $('#LV4R9').hide(); $('#LJ2N9').hide(); $('#LV5R9').hide(); $('#LF1N9').hide(); $('#LF1R9').hide(); $('#LF2N9').hide(); $('#LF2R9').hide(); $('#LGF1N9').hide(); $('#LGF1R9').hide(); $('#LGF2R9').hide(); $('#LGF2N9').show(); } else $('#LGF2N9').hide(); });
 			  $('#btnLGF2R9').click(function(){ if ($('#LGF2R9').is (':hidden')){ $('#LV1R9').hide(); $('#LV2R9').hide(); $('#LV1N9').hide(); $('#LJ1N9').hide(); $('#LV2N9').hide(); $('#LV3R9').hide(); $('#LV4R9').hide(); $('#LJ2N9').hide(); $('#LV5R9').hide(); $('#LF1N9').hide(); $('#LF1R9').hide(); $('#LF2N9').hide(); $('#LF2R9').hide(); $('#LGF1N9').hide(); $('#LGF1R9').hide(); $('#LGF2N9').hide(); $('#LGF2R9').show(); } else $('#LGF2R9').hide(); });
 
-			  /* 2020 */
+			  /* 2021 */
+			  $('#btnRLV121').click(function(){ if ($('#RLV121').is (':hidden')){ $('#RLV121').show(); } else $('#RLV121').hide(); });
 			  
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();

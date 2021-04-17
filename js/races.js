@@ -1,4 +1,4 @@
-const MAXROWS = 20;
+const MAXROWS = 10;
 
 var arrAnios = [{"anio":2016,"activo":true},
 				{"anio":2017,"activo":true},
@@ -182,7 +182,10 @@ function ProcesaAnio(anio){
 			  $('#btnLGF2R9').click(function(){ if ($('#LGF2R9').is (':hidden')){ $('#LV1R9').hide(); $('#LV2R9').hide(); $('#LV1N9').hide(); $('#LJ1N9').hide(); $('#LV2N9').hide(); $('#LV3R9').hide(); $('#LV4R9').hide(); $('#LJ2N9').hide(); $('#LV5R9').hide(); $('#LF1N9').hide(); $('#LF1R9').hide(); $('#LF2N9').hide(); $('#LF2R9').hide(); $('#LGF1N9').hide(); $('#LGF1R9').hide(); $('#LGF2N9').hide(); $('#LGF2R9').show(); } else $('#LGF2R9').hide(); });
 
 			  /* 2021 */
-			  $('#btnRLV121').click(function(){ if ($('#RLV121').is (':hidden')){ $('#RLV121').show(); } else $('#RLV121').hide(); });
+			  $('#btnRLV121').click(function(){ if ($('#RLV121').is (':hidden')){ $('#LV1N21').hide(); $('#RLV221').hide(); $('#RLV121').show(); } else $('#RLV121').hide(); });
+			  $('#btnLV1N21').click(function(){ if ($('#LV1N21').is (':hidden')){ $('#RLV121').hide(); $('#RLV221').hide(); $('#LV1N21').show(); } else $('#LV1N21').hide(); });
+			  $('#btnRLV221').click(function(){ if ($('#RLV221').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#RLV221').show(); } else $('#RLV221').hide(); });
+
 
 			  
 			  crearMejoresPalomasNacional();

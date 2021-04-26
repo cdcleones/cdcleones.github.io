@@ -182,11 +182,12 @@ function ProcesaAnio(anio){
 			  $('#btnLGF2R9').click(function(){ if ($('#LGF2R9').is (':hidden')){ $('#LV1R9').hide(); $('#LV2R9').hide(); $('#LV1N9').hide(); $('#LJ1N9').hide(); $('#LV2N9').hide(); $('#LV3R9').hide(); $('#LV4R9').hide(); $('#LJ2N9').hide(); $('#LV5R9').hide(); $('#LF1N9').hide(); $('#LF1R9').hide(); $('#LF2N9').hide(); $('#LF2R9').hide(); $('#LGF1N9').hide(); $('#LGF1R9').hide(); $('#LGF2N9').hide(); $('#LGF2R9').show(); } else $('#LGF2R9').hide(); });
 
 			  /* 2021 */
-			  $('#btnRLV121').click(function(){ if ($('#RLV121').is (':hidden')){ $('#LV1N21').hide(); $('#RLV221').hide(); $('#RLV121').show(); } else $('#RLV121').hide(); });
-			  $('#btnLV1N21').click(function(){ if ($('#LV1N21').is (':hidden')){ $('#RLV121').hide(); $('#RLV221').hide(); $('#LV1N21').show(); } else $('#LV1N21').hide(); });
-			  $('#btnRLV221').click(function(){ if ($('#RLV221').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#RLV221').show(); } else $('#RLV221').hide(); });
-
-
+			  $('#btnRLV121').click(function(){ if ($('#RLV121').is (':hidden')){ $('#LV1N21').hide(); $('#RLV221').hide(); $('#LV2N21').hide(); $('#LJ1N21').hide(); $('#RLV321').hide(); $('#RLV121').show(); } else $('#RLV121').hide(); });
+			  $('#btnLV1N21').click(function(){ if ($('#LV1N21').is (':hidden')){ $('#RLV121').hide(); $('#RLV221').hide(); $('#LV2N21').hide(); ('#LJ1N21').hide(); $('#RLV321').hide(); $('#LV1N21').show(); } else $('#LV1N21').hide(); });
+			  $('#btnRLV221').click(function(){ if ($('#RLV221').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#LV2N21').hide(); $('#LJ1N21').hide(); $('#RLV321').hide(); $('#RLV221').show(); } else $('#RLV221').hide(); });
+			  $('#btnLV2N21').click(function(){ if ($('#LV2N21').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#RLV221').hide(); $('#LJ1N21').hide(); $('#RLV321').hide(); $('#LV2N21').show(); } else $('#LV2N21').hide(); });
+			  $('#btnLJ1N21').click(function(){ if ($('#LJ1N21').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#RLV221').hide(); $('#LV2N21').hide(); $('#RLV321').hide(); $('#LJ1N21').show(); } else $('#LJ1N21').hide(); });
+			  $('#btnRLV321').click(function(){ if ($('#RLV321').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#RLV221').hide(); $('#LV2N21').hide(); $('#LJ1N21').hide(); $('#RLV321').show(); } else $('#RLV321').hide(); });
 			  
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
@@ -217,7 +218,6 @@ function crearPodium(anio,clave){
 	/*for (var i=0;i<arrPuntos.length;i++){
 	  for (var j=0;j<arrCarreras.length;j++){
 		if ((arrPuntos[i].socio==arrCarreras[j].socio)&&(arrCarreras[j].anio == anio)){
-		  //if ((arrCarreras[j].concurso.charAt(arrCarreras[j].concurso.length-2)=='N')||(arrCarreras[j].concurso.charAt(arrCarreras[j].concurso.length-3)=='N')||(arrCarreras[j].concurso.charAt(0)=='N')){
 		  if (arrCarreras[j].concurso.includes('N')){
 			arrPuntos[i].puntosnacional += arrCarreras[j].puntos;
 		  }
@@ -238,8 +238,6 @@ function crearPodium(anio,clave){
 		  cuantosN=0;
 		  for (var k=0;k<arrCarreras.length;k++){
 			if ((arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)){
-			  //if ((arrCarreras[k].concurso.charAt(arrCarreras[k].concurso.length-2)=='N')||(arrCarreras[k].concurso.charAt(arrCarreras[k].concurso.length-3)=='N')||(arrCarreras[k].concurso.charAt(0)=='N')){
-			  var tmp=arrCarreras[k].concurso;	  
 			  if (arrCarreras[k].concurso.includes('N')){
 				arrPuntos[i].puntosnacional += arrCarreras[k].puntos;
 				cuantosN+=1;
@@ -259,7 +257,6 @@ function crearPodium(anio,clave){
 		  cuantosR=0;
 		  for (var k=0;k<arrCarreras.length;k++){
 			if ((arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)){
-			  //if ((arrCarreras[k].concurso.charAt(arrCarreras[k].concurso.length-2)=='R')||(arrCarreras[k].concurso.charAt(0)=='R')){
 			  if (arrCarreras[k].concurso.includes('R')){
 				arrPuntos[i].puntosregional += arrCarreras[k].puntos;
 				cuantosR+=1;
@@ -397,14 +394,12 @@ function crearMejoresPalomasNacional(){
 	  }
 	}
 	if (!encontrada){
-	  //if ((arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-2)=='N')||(arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-3)=='N')||(arrCarreras[i].concurso.charAt(0)=='N')){
 	  if (arrCarreras[i].concurso.includes('N')){
 		var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_nac:arrCarreras[i].puntos};
 		arrPalomas.push(nueva);
 	  }
 	}
 	else{
-	  //if ((arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-2)=='N')||(arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-3)=='N')||(arrCarreras[i].concurso.charAt(0)=='N')){
 	  if (arrCarreras[i].concurso.includes('N')){
 		arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
 		arrPalomas[j].puntos_nac+=arrCarreras[i].puntos;
@@ -521,14 +516,12 @@ function crearMejoresPalomasRegional(){
 	  }
 	}
 	if (!encontrada){
-	  //if ((arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-2)!='N')&&(arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-3)!='N')&&(arrCarreras[i].concurso.charAt(0)!='N')){
 	  if (arrCarreras[i].concurso.includes('R')){
 		var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_nac:arrCarreras[i].puntos};
 		arrPalomas.push(nueva);
 	  }
 	}
 	else{
-	  //if ((arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-2)!='N')&&(arrCarreras[i].concurso.charAt(arrCarreras[i].concurso.length-3)!='N')&&(arrCarreras[i].concurso.charAt(0)!='N')){
  	  if (arrCarreras[i].concurso.includes('R')){
 		arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
 		arrPalomas[j].puntos_nac+=arrCarreras[i].puntos;
@@ -796,13 +789,11 @@ function dimeCodigos(esNacional){
   for (var i=0; i<arrConcursos.length; i++){
 	if (arrConcursos[i].activo==true){
 	  if (esNacional==true){ //Nacional
-		//if ((arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-2)=='N')||(arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-3)=='N')||(arrConcursos[i].codigo.charAt(0)=='N')){
 		if (arrConcursos[i].codigo.includes('N')){
 		  arrCodigos[j++]=arrConcursos[i].codigo;
 		}
 	  }
 	  else{ //Regional
-		//if ((arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-2)!='N')||(arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-3)!='N')||(arrConcursos[i].codigo.charAt(0)!='N')){
 		if (arrConcursos[i].codigo.includes('R')){
 		  arrCodigos[j++]=arrConcursos[i].codigo;
 		}
@@ -838,13 +829,11 @@ function dimeClasificadas(esNacional){
   for (var i=0; i<arrConcursos.length; i++){
 	if (arrConcursos[i].activo==true){
 	  if (esNacional==true){ //Nacional
-		//if ((arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-2)=='N')||(arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-3)=='N')||(arrConcursos[i].codigo.charAt(0)=='N')){
 		if (arrConcursos[i].codigo.includes('N')){
 		  arrClasificadas[j++]=arrConcursos[i].clasif;
 		}
 	  }
 	  else{ //Regional
-		//if ((arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-2)!='N')&&(arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-3)!='N')&&(arrConcursos[i].codigo.charAt(0)!='N')){
 		if (arrConcursos[i].codigo.includes('R')){
 		  arrClasificadas[j++]=arrConcursos[i].clasif;
 		}
@@ -860,13 +849,11 @@ function dimeNoClasificadas(esNacional){
   for (var i=0; i<arrConcursos.length; i++){
 	if (arrConcursos[i].activo==true){
 	  if (esNacional==true){ //Nacional
-		//if ((arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-2)=='N')||(arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-3)=='N')||(arrConcursos[i].codigo.charAt(0)=='N')){
 		if (arrConcursos[i].codigo.includes('N')){
 		  arrNoClasificadas[j++]=arrConcursos[i].noclasif;
 		}
 	  }
 	  else{ //Regional
-		//if ((arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-2)!='N')&&(arrConcursos[i].codigo.charAt(arrConcursos[i].codigo.length-3)!='N')&&(arrConcursos[i].codigo.charAt(0)!='N')){
 		if (arrConcursos[i].codigo.includes('R')){
 		  arrNoClasificadas[j++]=arrConcursos[i].noclasif;
 		}

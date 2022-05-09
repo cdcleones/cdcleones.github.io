@@ -202,11 +202,14 @@ function ProcesaAnio(anio){
 			  $('#btnRLG221').click(function(){ if ($('#RLG221').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#RLV221').hide(); $('#LV2N21').hide(); $('#LJ1N21').hide(); $('#RLV321').hide(); $('#RLV421').hide(); $('#LJ2N21').hide(); $('#RLV521').hide(); $('#LF1N21').hide(); $('#RLF121').hide(); $('#LF2N21').hide(); $('#RLF221').hide(); $('#LG1N21').hide(); $('#RLG121').hide(); $('#LG2N21').hide(); $('#RLG221').show(); } else $('#RLG221').hide(); });
 
 			  /* 2022 */
-			  $('#btnRLV122').click(function(){ if ($('#RLV122').is (':hidden')){ $('#NLV122').hide(); $('#RLV222').hide(); $('#RLV122').show(); } else $('#RLV122').hide(); });
-			  $('#btnNLV122').click(function(){ if ($('#NLV122').is (':hidden')){ $('#RLV122').hide(); $('#RLV222').hide(); $('#NLV122').show(); } else $('#NLV122').hide(); });
-			  $('#btnRLV222').click(function(){ if ($('#RLV222').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').show(); } else $('#RLV222').hide(); });
+			  $('#btnRLV122').click(function(){ if ($('#RLV122').is (':hidden')){ $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#RLV122').show(); } else $('#RLV122').hide(); });
+			  $('#btnNLV122').click(function(){ if ($('#NLV122').is (':hidden')){ $('#RLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLV122').show(); } else $('#NLV122').hide(); });
+			  $('#btnRLV222').click(function(){ if ($('#RLV222').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#RLV222').show(); } else $('#RLV222').hide(); });
+			  $('#btnNLM122').click(function(){ if ($('#NLM122').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM122').show(); } else $('#NLM122').hide(); });
+			  $('#btnNLM222').click(function(){ if ($('#NLM222').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM222').show(); } else $('#NLM222').hide(); });
+			  $('#btnRLM122').click(function(){ if ($('#RLM122').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM222').hide(); $('#RLM122').show(); } else $('#RLM122').hide(); });
+			  $('#btnRLM222').click(function(){ if ($('#RLM222').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').show(); } else $('#RLM222').hide(); });
 
-			  
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
 			});
@@ -245,7 +248,7 @@ function crearPodium(anio,clave){
 		}
 	  }
 	}*/
-	/* Calcula la suma de puntos de las 10 primeras palomas de cada socio por cada carrera */
+	/* Calcula la suma de puntos de las 5 primeras palomas de cada socio por cada carrera en el nacional */
 	var cuantosN;
 	var cuantosR;
 	var i=-1;
@@ -259,7 +262,7 @@ function crearPodium(anio,clave){
 			  if (arrCarreras[k].concurso.includes('N')){
 				arrPuntos[i].puntosnacional += arrCarreras[k].puntos;
 				cuantosN+=1;
-				if (cuantosN==10){
+				if (cuantosN==5){
 				  break exit_kn;
 				}
 			  }
@@ -269,6 +272,7 @@ function crearPodium(anio,clave){
 	  }
 	}
 	
+	/* Calcula la suma de puntos de las 10 primeras palomas de cada socio por cada carrera en el regional */
 	for(i=0;i<arrPuntos.length;i++){
 	  for (var j=0;j<arrConcursos.length;j++){
 		exit_kr:{
@@ -307,9 +311,9 @@ function crearPodium(anio,clave){
 	  }
 	  htmlPuntos+="</tbody>";
 	  htmlPuntos+="</table>";
-	  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 10 primeras palomas clasificadas de cada concurso</p><br />";
+	  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 5 primeras palomas clasificadas de cada concurso</p><br />";
 	}
-	else{ //regional
+	else{ //Regional
 	  arrPuntos.sort(function (a, b) {
 		//return a.nombre.localeCompare(b.nombre);
 		return b.puntosregional - a.puntosregional;

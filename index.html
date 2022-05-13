@@ -169,23 +169,33 @@ div.anillainfo {
 <script>
 $(document).ready(function(){
 	$('#infoanio').hide();
+	$('#btnpichon').hide();
+	$('#btnbestpichon').hide();
 
 	$('#btn2016').click(function(){ 
+	  $('#btnpichon').hide();
+	  $('#btnbestpichon').hide();
 	  anioSelected=2016;
 	  Procesar(anioSelected);
 	});
 	
 	$('#btn2017').click(function(){ 
+	  $('#btnpichon').hide();
+	  $('#btnbestpichon').hide();
 	  anioSelected=2017;
 	  Procesar(anioSelected);
 	});
 
 	$('#btn2018').click(function(){ 
+	  $('#btnpichon').hide();
+	  $('#btnbestpichon').hide();
 	  anioSelected=2018;
 	  Procesar(anioSelected);
 	});
 
 	$('#btn2019').click(function(){ 
+	  $('#btnpichon').hide();
+	  $('#btnbestpichon').hide();
 	  anioSelected=2019;
 	  Procesar(anioSelected);
 	});
@@ -193,11 +203,15 @@ $(document).ready(function(){
 	$('#btn2021').click(function(){ 
 	  anioSelected=2021;
 	  Procesar(anioSelected);
+	  $('#btnpichon').show();
+	  $('#btnbestpichon').show();	  
 	});
 
 	$('#btn2022').click(function(){ 
 	  anioSelected=2022;
 	  Procesar(anioSelected);
+	  $('#btnpichon').show();
+	  $('#btnbestpichon').show();
 	});
 	
 	$('#btnnacional').click(function(){ 
@@ -206,6 +220,7 @@ $(document).ready(function(){
 	  $clave.empty();
 	  $clave.append(html);
 	  $('#regional').hide(); 
+	  $('#pichon').hide(); 
 	  $('#nacional').show(); 
 	});
 
@@ -215,18 +230,36 @@ $(document).ready(function(){
 	  $clave.empty();
 	  $clave.append(html);
 	  $('#nacional').hide(); 
+	  $('#pichon').hide(); 
 	  $('#regional').show(); 
+	});
+	
+	$('#btnpichon').click(function(){ 
+	  var html=$.parseHTML('<h3>Pichones '+anioSelected+'</h3>',true);
+	  var $clave= $("#infodate");
+	  $clave.empty();
+	  $clave.append(html);
+	  $('#nacional').hide(); 
+	  $('#regional').hide();
+	  $('#pichon').show(); 	  
 	});
 
 	$('#btnbestnac').click(function(){ 
 	  $('#divmejorpalomaregional').hide(); 
+	  $('#divmejorpichonnacional').hide(); 
 	  $('#divmejorpalomanacional').show();
 	});
-
 	$('#btnbestreg').click(function(){ 
-	  $('#divmejorpalomanacional').hide(); 
+	  $('#divmejorpalomanacional').hide();
+	  $('#divmejorpichonnacional').hide(); 
 	  $('#divmejorpalomaregional').show();
 	});
+	$('#btnbestpichon').click(function(){ 
+	  $('#divmejorpalomanacional').hide();
+	  $('#divmejorpalomaregional').hide();
+	  $('#divmejorpichonnacional').show(); 
+	});
+	
 	$('#btnBuscarAnilla').click(function(){ 
 	  ProcesarAnilla($('[name=ring]').val(),parseInt($('#anioconcurso').val()));
 	  $('#infoanilla').show();
@@ -239,6 +272,7 @@ $(document).ready(function(){
 		scrollTop : 0
 	  }, 500);
 	});
+
 });
 
 $(window).scroll(function(){
@@ -374,17 +408,21 @@ $(window).scroll(function(){
 			  <div id="podium" class="podium">
 				<button type="button" class="btn btn-lg btn-red enabled" id="btnnacional">Nacional</button>
 				<button type="button" class="btn btn-lg btn-red enabled" id="btnregional">Regional</button>
+				<button type="button" class="btn btn-lg btn-red enabled" id="btnpichon">Pichones</button>
 				<br /><br />
 				<div id="infodate"></div>
 				<div id="nacional"></div>
 				<div id="regional"></div>
+				<div id="pichon"></div>
 				<div id="concursos"></div>
 				<br /><br />
 				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestnac">Mejor paloma nacional</button>
 				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestreg">Mejor paloma regional</button>
+				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestpichon">Mejor pich&oacute;n</button>
 				<br /><br />
 				<div id="divmejorpalomanacional"></div>
 				<div id="divmejorpalomaregional"></div>
+				<div id="divmejorpichonnacional"></div>
 				
 			  </div>
 			</div>

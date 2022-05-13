@@ -60,14 +60,21 @@ function Procesar(anio){
   $clave=$('#divmejorpalomaregional');
   $clave.empty();
   $clave.append(html);
-
+if (anio>=2021){
+    html=$.parseHTML('<h3>Mejor pich&oacute;n nacional '+anio+'</h3><br>Sin datos',true);
+	$clave=$('#divmejorpichonnacional');
+	$clave.empty();
+	$clave.append(html);
+}
   ProcesaAnio(anio);
-
   $('#infoanio').show(); 
   $('#regional').hide(); 
+  $('#pichon').hide(); 
   $('#nacional').show(); 
   $('#divmejorpalomanacional').hide();
   $('#divmejorpalomaregional').hide();
+  $('#divmejorpichonnacional').hide();
+
 }
 
 function ProcesaAnio(anio){
@@ -94,18 +101,24 @@ function ProcesaAnio(anio){
 			req2.done(function(response){
 			  for (var i=0; i<datosCarreras.length; i++){
 				if (datosCarreras[i].anio==anio){
-				  var nuevo2 = {anio:datosCarreras[i].anio,club:datosCarreras[i].club,concurso:datosCarreras[i].concurso,pos:datosCarreras[i].pos,pais:datosCarreras[i].pais,anilla:datosCarreras[i].anilla,a1:datosCarreras[i].a1,a2:datosCarreras[i].a2,a3:datosCarreras[i].a3,socio:datosCarreras[i].socio,a4:datosCarreras[i].a4,a5:datosCarreras[i].a5,a6:datosCarreras[i].a6,a7:datosCarreras[i].a7,puntos:datosCarreras[i].puntos,a8:datosCarreras[i].a8};
+				  var nuevo2 = {anio:datosCarreras[i].anio,club:datosCarreras[i].club,concurso:datosCarreras[i].concurso,campeonato:datosCarreras[i].campeonato,categoria:datosCarreras[i].categoria,colectivo:datosCarreras[i].colectivo,pos:datosCarreras[i].pos,pais:datosCarreras[i].pais,anilla:datosCarreras[i].anilla,a1:datosCarreras[i].a1,a2:datosCarreras[i].a2,a3:datosCarreras[i].a3,socio:datosCarreras[i].socio,a4:datosCarreras[i].a4,a5:datosCarreras[i].a5,a6:datosCarreras[i].a6,a7:datosCarreras[i].a7,puntos:datosCarreras[i].puntos,a8:datosCarreras[i].a8};
 				  arrCarreras.push(nuevo2);
 				}
 			  }
-			  var html=crearPodium(anio,true);
+			  var html=crearPodium(anio,1); //Nacional
 			  var $clave = $('#nacional');
 			  $clave.empty();
 			  $clave.append(html);
-			  html=crearPodium(anio,false);
+			  html=crearPodium(anio,2); //Regional
 			  $clave = $('#regional');
 			  $clave.empty();
 			  $clave.append(html);
+if (anio>=2021){
+			  html=crearPodium(anio,3); //Pichones
+			  $clave = $('#pichon');
+			  $clave.empty();
+			  $clave.append(html);
+}			  
 			  html=crearConcursos(anio);
 			  $clave = $('#concursos');
 			  $clave.empty();
@@ -212,6 +225,9 @@ function ProcesaAnio(anio){
 
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
+			  if (anio>=2021){
+				  crearMejoresPichonesNacional();
+			  }
 			});
 		  });
 
@@ -223,7 +239,7 @@ function ProcesaAnio(anio){
 
 }
 
-function crearPodium(anio,clave){
+function crearPodium(anio, clave){
 	arrSocios.sort(function (a, b){
 	  return a.nombre.localeCompare(b.nombre);
 	});
@@ -231,7 +247,7 @@ function crearPodium(anio,clave){
 	var arrPuntos = [];
 	for (var i=0; i<arrSocios.length; i++){
 	  if ((arrSocios[i].anio==anio)&&(arrSocios[i].activo==true)){
-		var nuevo = {socio:arrSocios[i].socio,nombre:arrSocios[i].nombre,puntosnacional:0.00,puntosregional:0.00};
+		var nuevo = {socio:arrSocios[i].socio,nombre:arrSocios[i].nombre,puntosnacional:0.00,puntosregional:0.00,puntospichon:0.00};
 		arrPuntos.push(nuevo);
 	  }
 	}
@@ -248,24 +264,34 @@ function crearPodium(anio,clave){
 		}
 	  }
 	}*/
-	/* Calcula la suma de puntos de las 5 primeras palomas de cada socio por cada carrera en el nacional */
+	
 	var cuantosN;
 	var cuantosR;
+	var cuantosP;
 	var i=-1;
 	
+	/* Calcula la suma de puntos de las 5 primeras palomas de cada socio por cada carrera en el nacional de adultas */
 	for(i=0;i<arrPuntos.length;i++){
 	  for (var j=0;j<arrConcursos.length;j++){
 		exit_kn:{
 		  cuantosN=0;
 		  for (var k=0;k<arrCarreras.length;k++){
-			if ((arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)){
-			  if (arrCarreras[k].concurso.includes('N')){
-				arrPuntos[i].puntosnacional += arrCarreras[k].puntos;
-				cuantosN+=1;
+			  
+if ((anio<2021)&&(arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)&&(arrCarreras[k].concurso.includes('N'))){
+	arrPuntos[i].puntosnacional += arrCarreras[k].puntos;
+	cuantosN+=1;
+	if (cuantosN==5){
+		break exit_kn;
+	}
+}
+else  
+	
+			if ( (arrPuntos[i].socio==arrCarreras[k].socio) && (arrCarreras[k].anio==anio) && (arrConcursos[j].codigo==arrCarreras[k].concurso) && (arrConcursos[j].categoria=="Nacional") && (arrConcursos[j].colectivo=="Adultas") && (arrCarreras[k].categoria=="N") && (arrCarreras[k].colectivo=="A") ){
+			  arrPuntos[i].puntosnacional += arrCarreras[k].puntos;
+			  cuantosN+=1;
 				if (cuantosN==5){
 				  break exit_kn;
 				}
-			  }
 			}
 		  }
 		}
@@ -278,60 +304,108 @@ function crearPodium(anio,clave){
 		exit_kr:{
 		  cuantosR=0;
 		  for (var k=0;k<arrCarreras.length;k++){
-			if ((arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)){
-			  if (arrCarreras[k].concurso.includes('R')){
-				arrPuntos[i].puntosregional += arrCarreras[k].puntos;
-				cuantosR+=1;
-				if (cuantosR==10){
-				  break exit_kr;
-				}
+
+if ((anio<2021)&&(arrPuntos[i].socio==arrCarreras[k].socio)&&(arrCarreras[k].anio==anio)&&(arrConcursos[j].codigo==arrCarreras[k].concurso)&&(arrCarreras[k].concurso.includes('R'))){
+	arrPuntos[i].puntosregional += arrCarreras[k].puntos;
+	cuantosR+=1;
+	if (cuantosR==10){
+		break exit_kr;
+	}
+}
+else
+	
+			if ( (arrPuntos[i].socio==arrCarreras[k].socio) && (arrCarreras[k].anio==anio) && (arrConcursos[j].codigo==arrCarreras[k].concurso) && (arrConcursos[j].categoria=="Regional") && (arrCarreras[k].categoria=="A") && (arrCarreras[k].colectivo=="A")){
+			  arrPuntos[i].puntosregional += arrCarreras[k].puntos;
+			  cuantosR+=1;
+			  if (cuantosR==10){
+				break exit_kr;
 			  }
 			}
 		  }
 		}
 	  }
 	}
-	
+if (anio>=2021){
+	/* Calcula la suma de puntos de las 5 primeras palomas de cada socio por cada carrera en el nacional de pichones */
+	for(i=0;i<arrPuntos.length;i++){
+	  for (var j=0;j<arrConcursos.length;j++){
+		exit_kr:{
+		  cuantosP=0;
+		  for (var k=0;k<arrCarreras.length;k++){
+			if ( (arrPuntos[i].socio==arrCarreras[k].socio) && (arrCarreras[k].anio==anio) && (arrConcursos[j].codigo==arrCarreras[k].concurso) && (arrConcursos[j].categoria=="Nacional") && ((arrConcursos[j].colectivo=="Jóvenes") || (arrConcursos[j].colectivo="Pichones")) && (arrCarreras[k].categoria=="N") && (arrCarreras[k].colectivo=="J") ){
+			  var p0=arrPuntos[i].socio;
+			  var p1=arrCarreras[k].puntos;
+			  arrPuntos[i].puntospichon += arrCarreras[k].puntos;
+			  cuantosP+=1;
+			  if (cuantosP==5){
+				break exit_kr;
+			  }
+			}
+		  }
+		}
+	  }
+	}
+}	
 	var htmlPuntos = "";
-	if (clave==true){ //Nacional
-	  arrPuntos.sort(function (a, b) {
-		//return a.nombre.localeCompare(b.nombre);
-		return b.puntosnacional - a.puntosnacional;
-	  });
-	  
-	  htmlPuntos+="<table id='tablepodium" + anio +"' class='table table-striped'>";
-	  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
-	  htmlPuntos+="<tbody>";
-	  for (var i=0; i<arrPuntos.length; i++){
-		htmlPuntos+="<tr>";
-		htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
-		htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
-		htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosnacional).toFixed(2) + "</td>";
-		htmlPuntos+="</tr>";
-	  }
-	  htmlPuntos+="</tbody>";
-	  htmlPuntos+="</table>";
-	  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 5 primeras palomas clasificadas de cada concurso</p><br />";
-	}
-	else{ //Regional
-	  arrPuntos.sort(function (a, b) {
-		//return a.nombre.localeCompare(b.nombre);
-		return b.puntosregional - a.puntosregional;
-	  });
-	  htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
-	  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
-	  htmlPuntos+="<tbody>";
-	  for (var i=0; i<arrPuntos.length; i++){
-		htmlPuntos+="<tr>";
-		htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
-		htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
-		htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosregional).toFixed(2) + "</td>";
-		htmlPuntos+="</tr>";
-	  }
-	  htmlPuntos+="</tbody>";
-	  htmlPuntos+="</table>";
-	  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 10 primeras palomas clasificadas de cada concurso</p><br />";
-	}
+	switch (clave){
+		case 1: //Nacional adultas
+		  arrPuntos.sort(function (a, b) {
+			//return a.nombre.localeCompare(b.nombre);
+			return b.puntosnacional - a.puntosnacional;
+		  });
+		  
+		  htmlPuntos+="<table id='tablepodium" + anio +"' class='table table-striped'>";
+		  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
+		  htmlPuntos+="<tbody>";
+		  for (var i=0; i<arrPuntos.length; i++){
+			htmlPuntos+="<tr>";
+			htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
+			htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
+			htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosnacional).toFixed(2) + "</td>";
+			htmlPuntos+="</tr>";
+		  }
+		  htmlPuntos+="</tbody>";
+		  htmlPuntos+="</table>";
+		  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 5 primeras palomas clasificadas de cada concurso</p><br />";
+		  break;
+	  case 2: //Regional
+		  arrPuntos.sort(function (a, b) {
+			//return a.nombre.localeCompare(b.nombre);
+			return b.puntosregional - a.puntosregional;
+		  });
+		  htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
+		  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
+		  htmlPuntos+="<tbody>";
+		  for (var i=0; i<arrPuntos.length; i++){
+			htmlPuntos+="<tr>";
+			htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
+			htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
+			htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosregional).toFixed(2) + "</td>";
+			htmlPuntos+="</tr>";
+		  }
+		  htmlPuntos+="</tbody>";
+		  htmlPuntos+="</table>";
+		  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 10 primeras palomas clasificadas de cada concurso</p><br />";
+		  break;
+	  case 3: //Pichones
+		  arrPuntos.sort(function (a, b) {
+			//return a.nombre.localeCompare(b.nombre);
+			return b.puntospichon - a.puntospichon;
+		  });
+		  htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
+		  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
+		  htmlPuntos+="<tbody>";
+		  for (var i=0; i<arrPuntos.length; i++){
+			htmlPuntos+="<tr>";
+			htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
+			htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
+			htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntospichon).toFixed(2) + "</td>";
+			htmlPuntos+="</tr>";
+		  }
+		  htmlPuntos+="</tbody>";
+		  htmlPuntos+="</table>";
+		  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de los 5 primeros pichones clasificados de cada concurso</p><br />";
+		  break;	}
   return htmlPuntos;
 }
 
@@ -416,17 +490,36 @@ function crearMejoresPalomasNacional(){
 	  }
 	}
 	if (!encontrada){
-	  if (arrCarreras[i].concurso.includes('N')){
-		var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_nac:arrCarreras[i].puntos};
-		arrPalomas.push(nueva);
-	  }
+		if (anioSelected>=2021){
+			if ((arrCarreras[i].categoria=="N") && (arrCarreras[i].colectivo=="A")){
+				var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_nac:arrCarreras[i].puntos};
+				arrPalomas.push(nueva);
+			}
+		}
+		else
+		{
+			if (arrCarreras[i].concurso.includes('N')){
+				var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_nac:arrCarreras[i].puntos};
+				arrPalomas.push(nueva);
+			}
+		}
 	}
 	else{
-	  if (arrCarreras[i].concurso.includes('N')){
-		arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
-		arrPalomas[j].puntos_nac+=arrCarreras[i].puntos;
-	  }
+		if (anioSelected>=2021){
+			if ((arrCarreras[i].categoria=="N") && (arrCarreras[i].colectivo=="A")){
+				arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
+				arrPalomas[j].puntos_nac+=arrCarreras[i].puntos;
+			}
+		}
+		else
+		{
+			if (arrCarreras[i].concurso.includes('N')){
+				arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
+				arrPalomas[j].puntos_nac+=arrCarreras[i].puntos;
+			}
+		}
 	}
+	
   }
   arrPalomas.sort(function (a, b) {
 	return b.puntos_nac - a.puntos_nac;
@@ -538,20 +631,38 @@ function crearMejoresPalomasRegional(){
 	  }
 	}
 	if (!encontrada){
-	  if (arrCarreras[i].concurso.includes('R')){
-		var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_nac:arrCarreras[i].puntos};
-		arrPalomas.push(nueva);
-	  }
+		if (anioSelected>=2021){
+			if ((arrCarreras[i].categoria=="A") && (arrCarreras[i].colectivo=="A")){
+				var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_reg:arrCarreras[i].puntos};
+				arrPalomas.push(nueva);
+			}
+		}
+		else
+		{
+			if (arrCarreras[i].concurso.includes('R')){
+				var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_reg:arrCarreras[i].puntos};
+				arrPalomas.push(nueva);
+			}
+		}
 	}
 	else{
- 	  if (arrCarreras[i].concurso.includes('R')){
-		arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
-		arrPalomas[j].puntos_nac+=arrCarreras[i].puntos;
-	  }
+		if (anioSelected>=2021){
+			if ((arrCarreras[i].categoria=="A") && (arrCarreras[i].colectivo=="A")){
+				arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
+				arrPalomas[j].puntos_reg+=arrCarreras[i].puntos;
+			}
+		}
+		else
+		{
+			if (arrCarreras[i].concurso.includes('R')){
+				arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
+				arrPalomas[j].puntos_reg+=arrCarreras[i].puntos;
+			}
+		}
 	}
   }
   arrPalomas.sort(function (a, b) {
-	return b.puntos_nac - a.puntos_nac;
+	return b.puntos_reg - a.puntos_reg;
   });
   
   var myTableDiv = document.getElementById("divmejorpalomaregional");
@@ -600,7 +711,7 @@ function crearMejoresPalomasRegional(){
 		  td.id='posr'+i;
 		  break;
 		case 5:
-		  td.appendChild(document.createTextNode(Number(arrPalomas[i].puntos_nac).toFixed(2)));
+		  td.appendChild(document.createTextNode(Number(arrPalomas[i].puntos_reg).toFixed(2)));
 		  break;
 	  } 
 	  tr.appendChild(td);
@@ -620,6 +731,128 @@ function crearMejoresPalomasRegional(){
   }
   
   $('#mejorespalomasregional').DataTable( {
+	retrieve: true,
+	responsive: true,
+	paging: true,
+	"autoWidth": false,
+	"language": {
+		"emptyTable": "No hay datos disponibles en la tabla",
+		"infoEmpty": "Mostrando 0 a 0 de 0 registros",
+		"decimal": ",",
+		"thousands": ".",
+		"lengthMenu": "Mostrar _MENU_ registros por página",
+		"search" : "Buscar",
+		"paginate": {
+			"first": "Primero",
+			"last": "Último",
+			"next": "Siguiente",
+			"previous": "Anterior"
+		},
+		"info": "Mostrando página _PAGE_ de _PAGES_",
+		"infoFiltered": "(Filtrando de un total de _MAX_ registros)",
+		"zeroRecords": "No se han encontrado datos"
+	},
+	columnDefs: [
+		{ targets: [0,5], className: 'dt-body-right' }
+	]
+  } );
+
+}
+
+function crearMejoresPichonesNacional(){
+  var arrPalomas = [];
+  var encontrada;
+  for (var i=0; i<arrCarreras.length; i++){
+	encontrada=false;
+	for (var j=0; j<arrPalomas.length; j++){
+	  if (arrCarreras[i].anilla==arrPalomas[j].anilla){
+		encontrada=true;
+		break;
+	  }
+	}
+	if (!encontrada){
+	  if ((arrCarreras[i].categoria=="N") && (arrCarreras[i].colectivo=="J")){
+		var nueva = {anilla:arrCarreras[i].anilla,pais:arrCarreras[i].pais,socio:arrCarreras[i].socio,misdatos:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª",puntos_pichon:arrCarreras[i].puntos};
+		arrPalomas.push(nueva);
+	  }
+	}
+	else{
+	  if ((arrCarreras[i].categoria=="N") && (arrCarreras[i].colectivo=="J")){
+		arrPalomas[j].misdatos+=", "+"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>: "+arrCarreras[i].pos+"ª";
+		arrPalomas[j].puntos_pichon+=arrCarreras[i].puntos;
+	  }
+	}
+  }
+  arrPalomas.sort(function (a, b) {
+	return b.puntos_pichon - a.puntos_pichon;
+  });
+  
+  var myTableDiv = document.getElementById("divmejorpichonnacional");
+  
+  var table = document.createElement('TABLE');
+  table.id='mejorespichonesnacional';
+  table.setAttribute("class", "display text-left");
+  table.style='width:100%';
+  var header = table.createTHead();
+  var row = header.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(1);
+  var cell4 = row.insertCell(1);
+  var cell5 = row.insertCell(1);
+  var cell6 = row.insertCell(1);
+  cell1.innerHTML = "#";
+  cell6.innerHTML = "País";
+  cell5.innerHTML = "Anilla";
+  cell4.innerHTML = "Nombre";
+  cell3.innerHTML = "Posiciones";
+  cell2.innerHTML = "Puntos";
+  var tableBody = document.createElement('TBODY');
+  table.appendChild(tableBody);
+  
+  for (var i=0; i<arrPalomas.length; i++){
+	var tr = document.createElement('TR');
+	tableBody.appendChild(tr);
+	for (var j=0; j<6; j++){
+	  var td = document.createElement('TD');
+	  switch(j) {
+		case 0:
+		  td.appendChild(document.createTextNode(i+1));
+		  break;
+		case 1:
+		  td.appendChild(document.createTextNode(arrPalomas[i].pais));
+		  break;
+		case 2:
+		  td.appendChild(document.createTextNode(arrPalomas[i].anilla));
+		  break;
+		case 3:
+		  td.appendChild(document.createTextNode(dimeNombreSocio(arrPalomas[i].socio)));
+		  break;
+		case 4:
+		  //td.appendChild(document.createTextNode(arrPalomas[i].misdatos));
+		  td.id='posp'+i;
+		  break;
+		case 5:
+		  td.appendChild(document.createTextNode(Number(arrPalomas[i].puntos_pichon).toFixed(2)));
+		  break;
+	  } 
+	  tr.appendChild(td);
+	}
+  }
+  
+  $('#divmejorpichonnacional').empty();
+  var tituloh3=document.createElement("H3");
+  tituloh3.appendChild(document.createTextNode("Mejor pichón nacional "+anioSelected));
+  myTableDiv.appendChild(tituloh3);
+  myTableDiv.appendChild(table);
+
+  for (var i=0; i<arrPalomas.length; i++){
+	var $mipos = $("#posp"+i);
+	var html = $.parseHTML(arrPalomas[i].misdatos,true);
+	$mipos.append(html);
+  }
+  
+  $('#mejorespichonesnacional').DataTable( {
 	retrieve: true,
 	responsive: true,
 	paging: true,

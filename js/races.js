@@ -1085,7 +1085,7 @@ function dimeCodigos(tipoConcurso, anio){
 			}
 			break;
 		  case 3: //Pichones
-			if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Jóvenes")){
+			if ((arrConcursos[i].categoria=="Nacional")&&((arrConcursos[i].colectivo=="Jóvenes") || (arrConcursos[i].colectivo=="Pichones"))){
 			  arrCodigos[j++]=arrConcursos[i].codigo;
 			}
 			break;
@@ -1147,7 +1147,7 @@ function dimeClasificadas(tipoConcurso, anio){
 						}
 							break;
 					case 3: //Pichones
-						if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Jóvenes")){
+						if ((arrConcursos[i].categoria=="Nacional")&&((arrConcursos[i].colectivo=="Jóvenes") || (arrConcursos[i].colectivo=="Pichones"))){
 							arrClasificadas[j++]=arrConcursos[i].clasif;
 						}	
 				}
@@ -1188,7 +1188,7 @@ function dimeNoClasificadas(tipoConcurso, anio){
 						}
 							break;
 					case 3: //Pichones
-						if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Jóvenes")){
+						if ((arrConcursos[i].categoria=="Nacional")&&((arrConcursos[i].colectivo=="Jóvenes") || (arrConcursos[i].colectivo=="Pichones"))){
 							arrNoClasificadas[j++]=arrConcursos[i].noclasif;
 						}	
 				}

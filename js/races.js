@@ -339,7 +339,7 @@ if (anio>=2019){
 		exit_kr:{
 		  cuantosP=0;
 		  for (var k=0;k<arrCarreras.length;k++){
-			if ( (arrPuntos[i].socio==arrCarreras[k].socio) && (arrCarreras[k].anio==anio) && (arrConcursos[j].codigo==arrCarreras[k].concurso) && (arrConcursos[j].categoria=="Nacional") && ((arrConcursos[j].colectivo=="Jóvenes") || (arrConcursos[j].colectivo="Pichones")) && (arrCarreras[k].categoria=="N") && (arrCarreras[k].colectivo=="J") ){
+			if ( (arrPuntos[i].socio==arrCarreras[k].socio) && (arrCarreras[k].anio==anio) && (arrConcursos[j].codigo==arrCarreras[k].concurso) && (arrConcursos[j].categoria=="Nacional") && ((arrConcursos[j].colectivo=="Jóvenes") || (arrConcursos[j].colectivo=="Pichones")) && (arrCarreras[k].categoria=="N") && (arrCarreras[k].colectivo=="J") ){
 			  var p0=arrPuntos[i].socio;
 			  var p1=arrCarreras[k].puntos;
 			  arrPuntos[i].puntospichon += arrCarreras[k].puntos;

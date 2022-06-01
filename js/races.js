@@ -215,17 +215,20 @@ if (anio>=2019){
 			  $('#btnRLG221').click(function(){ if ($('#RLG221').is (':hidden')){ $('#RLV121').hide(); $('#LV1N21').hide(); $('#RLV221').hide(); $('#LV2N21').hide(); $('#LJ1N21').hide(); $('#RLV321').hide(); $('#RLV421').hide(); $('#LJ2N21').hide(); $('#RLV521').hide(); $('#LF1N21').hide(); $('#RLF121').hide(); $('#LF2N21').hide(); $('#RLF221').hide(); $('#LG1N21').hide(); $('#RLG121').hide(); $('#LG2N21').hide(); $('#RLG221').show(); } else $('#RLG221').hide(); });
 
 			  /* 2022 */
- 			  $('#btnRLV122').click(function(){ if ($('#RLV122').is (':hidden')){ $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#RLV122').show(); } else $('#RLV122').hide(); });
-			  $('#btnNLV122').click(function(){ if ($('#NLV122').is (':hidden')){ $('#RLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLV122').show(); } else $('#NLV122').hide(); });
-			  $('#btnRLV222').click(function(){ if ($('#RLV222').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#RLV222').show(); } else $('#RLV222').hide(); });
-			  $('#btnNLM122').click(function(){ if ($('#NLM122').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLM122').show(); } else $('#NLM122').hide(); });
-			  $('#btnNLM222').click(function(){ if ($('#NLM222').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLM222').show(); } else $('#NLM222').hide(); });
-			  $('#btnRLM122').click(function(){ if ($('#RLM122').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#RLM122').show(); } else $('#RLM122').hide(); });
-			  $('#btnRLM222').click(function(){ if ($('#RLM222').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#RLM222').show(); } else $('#RLM222').hide(); });
-			  $('#btnNLM322').click(function(){ if ($('#NLM322').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLM322').show(); } else $('#NLM322').hide(); });
-			  $('#btnRLM322').click(function(){ if ($('#RLM322').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#RLM322').show(); } else $('#RLM322').hide(); });
-			  $('#btnNLF122').click(function(){ if ($('#NLF122').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#RLF122').hide(); $('#NLF122').show(); } else $('#NLF122').hide(); });
-			  $('#btnRLF122').click(function(){ if ($('#RLF122').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').show(); } else $('#RLF122').hide(); });
+			  $('#btnNLV022').click(function(){ if ($('#NLV022').is (':hidden')){ $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#NLV022').show(); } else $('#NLV022').hide(); });
+			  $('#btnRLV122').click(function(){ if ($('#RLV122').is (':hidden')){ $('#NLV022').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#RLV122').show(); } else $('#RLV122').hide(); });
+			  $('#btnNLV122').click(function(){ if ($('#NLV122').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#NLV122').show(); } else $('#NLV122').hide(); });
+			  $('#btnRLV222').click(function(){ if ($('#RLV222').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#RLV222').show(); } else $('#RLV222').hide(); });
+			  $('#btnNLM122').click(function(){ if ($('#NLM122').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#NLM122').show(); } else $('#NLM122').hide(); });
+			  $('#btnNLM222').click(function(){ if ($('#NLM222').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#NLM222').show(); } else $('#NLM222').hide(); });
+			  $('#btnRLM122').click(function(){ if ($('#RLM122').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#RLM122').show(); } else $('#RLM122').hide(); });
+			  $('#btnRLM222').click(function(){ if ($('#RLM222').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#RLM222').show(); } else $('#RLM222').hide(); });
+			  $('#btnNLM322').click(function(){ if ($('#NLM322').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#NLM322').show(); } else $('#NLM322').hide(); });
+			  $('#btnRLM322').click(function(){ if ($('#RLM322').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#RLM322').show(); } else $('#RLM322').hide(); });
+			  $('#btnNLF122').click(function(){ if ($('#NLF122').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#NLF122').show(); } else $('#NLF122').hide(); });
+			  $('#btnRLF122').click(function(){ if ($('#RLF122').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#NLF222').hide(); $('#RLF222').hide(); $('#RLF122').show(); } else $('#RLF122').hide(); });
+			  $('#btnNLF222').click(function(){ if ($('#NLF222').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#RLF222').hide(); $('#NLF222').show(); } else $('#NLF222').hide(); });
+			  $('#btnRLF222').click(function(){ if ($('#RLF222').is (':hidden')){ $('#NLV022').hide(); $('#RLV122').hide(); $('#NLV122').hide(); $('#RLV222').hide(); $('#NLM122').hide(); $('#NLM222').hide(); $('#RLM122').hide(); $('#RLM222').hide(); $('#NLM322').hide(); $('#RLM322').hide(); $('#NLF122').hide(); $('#RLF122').hide(); $('#NLF222').hide(); $('#RLF222').show(); } else $('#RLF222').hide(); });
 
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
@@ -917,6 +920,7 @@ function ProcesarAnilla(anilla,anio) {
 		  $clave.append(html);
 		  escribeChartNacional(anilla,anio);
 		  escribeChartRegional(anilla,anio);
+		  escribeChartPichonesNacional(anilla,anio);
 		}
 		else{
 		  htmlAnillas="<br />Anilla no encontrada";
@@ -975,6 +979,7 @@ function ProcesarAnilla(anilla,anio) {
 					  $clave.append(html);
 					  escribeChartNacional(anilla,anio);
 					  escribeChartRegional(anilla,anio);
+					  escribeChartPichonesNacional(anilla,anio);
 					}
 					else{
 					  htmlAnillas="<br />Anilla no encontrada";
@@ -1037,32 +1042,61 @@ function getDatosAnilla(anio,anilla){
   datosAnilla+="</div>";
   datosAnilla+="<h3>Nacional</h3>";
   datosAnilla+="<div><canvas id='myChartNacional'></canvas></div>";
+  datosAnilla+="<div id='carrerasnacional'></div>";
   datosAnilla+="<br /><h3>Regional</h3>";
   datosAnilla+="<div><canvas id='myChartRegional'></canvas></div>";
+  datosAnilla+="<div id='carrerasrgional'></div>";
+  datosAnilla+="<br /><h3>Pichones</h3>";
+  datosAnilla+="<div><canvas id='myChartPichonesNacional'></canvas></div>";
+  datosAnilla+="<div id='carreraspichonesnacional'></div>";
   return datosAnilla;
 }
 
-function dimeCodigos(esNacional){
+function dimeCodigos(tipoConcurso, anio){
   var arrCodigos=[];
   var j=0;
   for (var i=0; i<arrConcursos.length; i++){
 	if (arrConcursos[i].activo==true){
-	  if (esNacional==true){ //Nacional
-		if (arrConcursos[i].codigo.includes('N')){
-		  arrCodigos[j++]=arrConcursos[i].codigo;
-		}
+	  if (anio < 2019){
+		switch (tipoConcurso) {
+		  case 1: //Nacional
+			if (arrConcursos[i].codigo.includes('N')){
+			  arrCodigos[j++]=arrConcursos[i].codigo;
+			}
+			break;
+		  case 2: //Regional
+			if (arrConcursos[i].codigo.includes('R')){
+			  arrCodigos[j++]=arrConcursos[i].codigo;
+			}
+			break;
+	    }
 	  }
-	  else{ //Regional
-		if (arrConcursos[i].codigo.includes('R')){
-		  arrCodigos[j++]=arrConcursos[i].codigo;
-		}
+	  else
+	  {
+		switch (tipoConcurso){
+		  case 1: //Nacional
+			if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Adultas")){
+			  arrCodigos[j++]=arrConcursos[i].codigo;
+			}
+			break;
+		  case 2: //Regional
+			if ((arrConcursos[i].categoria=="Regional")&&(arrConcursos[i].colectivo=="Adultas")){
+			  arrCodigos[j++]=arrConcursos[i].codigo;
+			}
+			break;
+		  case 3: //Pichones
+			if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Jóvenes")){
+			  arrCodigos[j++]=arrConcursos[i].codigo;
+			}
+			break;
+	    }
 	  }
 	}
   }
   return arrCodigos;
 }
 
-function dimePosiciones(anilla,arrCodigos){
+function dimePosiciones(anilla, arrCodigos){
   var arrPosiciones=[];
   for (var i=0; i<arrCodigos.length; i++){
 	var encontrada=false;
@@ -1082,53 +1116,95 @@ function dimePosiciones(anilla,arrCodigos){
   return arrPosiciones;
 }
 
-function dimeClasificadas(esNacional){
-  var arrClasificadas=[];
-  var j=0;
-  for (var i=0; i<arrConcursos.length; i++){
-	if (arrConcursos[i].activo==true){
-	  if (esNacional==true){ //Nacional
-		if (arrConcursos[i].codigo.includes('N')){
-		  arrClasificadas[j++]=arrConcursos[i].clasif;
+function dimeClasificadas(tipoConcurso, anio){
+	var arrClasificadas=[];
+	var j=0;
+	for (var i=0; i<arrConcursos.length; i++){
+		if (arrConcursos[i].activo==true){
+			if (anio < 2019){
+				switch (tipoConcurso) {
+					case 1: //Nacional
+						if (arrConcursos[i].codigo.includes('N')){
+							arrClasificadas[j++]=arrConcursos[i].clasif;
+						}
+						break;
+					case 2: //Regional
+						if (arrConcursos[i].codigo.includes('R')){
+							arrClasificadas[j++]=arrConcursos[i].clasif;
+						}
+				}
+			}
+			else {
+				switch (tipoConcurso) {
+					case 1: //Nacional
+						if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Adultas")){
+							arrClasificadas[j++]=arrConcursos[i].clasif;
+						}
+							break;
+					case 2: //Regional
+						if ((arrConcursos[i].categoria=="Regional")&&(arrConcursos[i].colectivo=="Adultas")){
+							arrClasificadas[j++]=arrConcursos[i].clasif;
+						}
+							break;
+					case 3: //Pichones
+						if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Jóvenes")){
+							arrClasificadas[j++]=arrConcursos[i].clasif;
+						}	
+				}
+			}
 		}
-	  }
-	  else{ //Regional
-		if (arrConcursos[i].codigo.includes('R')){
-		  arrClasificadas[j++]=arrConcursos[i].clasif;
-		}
-	  }
 	}
-  }
-  return arrClasificadas;
+	return arrClasificadas;
 }
 
-function dimeNoClasificadas(esNacional){
-  var arrNoClasificadas=[];
-  var j=0;
-  for (var i=0; i<arrConcursos.length; i++){
-	if (arrConcursos[i].activo==true){
-	  if (esNacional==true){ //Nacional
-		if (arrConcursos[i].codigo.includes('N')){
-		  arrNoClasificadas[j++]=arrConcursos[i].noclasif;
+function dimeNoClasificadas(tipoConcurso, anio){
+	var arrNoClasificadas=[];
+	var j=0;
+	for (var i=0; i<arrConcursos.length; i++){
+		if (arrConcursos[i].activo==true){
+			if (anio < 2019){
+				switch (tipoConcurso) {
+					case 1: //Nacional
+						if (arrConcursos[i].codigo.includes('N')){
+							arrNoClasificadas[j++]=arrConcursos[i].noclasif;
+						}
+						break;
+					case 2: //Regional
+						if (arrConcursos[i].codigo.includes('R')){
+							arrNoClasificadas[j++]=arrConcursos[i].noclasif;
+						}
+				}
+			}
+			else {
+				switch (tipoConcurso) {
+					case 1: //Nacional
+						if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Adultas")){
+							arrNoClasificadas[j++]=arrConcursos[i].noclasif;
+						}
+							break;
+					case 2: //Regional
+						if ((arrConcursos[i].categoria=="Regional")&&(arrConcursos[i].colectivo=="Adultas")){
+							arrNoClasificadas[j++]=arrConcursos[i].noclasif;
+						}
+							break;
+					case 3: //Pichones
+						if ((arrConcursos[i].categoria=="Nacional")&&(arrConcursos[i].colectivo=="Jóvenes")){
+							arrNoClasificadas[j++]=arrConcursos[i].noclasif;
+						}	
+				}
+			}
 		}
-	  }
-	  else{ //Regional
-		if (arrConcursos[i].codigo.includes('R')){
-		  arrNoClasificadas[j++]=arrConcursos[i].noclasif;
-		}
-	  }
 	}
-  }
-  return arrNoClasificadas;
+	return arrNoClasificadas;
 }
 
 function escribeChartRegional(anilla,anio){
   Chart.defaults.global.elements.line.fill = false;
-  var arrCodigos=dimeCodigos(false);
+  var arrCodigos=dimeCodigos(2, anio);
   var arrPosiciones=dimePosiciones(anilla,arrCodigos);
   var arrEncestada=dimeEncestada(anilla,anio,arrCodigos);
-  var arrClasificadas=dimeClasificadas(false);
-  var arrNoClasificadas=dimeNoClasificadas(false);
+  var arrClasificadas=dimeClasificadas(2, anio);
+  var arrNoClasificadas=dimeNoClasificadas(2, anio);
   //data: [0,0,0,0,0,0,0,0,0]
   var barChartData = {
 	labels: arrCodigos,
@@ -1222,11 +1298,11 @@ function escribeChartRegional(anilla,anio){
 
 function escribeChartNacional(anilla,anio){
   Chart.defaults.global.elements.line.fill = false;
-  var arrCodigos=dimeCodigos(true);
+  var arrCodigos=dimeCodigos(1, anio);
   var arrPosiciones=dimePosiciones(anilla,arrCodigos);
   var arrEncestada=dimeEncestada(anilla,anio,arrCodigos);
-  var arrClasificadas=dimeClasificadas(true);
-  var arrNoClasificadas=dimeNoClasificadas(true);
+  var arrClasificadas=dimeClasificadas(1, anio);
+  var arrNoClasificadas=dimeNoClasificadas(1, anio);
   //data: [0,0,0,0,0,0,0,0,0]
   var barChartData = {
 	labels: arrCodigos,
@@ -1263,6 +1339,104 @@ function escribeChartNacional(anilla,anio){
   };
 
   var ctx = document.getElementById("myChartNacional").getContext("2d");
+  var ch = new Chart(ctx, {
+	type: 'bar',
+	data: barChartData,
+	options: {
+	  animation: true,
+	  //responsive: true,
+	  title: {
+		display: true,
+		padding: 10,
+		text: [anilla,anio],
+		position: 'top'
+	  },
+	  tooltips: {
+		mode: 'index'
+	  },
+	  legend: {
+		//position: 'right'
+	  },
+	  showTooltips: true,
+	  scales: {
+		xAxes: [{
+		  stacked: true
+		}],
+		yAxes: [{
+		  stacked: true,
+		  position: "left",
+		  id: "y-axis-0",
+		}]
+	  },
+	  animation: {
+		//duration: 0,
+		onComplete: function () {
+		  
+		  var ctx = this.chart.ctx;
+		  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+		  ctx.textAlign = 'center';
+		  ctx.textBaseline = 'bottom';
+		  ctx.fillStyle = "#000";
+		  this.data.datasets.forEach(function (dataset) {
+			if (dataset.label == 'Posición'){
+			  for (var i = 0; i < dataset.data.length; i++) {
+				for (var key in dataset._meta) {
+				  var model = dataset._meta[key].data[i]._model;
+				  ctx.fillText(dataset.data[i] + 'ª', model.x, model.y - 10);
+				}
+			  }
+			}
+		  });
+		}
+	  }
+	  
+	}
+  });
+}
+
+function escribeChartPichonesNacional(anilla,anio){
+  Chart.defaults.global.elements.line.fill = false;
+  var arrCodigos=dimeCodigos(3, anio);
+  var arrPosiciones=dimePosiciones(anilla,arrCodigos);
+  var arrEncestada=dimeEncestada(anilla,anio,arrCodigos);
+  var arrClasificadas=dimeClasificadas(3, anio);
+  var arrNoClasificadas=dimeNoClasificadas(3, anio);
+  //data: [0,0,0,0,0,0,0,0,0]
+  var barChartData = {
+	labels: arrCodigos,
+	datasets: [{
+	  type: 'line',
+	  label: 'Posición',
+	  id: "y-axis-1",
+	  lineTension: 0,
+	  borderWidth: 5,
+	  backgroundColor: "rgba(0,0,255,0.5)",
+	  borderColor: "rgba(0,0,255,0.5)",
+	  data: arrPosiciones
+	}, {
+	  type: 'bubble',
+	  label: 'Encestada',
+	  id: "y-axis-1",
+	  borderWidth: 8,
+	  backgroundColor: "rgba(255,0,0,0.7)",
+	  borderColor: "rgba(255,0,0,0.7)",
+	  data: arrEncestada
+	}, {
+	  type: 'bar',
+	  label: 'Clasificadas',
+	  id: "y-axis-0",
+	  backgroundColor: "rgba(0,198,79,0.75)",
+	  data: arrClasificadas
+	}, {
+	  type: 'bar',
+	  label: 'No clasificadas',
+	  id: "y-axis-0",
+	  backgroundColor: "rgba(187,187,187,0.75)",
+	  data: arrNoClasificadas
+	}]
+  };
+
+  var ctx = document.getElementById("myChartPichonesNacional").getContext("2d");
   var ch = new Chart(ctx, {
 	type: 'bar',
 	data: barChartData,

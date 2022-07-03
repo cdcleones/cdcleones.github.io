@@ -264,6 +264,17 @@ $(document).ready(function(){
 	  ProcesarAnilla($('[name=ring]').val(),parseInt($('#anioconcurso').val()));
 	  $('#infoanilla').show();
 	});
+	
+	$('#socios').on('change',function(){
+		var socio = $(this).val();
+		if (socio == -1){
+			$('#divpalomasporsocio').empty();
+		}
+		else{
+			crearPosicionamientoPalomas(anioSelected, socio);
+		}
+	});
+	
 	$('#infoanilla').hide();
 	RellenaAnios();
 	
@@ -423,7 +434,20 @@ $(window).scroll(function(){
 				<div id="divmejorpalomanacional"></div>
 				<div id="divmejorpalomaregional"></div>
 				<div id="divmejorpichonnacional"></div>
-				
+				<br /><br />
+				<div id="selectsocio">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3>Posicionamiento de palomas por socio</h3>
+							<div class="form-group">
+								<select id="socios" class="selectpicker form-control" name="socios">
+								</select>
+							</div>
+						</div>
+					</div>
+					<div id="divpalomasporsocio"></div>
+				</div>
+
 			  </div>
 			</div>
 		  </div>

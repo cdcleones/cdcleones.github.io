@@ -1587,11 +1587,11 @@ function dimeFechaConcurso(sConcurso){
 function crearPosicionamientoPalomas(anio, socio){
 	var arrAnillasSocio=[];
 	var arrCodigosSocio=[];
-	var arrDstosSocio=[];
+	var arrDatosSocio=[];
 	for (var i=0; i<arrCarreras.length; i++){
 		if (arrCarreras[i].socio==socio){
-			var nuevo0 = {concurso:arrCarreras[i].concurso, pais:arrCarreras[i].pais, anilla:arrCarreras[i].anilla, socio:arrCarreras[i].socio, hora:arrCarreras[i].a4, ndia:arrCarreras[i].a5, pos:arrCarreras[i].a1};
-			arrDstosSocio.push(nuevo0);
+			var nuevo0 = {concurso:arrCarreras[i].concurso, pais:arrCarreras[i].pais, anilla:arrCarreras[i].anilla, socio:arrCarreras[i].socio, hora:arrCarreras[i].a4, ndia:arrCarreras[i].a5, pos:arrCarreras[i].a1, horadias:arrCarreras[i].a4+" ["+arrCarreras[i].a5+"]"};
+			arrDatosSocio.push(nuevo0);
 			
 			var encontrada=false;
 			for (var j=0; j<arrAnillasSocio.length; j++){
@@ -1612,8 +1612,7 @@ function crearPosicionamientoPalomas(anio, socio){
 				}
 			}
 			if (!encontrada1){
-				//var nuevo1 = {fecha:dimeFechaConcurso(arrCarreras[i].concurso), concurso:arrCarreras[i].concurso, conabbr:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>"};
-				var nuevo1 = {fecha:dimeFechaConcurso(arrCarreras[i].concurso), concurso:arrCarreras[i].concurso, conabbr:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+" ("+dimeFechaConcurso(arrCarreras[i].concurso)+")'>"+arrCarreras[i].concurso+"</abbr>"};
+				var nuevo1 = {fecha:dimeFechaConcurso(arrCarreras[i].concurso), concurso:arrCarreras[i].concurso, concursoconabbr:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+" ("+dimeFechaConcurso(arrCarreras[i].concurso)+")'>"+arrCarreras[i].concurso+"</abbr>"};
 				arrCodigosSocio.push(nuevo1);
 			}
 		}
@@ -1641,7 +1640,7 @@ function crearPosicionamientoPalomas(anio, socio){
 			x.innerHTML = "Anilla";
 		}
 		else{
-			x.innerHTML = arrCodigosSocio[columna-1].conabbr;
+			x.innerHTML = arrCodigosSocio[columna-1].concursoconabbr;
 		}
 	}
 	
@@ -1657,8 +1656,8 @@ function crearPosicionamientoPalomas(anio, socio){
 		tr.appendChild(td);
 		for (var columna=0; columna<arrCodigosSocio.length; columna++){
 			var encontrada2 = false;
-			for (var i=0; i<arrDstosSocio.length; i++){
-				if ((arrDstosSocio[i].anilla==arrAnillasSocio[fila].anilla) && (arrDstosSocio[i].concurso==arrCodigosSocio[columna].concurso)){
+			for (var i=0; i<arrDatosSocio.length; i++){
+				if ((arrDatosSocio[i].anilla==arrAnillasSocio[fila].anilla) && (arrDatosSocio[i].concurso==arrCodigosSocio[columna].concurso)){
 					encontrada2 = true;
 					break;
 				}
@@ -1666,7 +1665,7 @@ function crearPosicionamientoPalomas(anio, socio){
 			var td = document.createElement('TD');
 			td.id = "celda_" + (fila+1) + "_" + (columna+1);
 			if (encontrada2){
-				td.appendChild(document.createTextNode(arrDstosSocio[i].pos));
+				td.appendChild(document.createTextNode(arrDatosSocio[i].pos+" "+arrDatosSocio[i].horadias));
 			}
 			else{
 				td.appendChild(document.createTextNode(""));

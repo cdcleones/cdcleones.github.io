@@ -59,6 +59,7 @@ function Procesar(anio){
   html=$.parseHTML('<h3>Mejor paloma regional '+anio+'</h3><br>Sin datos',true);
   $clave=$('#divmejorpalomaregional');
   $clave.empty();
+  $('#divpalomasporsocio').empty();
   $clave.append(html);
 if (anio>=2019){
     html=$.parseHTML('<h3>Mejor pich&oacute;n nacional '+anio+'</h3><br>Sin datos',true);

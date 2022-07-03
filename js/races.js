@@ -235,6 +235,7 @@ if (anio>=2019){
 			  if (anio>=2019){
 				  crearMejoresPichonesNacional();
 			  }
+			  crearSociosPosicionamientoPalomas(anio);
 			});
 		  });
 
@@ -421,7 +422,7 @@ function crearConcursos(anio){
   for (var j=0; j<arrConcursos.length; j++){
 	if (arrConcursos[j].anio == anio){
 	  if (arrConcursos[j].activo){
-		htmlConcursos+="<button type='button' class='btn btn-lg btn-block btn-red' id='btn" + arrConcursos[j].codigo + "'>" + arrConcursos[j].nombre + "</button>"
+		htmlConcursos+="<button type='button' class='btn btn-lg btn-block btn-red' id='btn" + arrConcursos[j].codigo + "' title='Concurso " + arrConcursos[j].nombre + "'>" + arrConcursos[j].nombre + "</button>"
 		htmlConcursos+="<div id='" + arrConcursos[j].codigo + "'>"; //concurso
 		htmlConcursos+="<div class='table-responsive'>";
 		htmlConcursos+="<div class='container-fluid infocarrera'>"; //infocarrera
@@ -1042,13 +1043,13 @@ function getDatosAnilla(anio,anilla){
   datosAnilla+="</div>";
   datosAnilla+="<h3>Nacional</h3>";
   datosAnilla+="<div><canvas id='myChartNacional'></canvas></div>";
-  datosAnilla+="<div id='carrerasnacional'></div>";
+  datosAnilla+="<div id='carrerasnacional'>" + htmlCodigosConcursos(anio, 0); +"</div>";
   datosAnilla+="<br /><h3>Regional</h3>";
   datosAnilla+="<div><canvas id='myChartRegional'></canvas></div>";
-  datosAnilla+="<div id='carrerasrgional'></div>";
+  datosAnilla+="<div id='carrerasregional'>" + htmlCodigosConcursos(anio, 1); +"</div>";
   datosAnilla+="<br /><h3>Pichones</h3>";
   datosAnilla+="<div><canvas id='myChartPichonesNacional'></canvas></div>";
-  datosAnilla+="<div id='carreraspichonesnacional'></div>";
+  datosAnilla+="<div id='carreraspichonesnacional'>" + htmlCodigosConcursos(anio, 2); +"</div>";
   return datosAnilla;
 }
 
@@ -1523,4 +1524,182 @@ function dimeEncestada(anilla,anio,arrCodigos){
 	}
   }
   return arrEnceste;
+}
+
+function htmlCodigosConcursos(anio, clave){
+	var htmlConcursos="";
+	for (var j=0; j<arrConcursos.length; j++){
+		if ((arrConcursos[j].anio == anio)&&(arrConcursos[j].activo)){
+			if ((arrConcursos[j].categoria=="Nacional") && (arrConcursos[j].colectivo=="Adultas") && (clave == 0)){ //Nacional adultas
+				htmlConcursos+="<div class='row'>";
+				htmlConcursos+="<div class='col-sm-1 col-md-1 col-lg-1 izda'>" + arrConcursos[j].codigo + ": </div>";
+				htmlConcursos+="<div class='col-sm-11 col-md-11 col-lg-11 izda'>" + arrConcursos[j].nombre +" (" + arrConcursos[j].campeonato +")</div>";
+				htmlConcursos+="</div >"; //row
+			}
+			if ((arrConcursos[j].categoria=="Regional") && (arrConcursos[j].colectivo=="Adultas") && (clave == 1)){ //Regional adultas
+				htmlConcursos+="<div class='row'>";
+				htmlConcursos+="<div class='col-sm-1 col-md-1 col-lg-1 izda'>" + arrConcursos[j].codigo + ": </div>";
+				htmlConcursos+="<div class='col-sm-11 col-md-11 col-lg-11 izda'>" + arrConcursos[j].nombre +" (" + arrConcursos[j].campeonato +")</div>";
+				htmlConcursos+="</div >"; //row
+			}
+			if ((arrConcursos[j].categoria=="Nacional") && ((arrConcursos[j].colectivo=="Jóvenes") || (arrConcursos[j].colectivo=="Pichones")) && (clave == 2)){ //Nacional pichones
+				htmlConcursos+="<div class='row'>";
+				htmlConcursos+="<div class='col-sm-1 col-md-1 col-lg-1 izda'>" + arrConcursos[j].codigo + ": </div>";
+				htmlConcursos+="<div class='col-sm-11 col-md-11 col-lg-11 izda'>" + arrConcursos[j].nombre +" (" + arrConcursos[j].campeonato +")</div>";
+				htmlConcursos+="</div >"; //row
+			}
+		}
+	}
+	if (htmlConcursos !=""){
+		return "<div class='container-fluid infocarrera'>" + htmlConcursos + "</div>";
+	}
+	else {
+		return "Sin datos";
+	}
+}
+
+function crearSociosPosicionamientoPalomas(anio){
+	var miSelect = document.getElementById("socios");
+	document.querySelector('#socios').innerHTML = '';
+	var aTag = document.createElement('option');
+	aTag.value = -1;
+	aTag.text = "Seleccione socio";
+	miSelect.appendChild(aTag);
+	for (var i=0; i<arrSocios.length; i++){
+		if ((arrSocios[i].anio==anio)&&(arrSocios[i].activo==true)){
+			aTag = document.createElement('option');
+			aTag.value = arrSocios[i].socio;
+			aTag.text = arrSocios[i].nombre;
+			miSelect.appendChild(aTag);
+		}
+	}
+}
+
+function dimeFechaConcurso(sConcurso){
+  for (var i=0; i<arrConcursos.length; i++){
+	if (arrConcursos[i].codigo==sConcurso){
+	  return(arrConcursos[i].fsuelta);
+	}
+  }
+}
+
+function crearPosicionamientoPalomas(anio, socio){
+	var arrAnillasSocio=[];
+	var arrCodigosSocio=[];
+	var arrDstosSocio=[];
+	for (var i=0; i<arrCarreras.length; i++){
+		if (arrCarreras[i].socio==socio){
+			var nuevo0 = {concurso:arrCarreras[i].concurso, pais:arrCarreras[i].pais, anilla:arrCarreras[i].anilla, socio:arrCarreras[i].socio, hora:arrCarreras[i].a4, ndia:arrCarreras[i].a5, pos:arrCarreras[i].a1};
+			arrDstosSocio.push(nuevo0);
+			
+			var encontrada=false;
+			for (var j=0; j<arrAnillasSocio.length; j++){
+				if (arrCarreras[i].anilla == arrAnillasSocio[j].anilla){
+					encontrada=true;
+					break;
+				}
+			}
+			if (!encontrada){
+				var nuevo = {pais:arrCarreras[i].pais, anilla:arrCarreras[i].anilla};
+				arrAnillasSocio.push(nuevo);
+			}
+			var encontrada1=false;
+			for (var j=0; j<arrCodigosSocio.length; j++){
+				if (arrCarreras[i].concurso == arrCodigosSocio[j].concurso){
+					encontrada1=true;
+					break;
+				}
+			}
+			if (!encontrada1){
+				//var nuevo1 = {fecha:dimeFechaConcurso(arrCarreras[i].concurso), concurso:arrCarreras[i].concurso, conabbr:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+"'>"+arrCarreras[i].concurso+"</abbr>"};
+				var nuevo1 = {fecha:dimeFechaConcurso(arrCarreras[i].concurso), concurso:arrCarreras[i].concurso, conabbr:"<abbr title='"+dimeNombreConcurso(arrCarreras[i].concurso)+" ("+dimeFechaConcurso(arrCarreras[i].concurso)+")'>"+arrCarreras[i].concurso+"</abbr>"};
+				arrCodigosSocio.push(nuevo1);
+			}
+		}
+	}
+	
+	arrCodigosSocio.sort((a, b) => {
+		const newA = a.fecha.split('/').reverse().join('/');
+		const newB = b.fecha.split('/').reverse().join('/');
+		return +new Date(newA) - +new Date(newB)
+	});
+	
+	var myTableDiv = document.getElementById("divpalomasporsocio");
+
+	var table = document.createElement('TABLE');
+	table.id='palomasporsocio';
+	table.setAttribute("class", "display text-center");
+	table.style='width:100%';
+	var fila = 0;
+	var header = table.createTHead();
+	var row = header.insertRow(0);
+	for (var columna=0; columna<arrCodigosSocio.length+1; columna++){
+		var x = row.insertCell(columna);
+		x.setAttribute("id", "celda_" + fila + "_" + columna);
+		if (columna==0){
+			x.innerHTML = "Anilla";
+		}
+		else{
+			x.innerHTML = arrCodigosSocio[columna-1].conabbr;
+		}
+	}
+	
+	var tableBody = document.createElement('TBODY');
+	table.appendChild(tableBody);
+	
+	for (var fila=0; fila<arrAnillasSocio.length; fila++){
+		var tr = document.createElement('TR');
+		tableBody.appendChild(tr);
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_0";
+		td.appendChild(document.createTextNode(arrAnillasSocio[fila].pais+"-"+arrAnillasSocio[fila].anilla));
+		tr.appendChild(td);
+		for (var columna=0; columna<arrCodigosSocio.length; columna++){
+			var encontrada2 = false;
+			for (var i=0; i<arrDstosSocio.length; i++){
+				if ((arrDstosSocio[i].anilla==arrAnillasSocio[fila].anilla) && (arrDstosSocio[i].concurso==arrCodigosSocio[columna].concurso)){
+					encontrada2 = true;
+					break;
+				}
+			}
+			var td = document.createElement('TD');
+			td.id = "celda_" + (fila+1) + "_" + (columna+1);
+			if (encontrada2){
+				td.appendChild(document.createTextNode(arrDstosSocio[i].pos));
+			}
+			else{
+				td.appendChild(document.createTextNode(""));
+			}
+			tr.appendChild(td);
+		}
+	}
+	
+	$('#divpalomasporsocio').empty();
+	myTableDiv.appendChild(table);
+	
+	$('#palomasporsocio').DataTable( {
+		retrieve: true,
+		responsive: true,
+		paging: true,
+		order: [[0, 'asc']],
+		"autoWidth": false,
+		"language": {
+			"emptyTable": "No hay datos disponibles en la tabla",
+			"infoEmpty": "Mostrando 0 a 0 de 0 registros",
+			"decimal": ",",
+			"thousands": ".",
+			"lengthMenu": "Mostrar _MENU_ registros por página",
+			"search" : "Buscar",
+			"paginate": {
+				"first": "Primero",
+				"last": "Último",
+				"next": "Siguiente",
+				"previous": "Anterior"
+			},
+			"info": "Mostrando página _PAGE_ de _PAGES_",
+			"infoFiltered": "(Filtrando de un total de _MAX_ registros)",
+			"zeroRecords": "No se han encontrado datos"
+		}
+	} );
+	
 }

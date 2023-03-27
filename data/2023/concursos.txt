@@ -1,1 +1,1 @@
-
+﻿[{"activo":true,"anio":2023,"club":163,"codigo":"RLV123","nombre":"FUENTES DE OÑORO (REG)","fenceste":"25/03/2023","fsuelta":"26/03/2023","categoria":"Regional","fichero":"RLV123-FUENTES DE OÑORO (REG).pdf","provincia":"Salamanca","hsuelta":"08:55","campeonato":"Velocidad","colectivo":"Adultas","socios":11,"encestadas":419,"porcent":100,"clasif":383,"noclasif":36,"km0":201.47,"km1":271.70}]

@@ -2,10 +2,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
-<meta http-equiv="Expires" content="0">
-<meta http-equiv="Last-Modified" content="0">
-<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-<meta http-equiv="Pragma" content="no-cache">
 <title>Club Deportivo Colomb&oacute;filo Leon&eacute;s</title>
 <link rel="icon" href="favicon.png" type="image/png">
 
@@ -168,6 +164,8 @@ div.anillainfo {
 
 <script>
 $(document).ready(function(){
+	$.ajaxSetup({ cache: false });
+	
 	$('#infoanio').hide();
 	$('#btnpichon').hide();
 	$('#btnbestpichon').hide();
@@ -209,6 +207,13 @@ $(document).ready(function(){
 
 	$('#btn2022').click(function(){ 
 	  anioSelected=2022;
+	  Procesar(anioSelected);
+	  $('#btnpichon').show();
+	  $('#btnbestpichon').show();
+	});
+	
+	$('#btn2023').click(function(){ 
+	  anioSelected=2023;
 	  Procesar(anioSelected);
 	  $('#btnpichon').show();
 	  $('#btnbestpichon').show();
@@ -284,14 +289,14 @@ $(document).ready(function(){
 	  }, 500);
 	});
 
-});
+	$(window).scroll(function(){
+		if ($(this).scrollTop() >= 50){
+			$('#return-to-top').fadeIn(200);
+		}else{
+			$('#return-to-top').fadeOut(200);
+		}
+	});
 
-$(window).scroll(function(){
-  if ($(this).scrollTop() >= 50){
-	$('#return-to-top').fadeIn(200);
-  }else{
-	$('#return-to-top').fadeOut(200);
-  }
 });
 </script>
 
@@ -429,7 +434,7 @@ $(window).scroll(function(){
 				<br /><br />
 				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestnac">Mejor paloma nacional</button>
 				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestreg">Mejor paloma regional</button>
-				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestpichon">Mejor pich&oacute;n</button>
+				<button type="button" class="btn btn-lg btn-red enabled" id="btnbestpichon">Mejor pich&oacute;n nacional</button>
 				<br /><br />
 				<div id="divmejorpalomanacional"></div>
 				<div id="divmejorpalomaregional"></div>
@@ -440,8 +445,7 @@ $(window).scroll(function(){
 						<div class="col-sm-12">
 							<h3>Posicionamiento de palomas por socio</h3>
 							<div class="form-group">
-								<select id="socios" class="selectpicker form-control" name="socios">
-								</select>
+								<select id="socios" class="selectpicker form-control" name="socios"></select>
 							</div>
 						</div>
 					</div>
@@ -554,7 +558,7 @@ $(window).scroll(function(){
 	</section>
   </div>
   <div class="container">
-	<div class="footer_bottom"><span>Copyright &copy; 2022 Club Deportivo Colomb&oacute;filo Leon&eacute;s</span><a href="aviso-legal.html" title="Aviso legal"><span>Aviso legal<spam></a></div>
+	<div class="footer_bottom"><span>Copyright &copy; 2023 Club Deportivo Colomb&oacute;filo Leon&eacute;s</span><a href="aviso-legal.html" title="Aviso legal"><span>Aviso legal<spam></a></div>
   </div>
 </footer>
 <!--Footer-->

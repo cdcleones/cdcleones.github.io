@@ -76,7 +76,14 @@ if (anio>=2019){
   $('#divmejorpalomanacional').hide();
   $('#divmejorpalomaregional').hide();
   $('#divmejorpichonnacional').hide();
-
+  $('#divcampeonatonacional').hide();
+  $('#divcampeonatoregional').hide();
+  if (anio<2023){
+	$('#divcampeonatos').hide();
+  }
+  else {
+	$('#divcampeonatos').show();
+  }
 }
 
 function ProcesaAnio(anio){
@@ -253,9 +260,15 @@ if (anio>=2019){
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
 			  if (anio>=2019){
-				  crearMejoresPichonesNacional();
+				crearMejoresPichonesNacional();
 			  }
 			  crearSociosPosicionamientoPalomas(anio);
+			  if (anio>=2023){
+				VerCampeonatosNacional(anio);
+				VerCampeonatosRegional(anio);
+				$('#btncampeonatonacional').click(function(){ if ($('#divcampeonatonacional').is (':hidden')){ $('#divcampeonatoregional').hide(); $('#divcampeonatonacional').show(); } else $('#divcampeonatonacional').hide(); });
+				$('#btncampeonatoregional').click(function(){ if ($('#divcampeonatoregional').is (':hidden')){ $('#divcampeonatonacional').hide(); $('#divcampeonatoregional').show(); } else $('#divcampeonatoregional').hide(); });
+			  }
 			});
 		  });
 
@@ -376,64 +389,65 @@ if (anio>=2019){
 }	
 	var htmlPuntos = "";
 	switch (clave){
-		case 1: //Nacional adultas
-		  arrPuntos.sort(function (a, b) {
+	  case 1: //Nacional adultas
+		arrPuntos.sort(function (a, b) {
 			//return a.nombre.localeCompare(b.nombre);
 			return b.puntosnacional - a.puntosnacional;
-		  });
-		  
-		  htmlPuntos+="<table id='tablepodium" + anio +"' class='table table-striped'>";
-		  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
-		  htmlPuntos+="<tbody>";
-		  for (var i=0; i<arrPuntos.length; i++){
-			htmlPuntos+="<tr>";
-			htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
-			htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
-			htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosnacional).toFixed(2) + "</td>";
-			htmlPuntos+="</tr>";
-		  }
-		  htmlPuntos+="</tbody>";
-		  htmlPuntos+="</table>";
-		  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 5 primeras palomas clasificadas de cada concurso</p><br />";
-		  break;
+		});
+		
+		htmlPuntos+="<table id='tablepodium" + anio +"' class='table table-striped'>";
+		htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
+		htmlPuntos+="<tbody>";
+		for (var i=0; i<arrPuntos.length; i++){
+		  htmlPuntos+="<tr>";
+		  htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
+		  htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
+		  htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosnacional).toFixed(2) + "</td>";
+		  htmlPuntos+="</tr>";
+		}
+		htmlPuntos+="</tbody>";
+		htmlPuntos+="</table>";
+		htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 5 primeras palomas clasificadas de cada concurso</p><br />";
+		break;
 	  case 2: //Regional
-		  arrPuntos.sort(function (a, b) {
-			//return a.nombre.localeCompare(b.nombre);
-			return b.puntosregional - a.puntosregional;
-		  });
-		  htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
-		  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
-		  htmlPuntos+="<tbody>";
-		  for (var i=0; i<arrPuntos.length; i++){
-			htmlPuntos+="<tr>";
-			htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
-			htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
-			htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosregional).toFixed(2) + "</td>";
-			htmlPuntos+="</tr>";
-		  }
-		  htmlPuntos+="</tbody>";
-		  htmlPuntos+="</table>";
-		  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 10 primeras palomas clasificadas de cada concurso</p><br />";
-		  break;
+		arrPuntos.sort(function (a, b) {
+		  //return a.nombre.localeCompare(b.nombre);
+		  return b.puntosregional - a.puntosregional;
+		});
+		htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
+		htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
+		htmlPuntos+="<tbody>";
+		for (var i=0; i<arrPuntos.length; i++){
+		  htmlPuntos+="<tr>";
+		  htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
+		  htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
+		  htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntosregional).toFixed(2) + "</td>";
+		  htmlPuntos+="</tr>";
+		}
+		htmlPuntos+="</tbody>";
+		htmlPuntos+="</table>";
+		htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de las 10 primeras palomas clasificadas de cada concurso</p><br />";
+		break;
 	  case 3: //Pichones
-		  arrPuntos.sort(function (a, b) {
-			//return a.nombre.localeCompare(b.nombre);
-			return b.puntospichon - a.puntospichon;
-		  });
-		  htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
-		  htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
-		  htmlPuntos+="<tbody>";
-		  for (var i=0; i<arrPuntos.length; i++){
-			htmlPuntos+="<tr>";
-			htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
-			htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
-			htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntospichon).toFixed(2) + "</td>";
-			htmlPuntos+="</tr>";
-		  }
-		  htmlPuntos+="</tbody>";
-		  htmlPuntos+="</table>";
-		  htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de los 5 primeros pichones clasificados de cada concurso</p><br />";
-		  break;	}
+		arrPuntos.sort(function (a, b) {
+		  //return a.nombre.localeCompare(b.nombre);
+		  return b.puntospichon - a.puntospichon;
+		});
+		htmlPuntos+="<table id='tablepodium'" + anio +" class='table table-striped'>";
+		 htmlPuntos+="<thead><tr><th class='dcha'>Nº</th><th class='izqda'>Socio</th><th class='dcha'>Puntos</th></tr></thead>";
+		 htmlPuntos+="<tbody>";
+		for (var i=0; i<arrPuntos.length; i++){
+		  htmlPuntos+="<tr>";
+		  htmlPuntos+="<th scope='row' class='dcha'>" + (i+1) +"</th>";
+		  htmlPuntos+="<td class='izda'>" + arrPuntos[i].nombre + "</td>";
+		  htmlPuntos+="<td class='dcha'>" + Number(arrPuntos[i].puntospichon).toFixed(2) + "</td>";
+		  htmlPuntos+="</tr>";
+		}
+		htmlPuntos+="</tbody>";
+		htmlPuntos+="</table>";
+		htmlPuntos+="<p>La puntuaci&oacuten es la suma de puntos de los 5 primeros pichones clasificados de cada concurso</p><br />";
+		break;
+	}
   return htmlPuntos;
 }
 
@@ -1721,4 +1735,53 @@ function crearPosicionamientoPalomas(anio, socio){
 		}
 	} );
 	
+}
+
+function VerCampeonatosNacional(anio){
+  var htmlCompeticiones="<br />";
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n1_cevmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Velocidad/Medio Fondo'>Cmpto. Espa&ntilde;a V/MF</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n1_cevmf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Velocidad/Medio Fondo Rev.'>Cmpto. Espa&ntilde;a V/MF Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n2_cef.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Fondo'>Cmpto. Espa&ntilde;a Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n2_cef_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Fondo Rev.'>Cmpto. Espa&ntilde;a Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n3_cegf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Gran Fondo'>Cmpto. Espa&ntilde;a GF</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n3_cegf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Gran Fondo Rev.'>Cmpto. Espa&ntilde;a GF Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n4_cnpj.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Palomas J&oacute;venes'>Cmpto. Nal. Palomas J&oacute;v.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n4_cnpj_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Palomas J&oacute;venes Rev.'>Cmpto. Nal. Palomas J&oacute;v. Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n5_cns.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Seguridad'>Cmpto. Nal. Seguridad</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n5_cns_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Seguridad Rev.'>Cmpto. Nal. Seguridad Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n6_apnv.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Velocidad'>AS Paloma Nal. Velocidad</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n6_apnv_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Velocidad Rev.'>AS Paloma Nal. Velocidad Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n7_apnf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Fondo'>AS Paloma Nacional de Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n7_apnf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Fondo Rev.'>AS Paloma Nacional de Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n8_apngf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Gran Fondo'>AS Paloma Nacional de Gran Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n8_apngf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Gran Fondo Rev.'>AS Paloma Nacional de Gran Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n9_pnf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Fondo de 2 a&ntilde;os'>Prestigio Nal. Fondo 2 a&ntilde;os</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n9_pnf2a_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Fondo de 2 a&ntilde;os Rev.'>Prestigio Nal. Fondo 2 a&ntilde;os Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n10_pngf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Gran Fondo de 2 a&ntilde;os'>Prestigio Nal. GF 2 a&ntilde;os</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n10_pngf2a_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Gran Fondo de 2 a&ntilde;os Rev.'>Prestigio Nal. GF 2 a&ntilde;os Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n11_pnf3a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Fondo de 3 a&ntilde;os'>Prestigio Nal. Fondo 3 a&ntilde;os</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n11_pnf3a_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Fondo de 3 a&ntilde;os Rev.'>Prestigio Nal. Fondo 3 a&ntilde;os Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n12_pngf3a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Gran Fondo de 3 a&ntilde;os'>Prestigio Nal. GF 3 a&ntilde;os</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n12_pngf3a_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Gran Fondo de 3 a&ntilde;os Rev.'>Prestigio Nal. GF 3 a&ntilde;os Rev.</a>"
+  var $clave = $('#divcampeonatonacional');
+  $clave.empty();
+  $clave.append(htmlCompeticiones);
+}
+
+function VerCampeonatosRegional(anio){
+  var htmlCompeticiones="<br />";
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r1_crvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Velocidad/Medio Fondo'>Cmpto. Reg. Velocidad/Medio Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r1_crvmf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Velocidad/Medio Fondo Rev.'>Cmpto. Reg. Velocidad/Medio Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo'>Campeonato Regional de Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo Rev.'>Campeonato Regional de Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto'>Campeonato Regional Absoluto</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto Rev.'>Campeonato Regional Absoluto Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r4_crs.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Seguridad'>Campeonato Regional Seguridad</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r5_aprvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Velocidad/Medio Fondo'>AS Paloma Reg. Velocidad/Medio Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r6_aprf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Fondo'>AS Paloma Regional de Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r7_apra.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional Absoluta'>AS Paloma Regional Absoluta</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r8_prf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Regional de Fondo de 2 a&ntilde;os'>Prestigio Reg. Fondo 2 a&ntilde;os</a>"
+  var $clave = $('#divcampeonatoregional');
+  $clave.empty();
+  $clave.append(htmlCompeticiones);
 }

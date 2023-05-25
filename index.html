@@ -219,6 +219,19 @@ $(document).ready(function(){
 	  $('#btnbestpichon').show();
 	});
 	
+	$('#btn2024').click(function(){ 
+	  anioSelected=2024;
+	  Procesar(anioSelected);
+	  $('#btnpichon').show();
+	  $('#btnbestpichon').show();
+	});
+	
+	$('#btn2025').click(function(){ 
+	  anioSelected=2025;
+	  Procesar(anioSelected);
+	  $('#btnpichon').show();
+	  $('#btnbestpichon').show();
+	});
 	$('#btnnacional').click(function(){ 
 	  var html=$.parseHTML('<h3>Nacional '+anioSelected+'</h3>',true);
 	  var $clave=$("#infodate");
@@ -283,12 +296,13 @@ $(document).ready(function(){
 	$('#infoanilla').hide();
 	RellenaAnios();
 	
+	
 	$('#return-to-top').click(function(){
 	  $('body,html').animate({
 		scrollTop : 0
 	  }, 500);
 	});
-
+	
 	$(window).scroll(function(){
 		if ($(this).scrollTop() >= 50){
 			$('#return-to-top').fadeIn(200);
@@ -450,6 +464,17 @@ $(document).ready(function(){
 						</div>
 					</div>
 					<div id="divpalomasporsocio"></div>
+				</div>
+				<br /><br />
+				<div id="divcampeonatos">
+					<div class="row">
+						<div class="col-sm-12">
+							<button type="button" class="btn btn-lg btn-red enabled" id="btncampeonatonacional">Campeonato Nacional</button>
+							<button type="button" class="btn btn-lg btn-red enabled" id="btncampeonatoregional">Campeonato Regional</button>
+						</div>
+					</div>
+					<div id="divcampeonatonacional"></div>
+					<div id="divcampeonatoregional"></div>
 				</div>
 
 			  </div>

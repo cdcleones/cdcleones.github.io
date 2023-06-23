@@ -1739,22 +1739,22 @@ function crearPosicionamientoPalomas(anio, socio){
 
 function VerCampeonatosNacional(anio){
   var htmlCompeticiones="<br />";
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n1_cevmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Velocidad/Medio Fondo'>Cmpto. Espa&ntilde;a V/MF</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n1_cevmf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Velocidad/Medio Fondo Rev.'>Cmpto. Espa&ntilde;a V/MF Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n1_cevmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Velocidad/Medio Fondo'>Cmpto. Espa&ntilde;a Vel./M. Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n1_cevmf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Velocidad/Medio Fondo Rev.'>Cmpto. Espa&ntilde;a Vel./M. Fondo Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n2_cef.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Fondo'>Cmpto. Espa&ntilde;a Fondo</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n2_cef_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Fondo Rev.'>Cmpto. Espa&ntilde;a Fondo Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n3_cegf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Gran Fondo'>Cmpto. Espa&ntilde;a GF</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n3_cegf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Gran Fondo Rev.'>Cmpto. Espa&ntilde;a GF Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n3_cegf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Gran Fondo'>Cmpto. Espa&ntilde;a Gran Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n3_cegf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de Espa&ntilde;a de Gran Fondo Rev.'>Cmpto. Espa&ntilde;a Gran Fondo Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n4_cnpj.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Palomas J&oacute;venes'>Cmpto. Nal. Palomas J&oacute;v.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n4_cnpj_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Palomas J&oacute;venes Rev.'>Cmpto. Nal. Palomas J&oacute;v. Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n5_cns.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Seguridad'>Cmpto. Nal. Seguridad</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n5_cns_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Nacional de Seguridad Rev.'>Cmpto. Nal. Seguridad Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n6_apnv.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Velocidad'>AS Paloma Nal. Velocidad</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n6_apnv_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Velocidad Rev.'>AS Paloma Nal. Velocidad Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n7_apnf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Fondo'>AS Paloma Nacional de Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n7_apnf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Fondo Rev.'>AS Paloma Nacional de Fondo Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n8_apngf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Gran Fondo'>AS Paloma Nacional de Gran Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n8_apngf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Gran Fondo Rev.'>AS Paloma Nacional de Gran Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n7_apnf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Fondo'>AS Paloma Nal. de Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n7_apnf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Fondo Rev.'>AS Paloma Nal. de Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n8_apngf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Gran Fondo'>AS Paloma Nal. de Gran Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n8_apngf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Nacional de Gran Fondo Rev.'>AS Paloma Nal. de Gran Fondo Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n9_pnf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Fondo de 2 a&ntilde;os'>Prestigio Nal. Fondo 2 a&ntilde;os</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n9_pnf2a_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Fondo de 2 a&ntilde;os Rev.'>Prestigio Nal. Fondo 2 a&ntilde;os Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n10_pngf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Gran Fondo de 2 a&ntilde;os'>Prestigio Nal. GF 2 a&ntilde;os</a>"
@@ -1763,6 +1763,8 @@ function VerCampeonatosNacional(anio){
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n11_pnf3a_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Fondo de 3 a&ntilde;os Rev.'>Prestigio Nal. Fondo 3 a&ntilde;os Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n12_pngf3a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Gran Fondo de 3 a&ntilde;os'>Prestigio Nal. GF 3 a&ntilde;os</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n12_pngf3a_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Nacional de Gran Fondo de 3 a&ntilde;os Rev.'>Prestigio Nal. GF 3 a&ntilde;os Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n13_cnreyast.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de S.M. El Rey/Pr&iacute;ncipe de Asturias'>Cmpto. Rey/P. Asturias</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/n13_cnreyast_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato de S.M. El Rey/Pr&iacute;ncipe de Asturias Rev.'>Cmpto. Rey/P. Asturias Rev.</a>"
   var $clave = $('#divcampeonatonacional');
   $clave.empty();
   $clave.append(htmlCompeticiones);
@@ -1770,16 +1772,16 @@ function VerCampeonatosNacional(anio){
 
 function VerCampeonatosRegional(anio){
   var htmlCompeticiones="<br />";
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r1_crvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Velocidad/Medio Fondo'>Cmpto. Reg. Velocidad/Medio Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r1_crvmf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Velocidad/Medio Fondo Rev.'>Cmpto. Reg. Velocidad/Medio Fondo Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo'>Campeonato Regional de Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo Rev.'>Campeonato Regional de Fondo Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto'>Campeonato Regional Absoluto</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto Rev.'>Campeonato Regional Absoluto Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r4_crs.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Seguridad'>Campeonato Regional Seguridad</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r5_aprvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Velocidad/Medio Fondo'>AS Paloma Reg. Velocidad/Medio Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r6_aprf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Fondo'>AS Paloma Regional de Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r7_apra.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional Absoluta'>AS Paloma Regional Absoluta</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r1_crvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Velocidad/Medio Fondo'>Cmpto. Reg. Vel./M. Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r1_crvmf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Velocidad/Medio Fondo Rev.'>Cmpto. Reg. Vel./M. Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo'>Campeonato Reg. de Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo Rev.'>Campeonato Reg. de Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto'>Campeonato Reg. Absoluto</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto Rev.'>Campeonato Reg. Absoluto Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r4_crs.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Seguridad'>Campeonato Reg. Seguridad</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r5_aprvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Velocidad/Medio Fondo'>AS Paloma Reg. Vel./M. Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r6_aprf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Fondo'>AS Paloma Reg. de Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r7_apra.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional Absoluta'>AS Paloma Reg. Absoluta</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r8_prf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Regional de Fondo de 2 a&ntilde;os'>Prestigio Reg. Fondo 2 a&ntilde;os</a>"
   var $clave = $('#divcampeonatoregional');
   $clave.empty();

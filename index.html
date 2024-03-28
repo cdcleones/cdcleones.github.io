@@ -1,3 +1,4 @@
+
 <!doctype html>
 <head>
 <meta charset="UTF-8">
@@ -279,10 +280,15 @@ $(document).ready(function(){
 	});
 	
 	$('#btnBuscarAnilla').click(function(){ 
-	  ProcesarAnilla($('[name=ring]').val(),parseInt($('#anioconcurso').val()));
+	  ProcesarAnilla($('[name=ring]').val(),parseInt($('#anioconcurso_anilla').val()));
 	  $('#infoanilla').show();
 	});
 	
+	$('#btnBuscarAnillaPalmares').click(function(){ 
+	  ProcesarAnillaPalmares($('[name=ring_palmares]').val(),parseInt($('#anioconcurso_palmares').val()));
+	  $('#infoanillapalmares').show();
+	});
+
 	$('#socios').on('change',function(){
 		var socio = $(this).val();
 		if (socio == -1){
@@ -294,6 +300,7 @@ $(document).ready(function(){
 	});
 	
 	$('#infoanilla').hide();
+	$('#infoanillapalmares').hide();
 	RellenaAnios();
 	
 	
@@ -337,6 +344,7 @@ $(document).ready(function(){
 			  <li><a href="#nosotros" class="scroll-link">Nosotros</a></li>
 			  <li><a href="#clasificaciones" class="scroll-link">Clasificaciones</a></li>
 			  <li><a href="#anillas" class="scroll-link">Anillas</a></li>
+			  <li><a href="#palmares" class="scroll-link">Palmar&eacute;s</a></li>
 			  <li><a href="#contacto" class="scroll-link">Contacto</a></li>
 			</ul>
 		  </div>
@@ -526,7 +534,7 @@ $(document).ready(function(){
 					  <div class="form-group" id="anio_concurso">
 						<label class="col-md-2 control-label">A&ntilde;o concurso</label>
 						  <div class="col-md-10">
-							<select class="form-control" id="anioconcurso"></select>
+							<select class="form-control" id="anioconcurso_anilla"></select>
 						  </div>
 					  </div>
 					  
@@ -546,6 +554,65 @@ $(document).ready(function(){
 
 </section>
 <!--/Anillas -->
+
+<br /><br />
+<!--Palmarés-->
+<section class="content" id="palmares">
+  <div class="inner_wrapper">
+	<div class="container">
+	  <h2>Palmar&eacute;s</h2>
+	</div> 
+	<div class="client_logos"><!--client_logos-->
+	  <div class="container">
+		<ul class="fadeInRight animated wow">
+		  <li><img src="img/trofeo.png" alt=""></li>
+		</ul>
+	  </div>
+	</div>
+	<br />
+	<div class="container">
+	  <div class="row">
+		<div class="col-xs-12 text-center">
+		  <div id="anillainfopalmares" class="anillainfo">
+			<div class="row">
+			  <div class="col-md-12 col-sm-6 col-xs-12">
+				<div class="panel panel-default">
+				  <div class="panel-heading clearfix">
+					<h3 class="panel-title">Buscar anilla</h3>
+				  </div>
+				  
+				  <div class="panel-body">
+					<div class="form-horizontal row-border">
+					  <div class="form-group">
+						<label class="col-md-2 control-label">Anilla</label>
+						<div class="col-md-10">
+						  <input type="text" name="ring_palmares" class="form-control" placeholder="YY-XXXXXX">
+						</div>
+					  </div>
+					  
+					  <div class="form-group" id="anio_concurso_palmares">
+						<label class="col-md-2 control-label">A&ntilde;o concurso</label>
+						  <div class="col-md-10">
+							<select class="form-control" id="anioconcurso_palmares"></select>
+						  </div>
+					  </div>
+					  
+					  <div class="col-md-12">
+						<button type="button" class="btn btn-lg btn-red" id="btnBuscarAnillaPalmares">Buscar</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div> <!-- row -->
+			<div id="infoanillapalmares"></div>
+		</div> <!-- anillainfopalmares -->
+	  </div>
+	</div> <!-- row -->
+  </div>
+
+</section>
+<!--/Palmarés -->
 
 <section id="nada1">
   <div class="inner_wrapper">
@@ -583,7 +650,7 @@ $(document).ready(function(){
 	</section>
   </div>
   <div class="container">
-	<div class="footer_bottom"><span>Copyright &copy; 2023 Club Deportivo Colomb&oacute;filo Leon&eacute;s</span><a href="aviso-legal.html" title="Aviso legal"><span>Aviso legal<spam></a></div>
+	<div class="footer_bottom"><span>Copyright &copy; 2024 Club Deportivo Colomb&oacute;filo Leon&eacute;s</span><a href="aviso-legal.html" title="Aviso legal"><span>Aviso legal<spam></a></div>
   </div>
 </footer>
 <!--Footer-->

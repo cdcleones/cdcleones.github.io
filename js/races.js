@@ -6,7 +6,14 @@ var arrAnios = [{"anio":2016,"activo":true},
 				{"anio":2019,"activo":true},
 				{"anio":2021,"activo":true},
 				{"anio":2022,"activo":true},
-				{"anio":2023,"activo":true}
+				{"anio":2023,"activo":true},
+				{"anio":2024,"activo":true}/*,
+				{"anio":2025,"activo":false},
+				{"anio":2026,"activo":false},
+				{"anio":2027,"activo":false},
+				{"anio":2028,"activo":false},
+				{"anio":2029,"activo":false},
+				{"anio":2030,"activo":false}*/
 			   ];
 
 var anioSelected;
@@ -256,6 +263,23 @@ if (anio>=2019){
 			  $('#btnRLF223').click(function(){ if ($('#RLF223').is (':hidden')){ $('#RLV123').hide(); $('#NLV123').hide(); $('#NLV223').hide(); $('#RLV223').hide(); $('#NLM123').hide(); $('#RLM123').hide(); $('#RLV323').hide(); $('#NLM223').hide(); $('#RLM223').hide(); $('#NLF123').hide(); $('#RLF123').hide(); $('#NLF223').hide(); $('#NLG123').hide(); $('#NLG223').hide(); $('#RLF223').show(); } else $('#RLF223').hide(); });
 			  $('#btnNLG123').click(function(){ if ($('#NLG123').is (':hidden')){ $('#RLV123').hide(); $('#NLV123').hide(); $('#NLV223').hide(); $('#RLV223').hide(); $('#NLM123').hide(); $('#RLM123').hide(); $('#RLV323').hide(); $('#NLM223').hide(); $('#RLM223').hide(); $('#NLF123').hide(); $('#RLF123').hide(); $('#NLF223').hide(); $('#RLF223').hide(); $('#NLG223').hide(); $('#NLG123').show(); } else $('#NLG123').hide(); });
 			  $('#btnNLG223').click(function(){ if ($('#NLG223').is (':hidden')){ $('#RLV123').hide(); $('#NLV123').hide(); $('#NLV223').hide(); $('#RLV223').hide(); $('#NLM123').hide(); $('#RLM123').hide(); $('#RLV323').hide(); $('#NLM223').hide(); $('#RLM223').hide(); $('#NLF123').hide(); $('#RLF123').hide(); $('#NLF223').hide(); $('#RLF223').hide(); $('#NLG123').hide(); $('#NLG223').show(); } else $('#NLG223').hide(); });
+
+			  /* 2024 */
+			  $('#btnRLV124').click(function(){ if ($('#RLV124').is (':hidden')){ $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV124').show(); } else $('#RLV124').hide(); });
+			  $('#btnNLV124').click(function(){ if ($('#NLV124').is (':hidden')){ $('#RLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLV124').show(); } else $('#NLV124').hide(); });
+			  $('#btnNLV224').click(function(){ if ($('#NLV224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLV224').show(); } else $('#NLV224').hide(); });
+			  $('#btnRLV224').click(function(){ if ($('#RLV224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV224').show(); } else $('#RLV224').hide(); });
+			  $('#btnNLM124').click(function(){ if ($('#NLM124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLM124').show(); } else $('#NLM124').hide(); });
+			  $('#btnRLM124').click(function(){ if ($('#RLM124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLM124').show(); } else $('#RLM124').hide(); });
+			  $('#btnRLV324').click(function(){ if ($('#RLV324').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV324').show(); } else $('#RLV324').hide(); });
+			  $('#btnNLM224').click(function(){ if ($('#NLM224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLM224').show(); } else $('#NLM224').hide(); });
+			  $('#btnRLM224').click(function(){ if ($('#RLM224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLM224').show(); } else $('#RLM224').hide(); });
+			  $('#btnNLF124').click(function(){ if ($('#NLF124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLF124').show(); } else $('#NLF124').hide(); });
+			  $('#btnRLF124').click(function(){ if ($('#RLF124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLF124').show(); } else $('#RLF124').hide(); });
+			  $('#btnNLF224').click(function(){ if ($('#NLF224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLF224').show(); } else $('#NLF224').hide(); });
+			  $('#btnRLF224').click(function(){ if ($('#RLF224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLF224').show(); } else $('#RLF224').hide(); });
+			  $('#btnNLG124').click(function(){ if ($('#NLG124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG224').hide(); $('#NLG124').show(); } else $('#NLG124').hide(); });
+			  $('#btnNLG224').click(function(){ if ($('#NLG224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').show(); } else $('#NLG224').hide(); });
 
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
@@ -576,11 +600,11 @@ function crearMejoresPalomasNacional(){
   var header = table.createTHead();
   var row = header.insertRow(0);
   var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(1);
-  var cell4 = row.insertCell(1);
-  var cell5 = row.insertCell(1);
-  var cell6 = row.insertCell(1);
+  var cell2 = row.insertCell(0);
+  var cell3 = row.insertCell(0);
+  var cell4 = row.insertCell(0);
+  var cell5 = row.insertCell(0);
+  var cell6 = row.insertCell(0);
   cell1.innerHTML = "#";
   cell6.innerHTML = "País";
   cell5.innerHTML = "Anilla";
@@ -716,11 +740,11 @@ function crearMejoresPalomasRegional(){
   var header = table.createTHead();
   var row = header.insertRow(0);
   var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(1);
-  var cell4 = row.insertCell(1);
-  var cell5 = row.insertCell(1);
-  var cell6 = row.insertCell(1);
+  var cell2 = row.insertCell(0);
+  var cell3 = row.insertCell(0);
+  var cell4 = row.insertCell(0);
+  var cell5 = row.insertCell(0);
+  var cell6 = row.insertCell(0);
   cell1.innerHTML = "#";
   cell6.innerHTML = "País";
   cell5.innerHTML = "Anilla";
@@ -838,11 +862,11 @@ function crearMejoresPichonesNacional(){
   var header = table.createTHead();
   var row = header.insertRow(0);
   var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(1);
-  var cell4 = row.insertCell(1);
-  var cell5 = row.insertCell(1);
-  var cell6 = row.insertCell(1);
+  var cell2 = row.insertCell(0);
+  var cell3 = row.insertCell(0);
+  var cell4 = row.insertCell(0);
+  var cell5 = row.insertCell(0);
+  var cell6 = row.insertCell(0);
   cell1.innerHTML = "#";
   cell6.innerHTML = "País";
   cell5.innerHTML = "Anilla";
@@ -1530,13 +1554,15 @@ function escribeChartPichonesNacional(anilla,anio){
 function RellenaAnios(){
   for (i=0; i<arrAnios.length;i++){
 	if (arrAnios[i].activo == true){
-	  document.getElementById("anioconcurso").options[document.getElementById("anioconcurso").options.length]=new Option(arrAnios[i].anio,arrAnios[i].anio);
+	  document.getElementById("anioconcurso_anilla").options[document.getElementById("anioconcurso_anilla").options.length]=new Option(arrAnios[i].anio,arrAnios[i].anio);
+	  document.getElementById("anioconcurso_palmares").options[document.getElementById("anioconcurso_palmares").options.length]=new Option(arrAnios[i].anio,arrAnios[i].anio);
 	}
   }
   var anioActual=new Date().getFullYear();
   for (i=0; i<arrAnios.length;i++){
 	if (anioActual==arrAnios[i].anio){
-	  document.getElementById("anioconcurso").selectedIndex = i;
+	  document.getElementById("anioconcurso_anilla").selectedIndex = i;
+	  document.getElementById("anioconcurso_palmares").selectedIndex = i;
 	  return;
 	}
   }
@@ -1786,4 +1812,399 @@ function VerCampeonatosRegional(anio){
   var $clave = $('#divcampeonatoregional');
   $clave.empty();
   $clave.append(htmlCompeticiones);
+}
+
+function ProcesarAnillaPalmares(anilla,anio) {
+  var html="";
+  if (anilla==''){
+	html=$.parseHTML('Sin datos',true);
+	$clave=$('#infoanillapalmares');
+	$clave.empty();
+	$clave.append(html);
+	return;
+  }
+  if (isNaN(anio)){
+	anio=new Date().getFullYear();
+  }
+  //Hay que cargar todos los datos de dicho año
+  arrSocios.length = 0;
+  arrConcursos.length = 0;
+  arrCarreras.length = 0;
+  arrAnillas.length = 0;
+  anioSelected = anio;
+  var req = $.getJSON('data/'+anio+'/socios.txt', function(datosSocios){
+    req.done(function(response){
+	  for (var i=0; i<datosSocios.length; i++){
+	    if (datosSocios[i].anio==anio){
+		  var nuevo = {anio:datosSocios[i].anio,club:datosSocios[i].club,socio:datosSocios[i].socio,nombre:datosSocios[i].nombre,activo:datosSocios[i].activo};
+		  arrSocios.push(nuevo);
+	    }
+	  }
+	  var req1 = $.getJSON('data/'+anio+'/concursos.txt', function(datosConcursos){
+	    req1.done(function(response){
+		  for (var i=0; i<datosConcursos.length; i++){
+		    if (datosConcursos[i].anio==anio){
+			  var nuevo1 = {anio:datosConcursos[i].anio,club:datosConcursos[i].club,codigo:datosConcursos[i].codigo,nombre:datosConcursos[i].nombre,fenceste:datosConcursos[i].fenceste,fsuelta:datosConcursos[i].fsuelta,categoria:datosConcursos[i].categoria,fichero:'data/'+anio+'/'+datosConcursos[i].fichero,provincia:datosConcursos[i].provincia,hsuelta:datosConcursos[i].hsuelta,campeonato:datosConcursos[i].campeonato,colectivo:datosConcursos[i].colectivo,socios:datosConcursos[i].socios,encestadas:datosConcursos[i].encestadas,clasif:datosConcursos[i].clasif,noclasif:datosConcursos[i].noclasif,km0:datosConcursos[i].km0,km1:datosConcursos[i].km1,activo:datosConcursos[i].activo};
+			  arrConcursos.push(nuevo1);
+		    }
+		  }
+		  var req2 = $.getJSON('data/'+anio+'/carreras.txt', function(datosCarreras){
+		    req2.done(function(response){
+			  for (var i=0; i<datosCarreras.length; i++){
+			    if (datosCarreras[i].anio==anio){
+				  var nuevo2 = {anio:datosCarreras[i].anio,club:datosCarreras[i].club,concurso:datosCarreras[i].concurso,pos:datosCarreras[i].pos,pais:datosCarreras[i].pais,anilla:datosCarreras[i].anilla,a1:datosCarreras[i].a1,a2:datosCarreras[i].a2,a3:datosCarreras[i].a3,socio:datosCarreras[i].socio,a4:datosCarreras[i].a4,a5:datosCarreras[i].a5,a6:datosCarreras[i].a6,a7:datosCarreras[i].a7,puntos:datosCarreras[i].puntos,a8:datosCarreras[i].a8};
+				  arrCarreras.push(nuevo2);
+			    }
+			  }
+			  var req3 = $.getJSON('data/'+anio+'/anillas.txt', function(datosAnillas){
+				  req3.done(function(response){
+					for (var i=0; i<datosAnillas.length; i++){
+					  if (datosAnillas[i].anio==anio){
+						var nuevo3 = {anio:datosAnillas[i].anio,club:datosAnillas[i].club,concurso:datosAnillas[i].concurso,anilla:datosAnillas[i].anilla,pais:datosAnillas[i].pais,sexo:datosAnillas[i].sexo,color:datosAnillas[i].color,nombre:datosAnillas[i].nombre};
+						arrAnillas.push(nuevo3);
+					  }
+					}
+				    var htmlAnillas="";
+				    if (AnillaHaParticipado(anio,anilla)==true){
+					  htmlAnillas=getDatosCabeceraAnilla(anio,anilla);
+  					  html=$.parseHTML(htmlAnillas,true);
+					  $clave=$('#infoanillapalmares');
+					  $clave.empty();
+					  $clave.append(html);
+					  escribeTablaPalmares(anilla,anio);
+				    }
+				    else{
+					  htmlAnillas="<br />Anilla no encontrada";
+					  html=$.parseHTML(htmlAnillas,true);
+					  $clave=$('#infoanillapalmares');
+					  $clave.empty();
+					  $clave.append(html);
+				    }
+
+				  });
+				}); //anillas
+		
+		    });
+		  }); //carreras
+
+	    });
+	  }); //concursos
+
+    });
+  }); //socios
+  
+}
+
+function escribeTablaPalmares(anilla, anio){
+	var arrConcursosAnilla=[];
+	for (var i=0; i<arrCarreras.length; i++){
+		if (arrCarreras[i].anilla==anilla){
+			var nuevo = {concurso:arrCarreras[i].concurso,
+						fecha:dimeFechaConcurso(arrCarreras[i].concurso),
+						nombre:dimeNombreConcurso(arrCarreras[i].concurso),
+						provincia:dimeProvinciaConcurso(arrCarreras[i].concurso),
+						categoria:dimeCategoriaConcurso(arrCarreras[i].concurso),
+						campeonato:dimeCampeonatoConcurso(arrCarreras[i].concurso),
+						km:dimeKmConcurso(arrCarreras[i].concurso,anilla),
+						velocidad:dimeVelocidadConcurso(arrCarreras[i].concurso,anilla),
+						clasificadassocio:arrCarreras[i].a1.split("/")[1],
+						posicionsocio:arrCarreras[i].a1.split("/")[0],
+						encestadasclub:dimeEnceestadasClubConcurso(arrCarreras[i].concurso),
+						clasificadasclub:dimeClasificadasClubConcurso(arrCarreras[i].concurso),
+						sociosclub:dimeSociosConcurso(arrCarreras[i].concurso),
+						posicionclub:dimePosicionClubConcurso(arrCarreras[i].concurso,anilla),
+						coeficiente:dimeCoeficioenteConcurso(arrCarreras[i].concurso,anilla)};
+			arrConcursosAnilla.push(nuevo);
+		}
+	}
+	
+	arrConcursosAnilla.sort((a, b) => {
+		const newA = a.fecha.split('/').reverse().join('/');
+		const newB = b.fecha.split('/').reverse().join('/');
+		return +new Date(newA) - +new Date(newB)
+	});
+	
+	var myTableDivPalmares = document.getElementById("infoanillapalmares");
+  
+	var table = document.createElement('TABLE');
+	table.id='palmarespalomaanio';
+	table.setAttribute("class", "display text-left");
+	table.style='width:100%';
+	var header = table.createTHead();
+	var row = header.insertRow(0);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(0);
+	var cell3 = row.insertCell(0);
+	var cell4 = row.insertCell(0);
+	var cell5 = row.insertCell(0);
+	var cell6 = row.insertCell(0);
+	var cell7 = row.insertCell(0);
+	var cell8 = row.insertCell(0);
+	var cell9 = row.insertCell(0);
+	var cell10 = row.insertCell(0);
+	var cell11 = row.insertCell(0);
+	//var cell12 = row.insertCell(0);
+	var cell13 = row.insertCell(0);
+	var cell14 = row.insertCell(0);
+	cell14.innerHTML = "Fecha";
+	cell13.innerHTML = "Concurso";	
+	//cell12.innerHTML = "Provincia";
+	cell11.innerHTML = "Cat.";
+	cell10.innerHTML = "Cmpto.";
+	cell9.innerHTML = "Km";
+	cell8.innerHTML = "Velocidad";
+	cell7.innerHTML = "Clas. socio";
+	cell6.innerHTML = "Pos. lleg. socio";
+	cell5.innerHTML = "Enc. club";
+	cell4.innerHTML = "Clas. club";
+	cell3.innerHTML = "Socios club";
+	cell2.innerHTML = "Pos. lleg. club";
+	cell1.innerHTML = "Coefi.";
+	
+	var tableBody = document.createElement('TBODY');
+	table.appendChild(tableBody);
+	
+	for (var fila=0; fila<arrConcursosAnilla.length; fila++){
+		var tr = document.createElement('TR');
+		tableBody.appendChild(tr);
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_0";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].fecha));
+		tr.appendChild(td);
+		
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_1";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].nombre));
+		tr.appendChild(td);
+		
+		//var td = document.createElement('TD');
+		//td.id = "celda_" + (fila+1) + "_2";
+		//td.appendChild(document.createTextNode(arrConcursosAnilla[fila].provincia));
+		//tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_3";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].categoria));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_4";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].campeonato));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_5";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].km));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_6";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].velocidad));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_7";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].clasificadassocio));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_8";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].posicionsocio));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_9";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].encestadasclub));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_10";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].clasificadasclub));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_11";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].sociosclub));
+		tr.appendChild(td);
+
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_12";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].posicionclub));
+		tr.appendChild(td);
+		
+		var td = document.createElement('TD');
+		td.id = "celda_" + (fila+1) + "_13";
+		td.appendChild(document.createTextNode(arrConcursosAnilla[fila].coeficiente));
+		tr.appendChild(td);
+	}
+
+	myTableDivPalmares.appendChild(table);
+	
+	$('#palmarespalomaanio').DataTable( {
+		retrieve: true,
+		responsive: true,
+		paging: true,
+		order: [[3, 'asc']],
+		"autoWidth": false,
+		"language": {
+			"emptyTable": "No hay datos disponibles en la tabla",
+			"infoEmpty": "Mostrando 0 a 0 de 0 registros",
+			"decimal": ",",
+			"thousands": ".",
+			"lengthMenu": "Mostrar _MENU_ registros por página",
+			"search" : "Buscar",
+			"paginate": {
+				"first": "Primero",
+				"last": "Último",
+				"next": "Siguiente",
+				"previous": "Anterior"
+			},
+			"info": "Mostrando página _PAGE_ de _PAGES_",
+			"infoFiltered": "(Filtrando de un total de _MAX_ registros)",
+			"zeroRecords": "No se han encontrado datos"
+		},
+	columnDefs: [
+		{ targets: [5,6,7,8,9,10,11,12], className: 'dt-body-right' }
+	]
+	} );
+	
+}
+
+function getDatosCabeceraAnilla(anio,anilla){
+  var propietario="";
+  var color="";
+  var sexo="";
+  var pais="";
+  var datosAnilla="";
+  for (var i=0; i<arrAnillas.length; i++){
+	if ((arrAnillas[i].anio==anio)&&(arrAnillas[i].anilla==anilla)){
+	  propietario=arrAnillas[i].nombre;
+	  color=arrAnillas[i].color;
+	  sexo=arrAnillas[i].sexo;
+	  pais=arrAnillas[i].pais;
+	  break;
+	}
+  }
+  datosAnilla="<div class='infocarrera'>";
+  datosAnilla+="<div class='row'>";
+  datosAnilla+="<h3>Anilla "+anilla+"</h3>";
+  datosAnilla+="</div><br />";
+  datosAnilla+="<div class='row'>";
+  datosAnilla+="<div class='col-md-6 izda'>Propietario: " + propietario + "</div>";
+  datosAnilla+="<div class='col-md-6 izda'>Pais: " + pais + "</div>";
+  datosAnilla+="<div class='col-md-6 izda'>Color: " + color + "</div>";
+  datosAnilla+="<div class='col-md-6 izda'>Sexo: " + sexo + "</div>";
+  datosAnilla+="</div>";
+  datosAnilla+="</div>";
+  return datosAnilla;
+}
+
+function AnillaHaParticipado(anio,anilla){
+  for (var i=0; i<arrCarreras.length; i++){
+	if ((arrCarreras[i].anio==anio)&&(arrCarreras[i].anilla==anilla)){
+	  return true;
+	  break;
+	}
+  }
+  return false;
+}
+
+function dimeProvinciaConcurso(sConcurso){
+  for (var i=0; i<arrConcursos.length; i++){
+	if (arrConcursos[i].codigo==sConcurso){
+	  return(arrConcursos[i].provincia);
+	}
+  }
+}
+
+function dimeCategoriaConcurso(sConcurso){
+  for (var i=0; i<arrConcursos.length; i++){
+	if (arrConcursos[i].codigo==sConcurso){
+	  switch (arrConcursos[i].categoria) {
+		case "Nacional":
+		  return("Nal");
+          break;
+		case "Regional":
+		  return('Reg');
+          break;
+	  }
+	}
+  }
+}
+
+function dimeCampeonatoConcurso(sConcurso){
+  for (var i=0; i<arrConcursos.length; i++){
+	if (arrConcursos[i].codigo==sConcurso){
+	  switch (arrConcursos[i].campeonato) {
+		case "Velocidad":
+		  return("V");
+          break;
+		case "Medio Fondo":
+		  return("MF");
+          break;
+		case "Fondo":
+		  return("F");
+          break;
+		case "Gran Fondo":
+		  return("GF");
+          break;
+	  }
+	}
+  }
+}
+
+function dimeKmConcurso(sConcurso,sAnilla){
+  for (var i=0; i<arrCarreras.length; i++){
+	if ((arrCarreras[i].concurso==sConcurso)&&(arrCarreras[i].anilla==sAnilla)){
+	  return(arrCarreras[i].a6/1000);
+	}
+  }
+}
+
+function dimeVelocidadConcurso(sConcurso,sAnilla){
+  for (var i=0; i<arrCarreras.length; i++){
+	if ((arrCarreras[i].concurso==sConcurso)&&(arrCarreras[i].anilla==sAnilla)){
+	  return(Number(arrCarreras[i].a7).toFixed(2));
+	}
+  }
+}
+
+function dimeEnceestadasClubConcurso(sConcurso){
+  for (var i=0; i<arrConcursos.length; i++){
+	if (arrConcursos[i].codigo==sConcurso){
+	  return(arrConcursos[i].encestadas);
+	}
+  }
+}
+
+function dimeClasificadasClubConcurso(sConcurso){
+  for (var i=0; i<arrConcursos.length; i++){
+	if (arrConcursos[i].codigo==sConcurso){
+	  return(arrConcursos[i].clasif);
+	}
+  }
+}
+
+function dimeSociosConcurso(sConcurso){
+  for (var i=0; i<arrConcursos.length; i++){
+	if (arrConcursos[i].codigo==sConcurso){
+	  return(arrConcursos[i].socios);
+	}
+  }
+}
+
+function dimePosicionClubConcurso(sConcurso,sAnilla){
+  for (var i=0; i<arrCarreras.length; i++){
+	if ((arrCarreras[i].concurso==sConcurso)&&(arrCarreras[i].anilla==sAnilla)){
+	  return(arrCarreras[i].pos);
+	}
+  }
+}
+
+function dimeCoeficioenteConcurso(sConcurso,sAnilla){
+  for (var i=0; i<arrCarreras.length; i++){
+	if ((arrCarreras[i].concurso==sConcurso)&&(arrCarreras[i].anilla==sAnilla)){
+	  return(arrCarreras[i].a8);
+	}
+  }
 }

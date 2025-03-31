@@ -7,8 +7,8 @@ var arrAnios = [{"anio":2016,"activo":true},
 				{"anio":2021,"activo":true},
 				{"anio":2022,"activo":true},
 				{"anio":2023,"activo":true},
-				{"anio":2024,"activo":true}/*,
-				{"anio":2025,"activo":false},
+				{"anio":2024,"activo":true},
+				{"anio":2025,"activo":true}/*,
 				{"anio":2026,"activo":false},
 				{"anio":2027,"activo":false},
 				{"anio":2028,"activo":false},
@@ -265,21 +265,25 @@ if (anio>=2019){
 			  $('#btnNLG223').click(function(){ if ($('#NLG223').is (':hidden')){ $('#RLV123').hide(); $('#NLV123').hide(); $('#NLV223').hide(); $('#RLV223').hide(); $('#NLM123').hide(); $('#RLM123').hide(); $('#RLV323').hide(); $('#NLM223').hide(); $('#RLM223').hide(); $('#NLF123').hide(); $('#RLF123').hide(); $('#NLF223').hide(); $('#RLF223').hide(); $('#NLG123').hide(); $('#NLG223').show(); } else $('#NLG223').hide(); });
 
 			  /* 2024 */
-			  $('#btnRLV124').click(function(){ if ($('#RLV124').is (':hidden')){ $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV124').show(); } else $('#RLV124').hide(); });
-			  $('#btnNLV124').click(function(){ if ($('#NLV124').is (':hidden')){ $('#RLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLV124').show(); } else $('#NLV124').hide(); });
-			  $('#btnNLV224').click(function(){ if ($('#NLV224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLV224').show(); } else $('#NLV224').hide(); });
-			  $('#btnRLV224').click(function(){ if ($('#RLV224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV224').show(); } else $('#RLV224').hide(); });
-			  $('#btnNLM124').click(function(){ if ($('#NLM124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLM124').show(); } else $('#NLM124').hide(); });
-			  $('#btnRLM124').click(function(){ if ($('#RLM124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLM124').show(); } else $('#RLM124').hide(); });
-			  $('#btnRLV324').click(function(){ if ($('#RLV324').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV324').show(); } else $('#RLV324').hide(); });
-			  $('#btnNLM224').click(function(){ if ($('#NLM224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLM224').show(); } else $('#NLM224').hide(); });
-			  $('#btnRLM224').click(function(){ if ($('#RLM224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLM224').show(); } else $('#RLM224').hide(); });
-			  $('#btnNLF124').click(function(){ if ($('#NLF124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLF124').show(); } else $('#NLF124').hide(); });
-			  $('#btnRLF124').click(function(){ if ($('#RLF124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLF124').show(); } else $('#RLF124').hide(); });
-			  $('#btnNLF224').click(function(){ if ($('#NLF224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLF224').show(); } else $('#NLF224').hide(); });
-			  $('#btnRLF224').click(function(){ if ($('#RLF224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLF224').show(); } else $('#RLF224').hide(); });
-			  $('#btnNLG124').click(function(){ if ($('#NLG124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG224').hide(); $('#NLG124').show(); } else $('#NLG124').hide(); });
-			  $('#btnNLG224').click(function(){ if ($('#NLG224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').show(); } else $('#NLG224').hide(); });
+			  $('#btnRLV124').click(function(){ if ($('#RLV124').is (':hidden')){ $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV124').show(); } else $('#RLV124').hide(); });
+			  $('#btnNLV124').click(function(){ if ($('#NLV124').is (':hidden')){ $('#RLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLV124').show(); } else $('#NLV124').hide(); });
+			  $('#btnNLV224').click(function(){ if ($('#NLV224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLV224').show(); } else $('#NLV224').hide(); });
+			  $('#btnRLV224').click(function(){ if ($('#RLV224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV224').show(); } else $('#RLV224').hide(); });
+			  $('#btnNLM124').click(function(){ if ($('#NLM124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLM124').show(); } else $('#NLM124').hide(); });
+			  $('#btnRLM124').click(function(){ if ($('#RLM124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLM124').show(); } else $('#RLM124').hide(); });
+			  $('#btnNLV324').click(function(){ if ($('#NLV324').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLV324').show(); } else $('#NLV324').hide(); });
+			  $('#btnRLV324').click(function(){ if ($('#RLV324').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV324').show(); } else $('#RLV324').hide(); });
+			  $('#btnNLM224').click(function(){ if ($('#NLM224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLM224').show(); } else $('#NLM224').hide(); });
+			  $('#btnRLM224').click(function(){ if ($('#RLM224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLM224').show(); } else $('#RLM224').hide(); });
+			  $('#btnNLF124').click(function(){ if ($('#NLF124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLF124').show(); } else $('#NLF124').hide(); });
+			  $('#btnRLF124').click(function(){ if ($('#RLF124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLF124').show(); } else $('#RLF124').hide(); });
+			  $('#btnNLF224').click(function(){ if ($('#NLF224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#NLF224').show(); } else $('#NLF224').hide(); });
+			  $('#btnRLF224').click(function(){ if ($('#RLF224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLF224').show(); } else $('#RLF224').hide(); });
+			  $('#btnNLG124').click(function(){ if ($('#NLG124').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG224').hide(); $('#NLG124').show(); } else $('#NLG124').hide(); });
+			  $('#btnNLG224').click(function(){ if ($('#NLG224').is (':hidden')){ $('#RLV124').hide(); $('#NLV124').hide(); $('#NLV224').hide(); $('#RLV224').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').show(); } else $('#NLG224').hide(); });
+
+			  /* 2025 */
+			  $('#btnRLV125').click(function(){ if ($('#RLV125').is (':hidden')){ $('#NLV125').hide(); $('#NLV225').hide(); $('#RLV225').hide(); $('#NLM124').hide(); $('#RLM124').hide(); $('#NLV324').hide(); $('#RLV324').hide(); $('#NLM224').hide(); $('#RLM224').hide(); $('#NLF124').hide(); $('#RLF124').hide(); $('#NLF224').hide(); $('#RLF224').hide(); $('#NLG124').hide(); $('#NLG224').hide(); $('#RLV125').show(); } else $('#RLV125').hide(); });
 
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
@@ -599,18 +603,19 @@ function crearMejoresPalomasNacional(){
   table.style='width:100%';
   var header = table.createTHead();
   var row = header.insertRow(0);
-  var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(0);
   var cell3 = row.insertCell(0);
   var cell4 = row.insertCell(0);
   var cell5 = row.insertCell(0);
   var cell6 = row.insertCell(0);
-  cell1.innerHTML = "#";
+  var cell1 = row.insertCell(0);
+  
   cell6.innerHTML = "País";
   cell5.innerHTML = "Anilla";
   cell4.innerHTML = "Nombre";
   cell3.innerHTML = "Posiciones";
   cell2.innerHTML = "Puntos";
+  cell1.innerHTML = "#";
   var tableBody = document.createElement('TBODY');
   table.appendChild(tableBody);
   
@@ -739,18 +744,18 @@ function crearMejoresPalomasRegional(){
   table.style='width:100%';
   var header = table.createTHead();
   var row = header.insertRow(0);
-  var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(0);
   var cell3 = row.insertCell(0);
   var cell4 = row.insertCell(0);
   var cell5 = row.insertCell(0);
   var cell6 = row.insertCell(0);
-  cell1.innerHTML = "#";
+  var cell1 = row.insertCell(0);
   cell6.innerHTML = "País";
   cell5.innerHTML = "Anilla";
   cell4.innerHTML = "Nombre";
   cell3.innerHTML = "Posiciones";
   cell2.innerHTML = "Puntos";
+  cell1.innerHTML = "#";
   var tableBody = document.createElement('TBODY');
   table.appendChild(tableBody);
   
@@ -861,18 +866,18 @@ function crearMejoresPichonesNacional(){
   table.style='width:100%';
   var header = table.createTHead();
   var row = header.insertRow(0);
-  var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(0);
   var cell3 = row.insertCell(0);
   var cell4 = row.insertCell(0);
   var cell5 = row.insertCell(0);
   var cell6 = row.insertCell(0);
-  cell1.innerHTML = "#";
+  var cell1 = row.insertCell(0);
   cell6.innerHTML = "País";
   cell5.innerHTML = "Anilla";
   cell4.innerHTML = "Nombre";
   cell3.innerHTML = "Posiciones";
   cell2.innerHTML = "Puntos";
+  cell1.innerHTML = "#";
   var tableBody = document.createElement('TBODY');
   table.appendChild(tableBody);
   

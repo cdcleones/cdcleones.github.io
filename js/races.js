@@ -8,8 +8,8 @@ var arrAnios = [{"anio":2016,"activo":true},
 				{"anio":2022,"activo":true},
 				{"anio":2023,"activo":true},
 				{"anio":2024,"activo":true},
-				{"anio":2025,"activo":true}/*,
-				{"anio":2026,"activo":false},
+				{"anio":2025,"activo":true},
+				{"anio":2026,"activo":true}/*,
 				{"anio":2027,"activo":false},
 				{"anio":2028,"activo":false},
 				{"anio":2029,"activo":false},
@@ -289,7 +289,6 @@ if (anio>=2019){
 			  $('#btnRLV225').click(function(){ if ($('#RLV225').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#NLM225').hide(); $('#RLM225').hide(); $('#NLV125').hide(); $('#NLV225').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#NLG225').hide(); $('#RLG225').hide(); $('#RLV225').show(); } else $('#RLV225').hide(); });
 			  $('#btnNLM225').click(function(){ if ($('#NLM225').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#RLM225').hide(); $('#NLV125').hide(); $('#NLV225').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#NLG225').hide(); $('#RLG225').hide(); $('#NLM225').show(); } else $('#NLM225').hide(); });
 			  $('#btnRLM225').click(function(){ if ($('#RLM225').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#NLM225').hide(); $('#NLV125').hide(); $('#NLV225').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#NLG225').hide(); $('#RLG225').hide(); $('#RLM225').show(); } else $('#RLM225').hide(); });
-
 			  $('#btnNLV125').click(function(){ if ($('#NLV125').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#NLM225').hide(); $('#RLM225').hide(); $('#NLV225').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#NLG225').hide(); $('#RLG225').hide(); $('#NLV125').show(); } else $('#NLV125').hide(); });
 			  $('#btnNLV225').click(function(){ if ($('#NLV225').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#NLM225').hide(); $('#RLM225').hide(); $('#NLV125').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#NLG225').hide(); $('#RLG225').hide(); $('#NLV225').show(); } else $('#NLV225').hide(); });
 			  $('#btnRLV325').click(function(){ if ($('#RLV325').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#NLM225').hide(); $('#RLM225').hide(); $('#NLV125').hide(); $('#NLV225').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#NLG225').hide(); $('#RLG225').hide(); $('#RLV325').show(); } else $('#RLV325').hide(); });
@@ -301,7 +300,21 @@ if (anio>=2019){
 			  $('#btnRLG125').click(function(){ if ($('#RLG125').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#NLM225').hide(); $('#RLM225').hide(); $('#NLV125').hide(); $('#NLV225').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#NLG225').hide(); $('#RLG225').hide(); $('#RLG125').show(); } else $('#RLG125').hide(); });
 			  $('#btnNLG225').click(function(){ if ($('#NLG225').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#NLM225').hide(); $('#RLM225').hide(); $('#NLV125').hide(); $('#NLV225').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#RLG225').hide(); $('#NLG225').show(); } else $('#NLG225').hide(); });
 			  $('#btnRLG225').click(function(){ if ($('#RLG225').is (':hidden')){ $('#RLV125').hide(); $('#NLM125').hide(); $('#RLM125').hide(); $('#RLV225').hide(); $('#NLM225').hide(); $('#RLM225').hide(); $('#NLV125').hide(); $('#NLV225').hide(); $('#RLV325').hide(); $('#NLF125').hide(); $('#RLF125').hide(); $('#NLF225').hide(); $('#RLF225').hide(); $('#NLG125').hide(); $('#RLG125').hide(); $('#NLG225').hide(); $('#RLG225').show(); } else $('#RLG225').hide(); });
-
+			  
+			  /* 2026 */
+			  $('#btnRLV126').click(function(){ if ($('#RLV126').is (':hidden')){ $('#RLV226').hide(); $('#RLM126').hide(); $('#RLM226').hide(); $('#RLF126').hide(); $('#RLG126').hide(); $('#RLF226').hide(); $('#RLG226').hide(); $('#RLV126').show(); } else $('#RLV126').hide(); });
+			  $('#btnRLV226').click(function(){ if ($('#RLV226').is (':hidden')){ $('#RLV126').hide(); $('#RLM126').hide(); $('#RLM226').hide(); $('#RLF126').hide(); $('#RLG126').hide(); $('#RLF226').hide(); $('#RLG226').hide(); $('#RLV226').show(); } else $('#RLV226').hide(); });
+			  $('#btnRLM126').click(function(){ if ($('#RLM126').is (':hidden')){ $('#RLV126').hide(); $('#RLV226').hide(); $('#RLM226').hide(); $('#RLF126').hide(); $('#RLG126').hide(); $('#RLF226').hide(); $('#RLG226').hide(); $('#RLM126').show(); } else $('#RLM126').hide(); });
+			  $('#btnRLM226').click(function(){ if ($('#RLM226').is (':hidden')){ $('#RLV126').hide(); $('#RLV226').hide(); $('#RLM126').hide(); $('#RLF126').hide(); $('#RLG126').hide(); $('#RLF226').hide(); $('#RLG226').hide(); $('#RLM226').show(); } else $('#RLM226').hide(); });
+			  $('#btnRLF126').click(function(){ if ($('#RLF126').is (':hidden')){ $('#RLV126').hide(); $('#RLV226').hide(); $('#RLM126').hide(); $('#RLM226').hide(); $('#RLG126').hide(); $('#RLF226').hide(); $('#RLG226').hide(); $('#RLF126').show(); } else $('#RLF126').hide(); });
+			  $('#btnRLG126').click(function(){ if ($('#RLG126').is (':hidden')){ $('#RLV126').hide(); $('#RLV226').hide(); $('#RLM126').hide(); $('#RLM226').hide(); $('#RLF126').hide(); $('#RLF226').hide(); $('#RLG226').hide(); $('#RLG126').show(); } else $('#RLG126').hide(); });
+			  $('#btnRLF226').click(function(){ if ($('#RLF226').is (':hidden')){ $('#RLV126').hide(); $('#RLV226').hide(); $('#RLM126').hide(); $('#RLM226').hide(); $('#RLF126').hide(); $('#RLG126').hide(); $('#RLG226').hide(); $('#RLF226').show(); } else $('#RLF226').hide(); });
+			  $('#btnRLG226').click(function(){ if ($('#RLG226').is (':hidden')){ $('#RLV126').hide(); $('#RLV226').hide(); $('#RLM126').hide(); $('#RLM226').hide(); $('#RLF126').hide(); $('#RLG126').hide(); $('#RLF226').hide(); $('#RLG226').show(); } else $('#RLG226').hide(); });
+			  
+			  /* 2027 */
+			  
+			  
+			  
 			  crearMejoresPalomasNacional();
 			  crearMejoresPalomasRegional();
 			  if (anio>=2019){
@@ -1824,13 +1837,16 @@ function VerCampeonatosRegional(anio){
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r1_crvmf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Velocidad/Medio Fondo Rev.'>Cmpto. Reg. Vel./M. Fondo Rev.</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo'>Campeonato Reg. de Fondo</a>"
   htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r2_crf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Fondo Rev.'>Campeonato Reg. de Fondo Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto'>Campeonato Reg. Absoluto</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crg_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto Rev.'>Campeonato Reg. Absoluto Rev.</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r4_crs.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Seguridad'>Campeonato Reg. Seguridad</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r5_aprvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Velocidad/Medio Fondo'>AS Paloma Reg. Vel./M. Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r6_aprf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Fondo'>AS Paloma Reg. de Fondo</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r7_apra.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional Absoluta'>AS Paloma Reg. Absoluta</a>"
-  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r8_prf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Regional de Fondo de 2 a&ntilde;os'>Prestigio Reg. Fondo 2 a&ntilde;os</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crgf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Gran Fondo'>Campeonato Reg. Gran Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r3_crgf_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Gran Fondo Rev.'>Campeonato Reg. Gran Fondo Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r4_cra.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto'>Campeonato Reg. Absoluto</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r4_cra_r.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional Absoluto Rev.'>Campeonato Reg. Absoluto Rev.</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r5_crs.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Campeonato Regional de Seguridad'>Campeonato Reg. Seguridad</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r6_aprvmf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Velocidad/Medio Fondo'>AS Paloma Reg. Vel./M. Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r7_aprf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Fondo'>AS Paloma Reg. de Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r8_aprgf.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional de Gran Fondo'>AS Paloma Reg. de Gran Fondo</a>"
+  htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r9_apra.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='AS Paloma Regional Absoluta'>AS Paloma Reg. Absoluta</a>"
+  //htmlCompeticiones+="<a href='data/"+anio+"/cmptos/r10_prf2a.pdf' target='_blank' role='button' class='btn btn-lg btn-block btn-red' title='Prestigio Regional de Fondo de 2 a&ntilde;os'>Prestigio Reg. Fondo 2 a&ntilde;os</a>"
   var $clave = $('#divcampeonatoregional');
   $clave.empty();
   $clave.append(htmlCompeticiones);

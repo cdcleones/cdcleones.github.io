@@ -233,6 +233,14 @@ $(document).ready(function(){
 	  $('#btnpichon').show();
 	  $('#btnbestpichon').show();
 	});
+
+	$('#btn2026').click(function(){ 
+	  anioSelected=2026;
+	  Procesar(anioSelected);
+	  $('#btnpichon').show();
+	  $('#btnbestpichon').show();
+	});
+	
 	$('#btnnacional').click(function(){ 
 	  var html=$.parseHTML('<h3>Nacional '+anioSelected+'</h3>',true);
 	  var $clave=$("#infodate");
